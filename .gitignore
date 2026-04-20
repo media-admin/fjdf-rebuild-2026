@@ -1,0 +1,104 @@
+# ============================================
+# WORDPRESS CORE
+# ============================================
+/cms/wp-admin/
+/cms/wp-includes/
+/cms/wp-*.php
+/cms/xmlrpc.php
+/cms/readme.html
+/cms/license.txt
+
+# ============================================
+# WORDPRESS CONFIG
+# ============================================
+/cms/wp-config.php
+/cms/wp-config-local.php
+/cms/wp-config-staging.php
+/cms/wp-config-production.php
+
+# ============================================
+# CONTENT
+# ============================================
+/cms/wp-content/uploads/
+/cms/wp-content/upgrade/
+/cms/wp-content/cache/
+/cms/wp-content/w3tc-config/
+/cms/wp-content/updraft/
+
+# ============================================
+# PLUGINS – Drittanbieter (nicht versionieren)
+# ============================================
+/cms/wp-content/plugins/*
+/cms/wp-content/languages/plugins/
+/cms/wp-content/languages/themes/
+
+# Agentur-Plugins (werden versioniert)
+!/cms/wp-content/plugins/media-lab-agency-core/
+!/cms/wp-content/plugins/media-lab-analytics/
+!/cms/wp-content/plugins/media-lab-seo/
+!/cms/wp-content/plugins/media-lab-woocommerce/
+
+# Janecka Custom Plugin (wird versioniert)
+!/cms/wp-content/plugins/fjdf-project/
+
+# ============================================
+# THEMES
+# ============================================
+/cms/wp-content/themes/twenty*/
+
+# Juwelier Janecka Theme (wird versioniert)
+!/cms/wp-content/themes/fjdf-theme/
+
+# Build-Artefakte innerhalb des Themes
+/cms/wp-content/themes/*/assets/dist/
+/cms/wp-content/themes/fjdf-theme/assets/hot
+
+# ============================================
+# BUILD & DEPENDENCIES
+# ============================================
+node_modules/
+npm-debug.log*
+yarn-error.log*
+# package-lock.json und yarn.lock: optional – je nach Team-Entscheidung
+/vendor/
+
+# ============================================
+# OS & IDE
+# ============================================
+.DS_Store
+Thumbs.db
+*~
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+
+# ============================================
+# LOGS & TEMP
+# ============================================
+*.log
+/cms/wp-content/debug.log
+*.tmp
+*.temp
+.cache/
+
+# ============================================
+# BACKUPS & DATENBANK
+# ============================================
+*.backup
+*.bak
+*-backup/
+*.sql
+*.sql.gz
+*.zip
+*.tar.gz
+docs-backup/
+
+# ============================================
+# ENVIRONMENT
+# ============================================
+.env
+.env.*
+.vscode/sftp.json
