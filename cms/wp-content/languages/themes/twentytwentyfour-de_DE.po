@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - Twenty Twenty-Four package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-02-16 16:57:36+0000\n"
+"PO-Revision-Date: 2026-04-19 21:57:25+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -224,7 +224,7 @@ msgstr "Twitter/X"
 
 #: patterns/footer.php:74
 msgid "Contact Us"
-msgstr "Kontaktiere uns"
+msgstr "Kontakt"
 
 #: patterns/footer.php:73
 msgid "Terms and Conditions"
@@ -287,7 +287,7 @@ msgstr "Seite ohne Titel"
 #: theme.json
 msgctxt "Template part name"
 msgid "Post Meta"
-msgstr "Beitrags-Meta"
+msgstr "Beitrags-Metadaten"
 
 #: theme.json
 msgctxt "Template part name"
@@ -814,7 +814,7 @@ msgstr "Ember"
 #: patterns/text-title-left-image-right.php:35
 msgctxt "Call to Action button text"
 msgid "About us"
-msgstr "Impressum"
+msgstr "Über uns"
 
 #: patterns/text-title-left-image-right.php:28
 msgctxt "Description for the About pattern"
@@ -948,7 +948,7 @@ msgstr "FAQ"
 
 #: patterns/text-centered-statement.php:21
 msgid "<em>Études</em> is not confined to the past—we are passionate about the cutting edge designs shaping our world today."
-msgstr "<em>Études</em> ist nicht auf die Vergangenheit beschränkt - wir interessieren uns leidenschaftlich für die modernsten Designs, die unsere Welt heute prägen."
+msgstr "<em>Études</em> ist nicht auf die Vergangenheit beschränkt – wir interessieren uns leidenschaftlich für die modernsten Designs, die unsere Welt heute prägen."
 
 #: patterns/text-centered-statement.php
 msgctxt "Pattern title"
@@ -1334,7 +1334,7 @@ msgstr "von"
 #: patterns/hidden-post-meta.php
 msgctxt "Pattern title"
 msgid "Post meta"
-msgstr "Beitrags-Meta"
+msgstr "Beitrags-Metadaten"
 
 #: patterns/hidden-portfolio-hero.php
 msgctxt "Pattern title"
@@ -1723,7 +1723,7 @@ msgstr "Äußeres Gebäude in Toronto, Kanada"
 #: patterns/banner-hero.php:37
 msgctxt "Button text of the hero section"
 msgid "About us"
-msgstr "Impressum"
+msgstr "Über uns"
 
 #: patterns/banner-hero.php:26
 msgctxt "Content of the hero section"

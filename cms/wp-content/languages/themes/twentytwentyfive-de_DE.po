@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - Twenty Twenty-Five package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-02-16 17:00:24+0000\n"
+"PO-Revision-Date: 2026-04-18 00:58:14+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -465,7 +465,7 @@ msgstr "Vertikaler Website-Header"
 #: patterns/text-faqs.php:83
 msgctxt "Question in the FAQs pattern."
 msgid "Are signed copies available?"
-msgstr "Sind signierte Kopien verfügbar?"
+msgstr "Sind signierte Exemplare verfügbar?"
 
 #: patterns/text-faqs.php:67
 msgctxt "Question in the FAQs pattern."
@@ -894,7 +894,7 @@ msgstr "20 €/Monat"
 #: patterns/pricing-2-col.php:78 patterns/pricing-3-col.php:73
 msgctxt "Name of membership package."
 msgid "Single"
-msgstr "Einzeln"
+msgstr "Einzel"
 
 #: patterns/pricing-2-col.php:68 patterns/pricing-2-col.php:112
 #: patterns/pricing-3-col.php:59 patterns/pricing-3-col.php:99
@@ -939,7 +939,7 @@ msgstr "Kostenlos"
 #: patterns/pricing-2-col.php:22
 #: patterns/services-subscriber-only-section.php:61
 msgid "Cancel or pause anytime."
-msgstr "Du kannst jederzeit abbrechen oder pausieren."
+msgstr "Du kannst jederzeit kündigen oder pausieren."
 
 #: patterns/pricing-2-col.php:18 patterns/pricing-3-col.php:23
 msgid "Pricing"
@@ -1304,7 +1304,7 @@ msgstr "Versteckte Blog-Überschrift"
 #: patterns/hidden-404.php:36
 msgctxt "404 error message"
 msgid "The page you are looking for doesn't exist, or it has been moved. Please try searching using the form below."
-msgstr "Die Seite, nach der du suchst, existiert nicht oder sie wurde verschoben. Bitte versuche die Suche mit dem untenstehenden Formular."
+msgstr "Die Seite, nach der du suchst, existiert nicht oder sie wurde verschoben. Bitte versuche es über die untenstehende Suche."
 
 #: patterns/hidden-404.php:32
 msgctxt "404 error message"
@@ -1314,7 +1314,7 @@ msgstr "Seite nicht gefunden"
 #: patterns/hidden-404.php:21
 msgctxt "image description"
 msgid "Small totara tree on ridge above Long Point"
-msgstr "Kleiner Totora-Baum auf dem Bergrücken oberhalb von Long Point"
+msgstr "Kleiner Totara-Baum auf dem Bergrücken oberhalb von Long Point"
 
 #: patterns/hidden-404.php
 msgctxt "Pattern title"
@@ -1376,7 +1376,7 @@ msgstr "Bild eines Buchs"
 #: patterns/hero-overlapped-book-cover-with-links.php:34
 msgctxt "Hero - Overlapped book cover pattern subline text"
 msgid "A fine collection of moments in time featuring photographs from Louis Fleckenstein, Paul Strand and Asahachi Kōno."
-msgstr "Eine schöne Sammlung von Momenten in der Zeit mit Fotografien von Louis Fleckenstein, Paul Strand und Asahachi Kōno."
+msgstr "Eine schöne Sammlung von Momentaufnahmen mit Fotografien von Louis Fleckenstein, Paul Strand und Asahachi Kōno."
 
 #: patterns/hero-overlapped-book-cover-with-links.php:28
 msgctxt "Hero - Overlapped book cover pattern headline text"
@@ -1426,7 +1426,7 @@ msgstr "Jetzt zum Vorbestellen verfügbar."
 #: patterns/hero-book.php:42
 msgctxt "Content of the hero section."
 msgid "A fine collection of moments in time featuring photographs from Louis Fleckenstein, Paul Strand and Asahachi Kōno."
-msgstr "Eine schöne Sammlung von Momenten in der Zeit mit Fotografien von Louis Fleckenstein, Paul Strand und Asahachi Kōno."
+msgstr "Eine schöne Sammlung von Momentaufnahmen mit Fotografien von Louis Fleckenstein, Paul Strand und Asahachi Kōno."
 
 #: patterns/hero-book.php:38
 msgctxt "Heading of the hero section."
@@ -1565,7 +1565,7 @@ msgstr "https://example.com"
 
 #: patterns/format-link.php:17
 msgid "The Stories Book, a fine collection of moments in time featuring photographs from Louis Fleckenstein, Paul Strand and Asahachi Kōno, is available for pre-order"
-msgstr "The Stories Book, eine schöne Sammlung von Momenten in der Zeit, mit Fotografien von Louis Fleckenstein, Paul Strand und Asahachi Kōno, kann jetzt vorbestellt werden"
+msgstr "The Stories Book, eine schöne Sammlung von Momentaufnahmen, mit Fotografien von Louis Fleckenstein, Paul Strand und Asahachi Kōno, kann jetzt vorbestellt werden"
 
 #: patterns/format-link.php
 msgctxt "Pattern description"
@@ -1723,7 +1723,7 @@ msgstr "Vortrag von <a href=\"#\">Prof. Fiona Presley</a>"
 #: patterns/event-schedule.php:145 patterns/event-schedule.php:177
 msgctxt "Example event time in pattern."
 msgid "9 AM — 11 AM"
-msgstr "9 Uhr – 11 Uhr"
+msgstr "9 bis 11 Uhr"
 
 #: patterns/event-schedule.php:57
 msgid "Fauna from North America and its characteristics"
@@ -1811,7 +1811,7 @@ msgstr "Abonnieren"
 
 #: patterns/cta-newsletter.php:23
 msgid "Get access to a curated collection of moments in time featuring photographs from historical relevance."
-msgstr "Erhalte Zugang zu einer kuratierten Sammlung von Momenten in der Zeit mit Fotos von historischer Bedeutung."
+msgstr "Erhalte Zugang zu einer kuratierten Sammlung von Momentaufnahmen mit Fotos von historischer Bedeutung."
 
 #: patterns/cta-newsletter.php:19
 msgid "Sign up to get daily stories"
@@ -1878,7 +1878,7 @@ msgstr "30 €"
 #. The price value has a font size set.
 #: patterns/cta-grid-products-link.php:58
 msgid "Starting at%s/month"
-msgstr "Ab %s/Monat"
+msgstr "Ab%s/Monat"
 
 #: patterns/cta-grid-products-link.php:38
 msgid "Closeup of plantlife in the Malibu Canyon area"
@@ -1891,7 +1891,7 @@ msgstr "Wird jede Woche geliefert"
 #: patterns/cta-grid-products-link.php:26
 #: patterns/cta-grid-products-link.php:126
 msgid "Black and white flower"
-msgstr "Schwarz-weiße Blume"
+msgstr "Blume in Schwarz-Weiß"
 
 #: patterns/cta-grid-products-link.php:20
 msgid "Our online store."
@@ -2197,7 +2197,7 @@ msgstr "Kontakt, Infos und Standorte"
 #: patterns/contact-centered-social-link.php:21
 msgctxt "Heading of the Contact social link pattern"
 msgid "Got questions? <br><a href=\"#\" rel=\"nofollow\">Feel free to reach out.</a>"
-msgstr "Hast du Fragen? <br><a href=\"#\" rel=\"nofollow\">Dann kannst uns gerne kontaktieren.</a>"
+msgstr "Hast du Fragen? <br><a href=\"#\" rel=\"nofollow\">Dann kannst du uns gerne kontaktieren.</a>"
 
 #: patterns/contact-centered-social-link.php
 msgctxt "Pattern description"
@@ -2236,7 +2236,7 @@ msgstr "Name des Beitragsformats"
 #: patterns/banner-with-description-and-images-grid.php:48
 #: patterns/overlapped-images.php:26
 msgid "Black and white photography close up of a flower."
-msgstr "Schwarz-weiße Nahaufnahme einer Blume."
+msgstr "Schwarz-Weiß-Nahaufnahme einer Blume."
 
 #: patterns/banner-with-description-and-images-grid.php:42
 #: patterns/overlapped-images.php:21
@@ -2252,7 +2252,7 @@ msgstr "%s ist ein Blumenversand- und Abonnement-Unternehmen. Mit Sitz in der EU
 #: patterns/banner-with-description-and-images-grid.php:23
 #: patterns/overlapped-images.php:37
 msgid "About Us"
-msgstr "Impressum"
+msgstr "Über uns"
 
 #: patterns/banner-with-description-and-images-grid.php
 msgctxt "Pattern description"
@@ -2279,7 +2279,7 @@ msgstr "Fuego Bar, Freiburg"
 #: patterns/banner-poster.php:39
 msgctxt "Example event date in pattern."
 msgid "Aug 08—10 2025"
-msgstr "08. – 10. August 2025"
+msgstr "8.–10. August 2025"
 
 #. translators: This string contains the word "Stories" in four different
 #. languages with the first item in the locale's language.

@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - Twenty Twenty-Three package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-02-13 21:51:03+0000\n"
+"PO-Revision-Date: 2026-04-18 20:22:31+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -56,7 +56,7 @@ msgstr "Kommentar-Template-Teil"
 #: theme.json
 msgctxt "Template part name"
 msgid "Post Meta"
-msgstr "Beitrags-Meta"
+msgstr "Beitrags-Metadaten"
 
 #: theme.json
 msgctxt "Template part name"
@@ -367,12 +367,12 @@ msgstr "Beitrag veröffentlicht"
 #: patterns/post-meta.php
 msgctxt "Pattern title"
 msgid "Post Meta"
-msgstr "Beitrags-Meta"
+msgstr "Beitrags-Metadaten"
 
 #: patterns/hidden-no-results.php:10
 msgctxt "Message explaining that there are no results returned from a search"
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
-msgstr "Leider gibt es keine Übereinstimmung mit deinen Suchbegriffen. Bitte versuche es mit anderen Stichwörtern erneut."
+msgstr "Es konnte leider nichts Passendes gefunden werden. Bitte versuche es mit anderen Suchbegriffen."
 
 #: patterns/hidden-no-results.php
 msgctxt "Pattern title"
@@ -421,7 +421,7 @@ msgstr "404 verborgen"
 #. Translators: WordPress link.
 #: patterns/footer-default.php:20
 msgid "Proudly powered by %s"
-msgstr "Mit Stolz präsentiert von %s"
+msgstr "Stolz präsentiert von %s"
 
 #: patterns/footer-default.php
 msgctxt "Pattern title"

@@ -29,7 +29,6 @@ export default defineConfig({
         blocks:              path.resolve(pluginDir, 'assets/src/js/blocks.js'),
         'block-accordion':   path.resolve(pluginDir, 'assets/src/js/block-accordion.js'),
         'block-logo-slider': path.resolve(pluginDir, 'assets/src/js/block-logo-slider.js'),
-        'blocks-scss':       path.resolve(pluginDir, 'assets/src/scss/blocks.scss'),
       },
       output: {
         entryFileNames: 'js/[name].js',

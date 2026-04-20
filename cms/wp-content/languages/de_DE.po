@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 6.9.x package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-04-15 19:02:31+0000\n"
+"PO-Revision-Date: 2026-04-20 00:40:37+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2433,6 +2433,22 @@ msgstr "Absätze automatisch hinzufügen"
 msgid "Select Category"
 msgstr "Kategorie auswählen"
 
+#: wp-includes/widgets/class-wp-widget-categories.php:218
+#: wp-includes/js/dist/block-library.js:7062
+#: wp-includes/js/dist/block-library.js:7069
+msgid "Show hierarchy"
+msgstr "Hierarchie anzeigen"
+
+#: wp-includes/widgets/class-wp-widget-recent-posts.php:31
+#: wp-includes/widgets/class-wp-widget-recent-posts.php:49
+#: wp-admin/includes/upgrade.php:426
+msgid "Recent Posts"
+msgstr "Neueste Beiträge"
+
+#: wp-includes/widgets/class-wp-widget-recent-posts.php:174
+msgid "Number of posts to show:"
+msgstr "Anzahl der anzuzeigenden Beiträge:"
+
 #: wp-includes/widgets/class-wp-widget-text.php:43
 #: wp-includes/js/dist/block-editor.js:20078
 #: wp-includes/js/dist/block-editor.js:24265
@@ -2452,22 +2468,6 @@ msgstr "Kategorie auswählen"
 #: wp-includes/js/dist/format-library.js:1282
 msgid "Text"
 msgstr "Text"
-
-#: wp-includes/widgets/class-wp-widget-categories.php:218
-#: wp-includes/js/dist/block-library.js:7062
-#: wp-includes/js/dist/block-library.js:7069
-msgid "Show hierarchy"
-msgstr "Hierarchie anzeigen"
-
-#: wp-includes/widgets/class-wp-widget-recent-posts.php:31
-#: wp-includes/widgets/class-wp-widget-recent-posts.php:49
-#: wp-admin/includes/upgrade.php:426
-msgid "Recent Posts"
-msgstr "Neueste Beiträge"
-
-#: wp-includes/widgets/class-wp-widget-recent-posts.php:174
-msgid "Number of posts to show:"
-msgstr "Anzahl der anzuzeigenden Beiträge:"
 
 #. translators: Comments widget. 1: Comment author, 2: Post link.
 #: wp-includes/widgets/class-wp-widget-recent-comments.php:150
@@ -5034,11 +5034,6 @@ msgstr "Hier findest du uns"
 msgctxt "Theme starter content"
 msgid "Address"
 msgstr "Adresse"
-
-#: wp-includes/theme.php:2311
-msgctxt "Theme starter content"
-msgid "123 Main Street"
-msgstr "Traum Allee 213"
 
 #: wp-includes/theme.php:2312
 msgctxt "Theme starter content"
@@ -7781,6 +7776,11 @@ msgctxt "password strength"
 msgid "Password strength unknown"
 msgstr "Passwortstärke unbekannt"
 
+#: wp-includes/theme.php:2311
+msgctxt "Theme starter content"
+msgid "123 Main Street"
+msgstr "Traumallee 213"
+
 #: wp-includes/post.php:1326 wp-includes/post.php:1346
 #: wp-includes/script-loader.php:1301 wp-includes/js/dist/edit-site.js:46420
 #: wp-includes/js/dist/editor.js:6284 wp-includes/js/dist/editor.js:19966
@@ -10456,22 +10456,6 @@ msgstr "Ergebnissatz auf Kommentare begrenzen, denen ein bestimmter Status zugew
 msgid "Limit result set to comments assigned a specific type. Requires authorization."
 msgstr "Ergebnissatz auf Kommentare begrenzen, denen ein bestimmter Typ zugewiesen ist. Erfordert eine Autorisierung."
 
-#. translators: %s: Method name.
-#: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:70
-#: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:87
-#: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:104
-#: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:121
-#: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:138
-#: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:155
-#: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:172
-#: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:189
-#: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:206
-#: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:223
-#: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:240
-#: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:258
-msgid "Method '%s' not implemented. Must be overridden in subclass."
-msgstr "Die Methode ‚%s‘ wurde nicht implementiert. Sie muss in der Unterklasse überschrieben werden."
-
 #: wp-includes/rest-api/endpoints/class-wp-rest-abilities-v1-categories-controller.php:279
 #: wp-includes/rest-api/endpoints/class-wp-rest-abilities-v1-list-controller.php:344
 #: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:345
@@ -10491,6 +10475,22 @@ msgstr "Ergebnisse auf alle begrenzen, die mit einer Zeichenfolge übereinstimme
 #: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:382
 msgid "Scope under which the request is made; determines fields present in response."
 msgstr "Geltungsbereich der Anfrage; ermittelt in der Antwort vorhandene Felder."
+
+#. translators: %s: Method name.
+#: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:70
+#: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:87
+#: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:104
+#: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:121
+#: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:138
+#: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:155
+#: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:172
+#: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:189
+#: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:206
+#: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:223
+#: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:240
+#: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:258
+msgid "Method '%s' not implemented. Must be overridden in subclass."
+msgstr "Die Methode ‚%s‘ wurde nicht implementiert. Sie muss in der Unterklasse überschrieben werden."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1795
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:108
@@ -14325,10 +14325,6 @@ msgstr "Um die Kommentare zu sehen, musst du dein Passwort eingeben."
 msgid "No Comments"
 msgstr "Keine Kommentare"
 
-#: wp-includes/comment-template.php:998
-msgid "1 Comment"
-msgstr "Ein Kommentar"
-
 #. translators: %s: Login URL.
 #: wp-includes/comment-template.php:2622
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
@@ -15034,6 +15030,24 @@ msgstr "Der Kommentarstatus ist ungültig."
 msgid "Comment author name and email are required."
 msgstr "Name und E-Mail-Adresse des Kommentar-Autors sind erforderlich."
 
+#: wp-includes/class-wp-xmlrpc-server.php:4011
+msgid "A valid email address is required."
+msgstr "Eine gültige E-Mail-Adresse ist erforderlich."
+
+#: wp-includes/class-wp-xmlrpc-server.php:4118
+msgid "Sorry, you are not allowed to access details of this post."
+msgstr "Du bist leider nicht berechtigt, auf Details dieses Beitrags zuzugreifen."
+
+#: wp-includes/class-wp-xmlrpc-server.php:4331
+msgid "Sorry, you are not allowed to update options."
+msgstr "Du bist leider nicht berechtigt, Einstellungen zu aktualisieren."
+
+#: wp-includes/class-wp-xmlrpc-server.php:5238
+#: wp-includes/class-wp-xmlrpc-server.php:5981
+#: wp-includes/class-wp-xmlrpc-server.php:6881
+msgid "Sorry, you are not allowed to publish this post."
+msgstr "Du bist leider nicht berechtigt, diesen Beitrag zu veröffentlichen."
+
 #: wp-includes/class-wp-xmlrpc-server.php:1461
 #: wp-includes/class-wp-xmlrpc-server.php:1764
 #: wp-includes/class-wp-xmlrpc-server.php:1846
@@ -15061,24 +15075,6 @@ msgstr "Name und E-Mail-Adresse des Kommentar-Autors sind erforderlich."
 #: wp-includes/revision.php:362
 msgid "Invalid post ID."
 msgstr "Die Beitrags-ID ist ungültig."
-
-#: wp-includes/class-wp-xmlrpc-server.php:4011
-msgid "A valid email address is required."
-msgstr "Eine gültige E-Mail-Adresse ist erforderlich."
-
-#: wp-includes/class-wp-xmlrpc-server.php:4118
-msgid "Sorry, you are not allowed to access details of this post."
-msgstr "Du bist leider nicht berechtigt, auf Details dieses Beitrags zuzugreifen."
-
-#: wp-includes/class-wp-xmlrpc-server.php:4331
-msgid "Sorry, you are not allowed to update options."
-msgstr "Du bist leider nicht berechtigt, Einstellungen zu aktualisieren."
-
-#: wp-includes/class-wp-xmlrpc-server.php:5238
-#: wp-includes/class-wp-xmlrpc-server.php:5981
-#: wp-includes/class-wp-xmlrpc-server.php:6881
-msgid "Sorry, you are not allowed to publish this post."
-msgstr "Du bist leider nicht berechtigt, diesen Beitrag zu veröffentlichen."
 
 #: wp-includes/class-wp-xmlrpc-server.php:5229
 #: wp-includes/class-wp-xmlrpc-server.php:5303
@@ -15380,14 +15376,6 @@ msgstr "Alle Beiträge"
 msgid "All Pages"
 msgstr "Alle Seiten"
 
-#: wp-includes/class-wp-taxonomy.php:625
-msgid "View Tag"
-msgstr "Schlagwort anzeigen"
-
-#: wp-includes/class-wp-taxonomy.php:625
-msgid "View Category"
-msgstr "Kategorie anzeigen"
-
 #: wp-includes/class-wp-editor.php:1266
 #: wp-includes/js/dist/block-editor.js:19399
 #: wp-includes/js/dist/block-editor.js:24307
@@ -15407,6 +15395,14 @@ msgstr "Kategorie anzeigen"
 #: wp-includes/js/dist/format-library.js:1069
 msgid "Link"
 msgstr "Link"
+
+#: wp-includes/class-wp-taxonomy.php:625
+msgid "View Tag"
+msgstr "Schlagwort anzeigen"
+
+#: wp-includes/class-wp-taxonomy.php:625
+msgid "View Category"
+msgstr "Kategorie anzeigen"
 
 #: wp-includes/class-wp-taxonomy.php:613
 msgctxt "taxonomy general name"
@@ -15869,6 +15865,18 @@ msgstr "Anmelde-Adresse (URL)"
 msgid "The URL to the admin area"
 msgstr "Die URL des Administrationsbereichs"
 
+#. translators: Localized date and time format, see
+#. https://www.php.net/manual/datetime.format.php
+#. translators: Date/Time format, see
+#. https://www.php.net/manual/datetime.format.php
+#. translators: Links last updated date format, see
+#. https://www.php.net/manual/datetime.format.php
+#: wp-includes/class-wp-locale.php:424 wp-includes/script-loader.php:159
+#: wp-includes/script-loader.php:471 wp-admin/includes/schema.php:440
+#: wp-admin/options-general.php:449
+msgid "F j, Y g:i a"
+msgstr "j. F Y, G:i"
+
 #. translators: Localized date format, see
 #. https://www.php.net/manual/datetime.format.php
 #. translators: Date format, see https://www.php.net/manual/datetime.format.php
@@ -15916,18 +15924,6 @@ msgstr "j. F Y"
 #: wp-admin/includes/schema.php:438 wp-admin/options-general.php:522
 msgid "g:i a"
 msgstr "G:i"
-
-#. translators: Localized date and time format, see
-#. https://www.php.net/manual/datetime.format.php
-#. translators: Date/Time format, see
-#. https://www.php.net/manual/datetime.format.php
-#. translators: Links last updated date format, see
-#. https://www.php.net/manual/datetime.format.php
-#: wp-includes/class-wp-locale.php:424 wp-includes/script-loader.php:159
-#: wp-includes/script-loader.php:471 wp-admin/includes/schema.php:440
-#: wp-admin/options-general.php:449
-msgid "F j, Y g:i a"
-msgstr "j. F Y, G:i"
 
 #: wp-includes/class-wp-http-streams.php:205
 #: wp-includes/class-wp-http-streams.php:214
@@ -18267,6 +18263,10 @@ msgstr "WordPress.org-Themes"
 msgid "Homepage Settings"
 msgstr "Homepage-Einstellungen"
 
+#: wp-includes/class-wp-customize-manager.php:5642
+msgid "You can choose what&#8217;s displayed on the homepage of your site. It can be posts in reverse chronological order (classic blog), or a fixed/static page. To set a static homepage, you first need to create two Pages. One will become the homepage, and the other will be where your posts are displayed."
+msgstr "Du kannst auswählen, was auf der Homepage deiner Website angezeigt wird. Das können Beiträge in umgekehrter chronologischer Reihenfolge (klassischer Blog) oder eine feststehende/statische Seite sein. Um eine statische Homepage festzulegen, musst du erst zwei Seiten erstellen. Eine wird die Homepage und die andere wird die, auf der deine Beiträge angezeigt werden."
+
 #: wp-includes/class-wp-customize-manager.php:5659
 #: wp-admin/options-reading.php:85
 msgid "Your homepage displays"
@@ -18281,10 +18281,6 @@ msgstr "Füge hier deinen eigenen CSS-Code ein, um das Erscheinungsbild und Layo
 #: wp-admin/plugin-editor.php:144 wp-admin/theme-editor.php:33
 msgid "When using a keyboard to navigate:"
 msgstr "Bei der Navigation mit der Tastatur:"
-
-#: wp-includes/class-wp-customize-manager.php:5642
-msgid "You can choose what&#8217;s displayed on the homepage of your site. It can be posts in reverse chronological order (classic blog), or a fixed/static page. To set a static homepage, you first need to create two Pages. One will become the homepage, and the other will be where your posts are displayed."
-msgstr "Du kannst auswählen, was auf der Homepage deiner Website angezeigt wird. Das können Beiträge in umgekehrter chronologischer Reihenfolge (klassischer Blog) oder eine feststehende/statische Seite sein. Um eine statische Homepage festzulegen, musst du erst zwei Seiten erstellen. Eine wird die Homepage und die andere wird die, auf der deine Beiträge angezeigt werden."
 
 #: wp-includes/class-wp-customize-manager.php:5719
 #: wp-includes/widgets/class-wp-widget-custom-html.php:326
@@ -18647,10 +18643,6 @@ msgstr "Kommentar-URL"
 #: wp-includes/comment.php:4029
 msgid "Comment %d contains personal data but could not be anonymized."
 msgstr "Kommentar %d beinhaltet personenbezogene Daten, konnte aber nicht anonymisiert werden."
-
-#: wp-includes/comment-template.php:2586
-msgid "Save my name, email, and website in this browser for the next time I comment."
-msgstr "Meinen Namen, meine E-Mail-Adresse und meine Website in diesem Browser für die nächste Kommentierung speichern."
 
 #: wp-includes/class-wp-post-type.php:1015 wp-admin/edit-form-advanced.php:181
 msgid "Post published."
@@ -20076,6 +20068,14 @@ msgctxt "table cell alignment attribute"
 msgid "None"
 msgstr "Keine"
 
+#: wp-includes/comment-template.php:2586
+msgid "Save my name, email, and website in this browser for the next time I comment."
+msgstr "Name, E-Mail-Adresse und Website in diesem Browser für meinen nächsten Kommentar speichern."
+
+#: wp-includes/comment-template.php:998
+msgid "1 Comment"
+msgstr "1 Kommentar"
+
 #: wp-activate.php:126
 msgid "Activation Key Required"
 msgstr "Aktivierungsschlüssel erforderlich"
@@ -20222,14 +20222,6 @@ msgstr "Vorschaubild"
 #: wp-admin/includes/media.php:1204
 msgid "Medium"
 msgstr "Mittel"
-
-#: wp-includes/block-editor.php:174 wp-includes/media-template.php:919
-#: wp-includes/media-template.php:999 wp-includes/media-template.php:1190
-#: wp-includes/media.php:4617 wp-includes/js/dist/block-editor.js:8132
-#: wp-admin/includes/class-custom-background.php:633
-#: wp-admin/includes/media.php:1206
-msgid "Full Size"
-msgstr "Vollständige Größe"
 
 #: wp-includes/class-wp-customize-control.php:650
 #: wp-includes/class-wp-customize-nav-menus.php:1247
@@ -21130,12 +21122,6 @@ msgid "%s minute"
 msgid_plural "%s minutes"
 msgstr[0] "%s Minute"
 msgstr[1] "%s Minuten"
-
-#: wp-includes/blocks/comment-content.php:46
-#: wp-includes/class-walker-comment.php:314
-#: wp-includes/class-walker-comment.php:418
-msgid "Your comment is awaiting moderation. This is a preview; your comment will be visible after it has been approved."
-msgstr "Dein Kommentar wartet auf Moderation. Dies ist eine Vorschau; dein Kommentar wird sichtbar, nachdem er freigegeben wurde."
 
 #: wp-content/plugins/hello.php:68 hello.php:68
 msgid "Quote from Hello Dolly song, by Jerry Herman:"
@@ -22922,3 +22908,17 @@ msgstr "in %s"
 #: wp-includes/customize/class-wp-customize-selective-refresh.php:177
 msgid "Shift-click to edit this element."
 msgstr "Umschalttaste + Klick, um dieses Element zu bearbeiten."
+
+#: wp-includes/blocks/comment-content.php:46
+#: wp-includes/class-walker-comment.php:314
+#: wp-includes/class-walker-comment.php:418
+msgid "Your comment is awaiting moderation. This is a preview; your comment will be visible after it has been approved."
+msgstr "Dein Kommentar wartet auf Freischaltung. Dies ist eine Vorschau. Dein Kommentar wird sichtbar, nachdem er freigegeben wurde."
+
+#: wp-includes/block-editor.php:174 wp-includes/media-template.php:919
+#: wp-includes/media-template.php:999 wp-includes/media-template.php:1190
+#: wp-includes/media.php:4617 wp-includes/js/dist/block-editor.js:8132
+#: wp-admin/includes/class-custom-background.php:633
+#: wp-admin/includes/media.php:1206
+msgid "Full Size"
+msgstr "Originalgröße"

@@ -1,0 +1,75 @@
+{
+  "name": "vite-plugin-compression2",
+  "version": "2.5.3",
+  "packageManager": "pnpm@10.12.1+sha512.f0dda8580f0ee9481c5c79a1d927b9164f2c478e90992ad268bbb2465a736984391d6333d2c327913578b2804af33474ca554ba29c04a8b13060a717675ae3ac",
+  "description": "a fast vite compression plugin",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "dist/index.mjs",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "types": {
+        "import": "./dist/index.d.mts",
+        "require": "./dist/index.d.ts"
+      },
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nonzzz/vite-plugin-compression.git"
+  },
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "compress"
+  ],
+  "author": "Kanno",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nonzzz/vite-plugin-compression/issues"
+  },
+  "homepage": "https://github.com/nonzzz/vite-plugin-compression#readme",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-esm-shim": "^0.1.8",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@swc/core": "^1.11.31",
+    "@types/node": "^24.0.3",
+    "@vitest/coverage-v8": "^2.0.3",
+    "ansis": "^4.0.0",
+    "dprint": "^0.46.3",
+    "eslint": "^9.16.0",
+    "eslint-config-kagura": "^3.0.1",
+    "memdisk": "^1.2.1",
+    "playwright": "^1.32.3",
+    "rollup": "^4.41.1",
+    "rollup-plugin-dts": "^6.2.1",
+    "rollup-plugin-swc3": "^0.12.1",
+    "sirv": "^2.0.3",
+    "typescript": "^5.3.3",
+    "vite": "^7.0.3",
+    "vite-bundle-analyzer": "^1.0.0",
+    "vitest": "^2.1.2",
+    "rolldown-vite": "^7.2.10"
+  },
+  "dependencies": {
+    "@rollup/pluginutils": "^5.1.0",
+    "tar-mini": "^0.2.0"
+  },
+  "resolutions": {
+    "is-core-module": "npm:@nolyfill/is-core-module@^1",
+    "sirv": "2.0.3"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "vite@2.9.18": "patches/vite@2.9.18.patch"
+    }
+  }
+}
