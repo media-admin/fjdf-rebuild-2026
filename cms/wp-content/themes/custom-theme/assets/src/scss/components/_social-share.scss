@@ -1,0 +1,32 @@
+/**
+ * Social Share Buttons
+ * Bindet das vom Plugin gelieferte CSS ein und erlaubt Theme-Overrides.
+ *
+ * Das Plugin enqueued assets/css/social-share.css global.
+ * Dieser SCSS-Partial ist für Theme-seitige Anpassungen gedacht.
+ *
+ * Einbindung in style.scss:
+ *   @use 'components/social-share';
+ */
+
+@use '../abstracts' as *;
+
+// ── CSS Custom Property Defaults (überschreibbar per Theme) ──────
+
+.medialab-share {
+    --share-btn-size:    #{$spacing-10};   // z.B. 2.5rem
+    --share-btn-radius:  #{$radius-md};
+    --share-gap:         #{$spacing-2};
+    --share-label-color: #{$color-gray-700};
+}
+
+// ── Abstands-Integration ─────────────────────────────────────────
+// Wenn .medialab-share innerhalb von Article/Content-Bereichen steht:
+
+.entry-content .medialab-share,
+.post-content .medialab-share,
+.page-content .medialab-share {
+    margin-top: $spacing-8;
+    padding-top: $spacing-6;
+    border-top: 1px solid $color-gray-200;
+}

@@ -1,0 +1,45 @@
+@use '../abstracts' as *;
+
+// =============================================================================
+// Scroll Progress Bar
+//
+// Dünne Fortschrittslinie am oberen Viewport-Rand.
+// Wird nur auf is_single()-Seiten eingeblendet (PHP-gesteuert via header.php).
+// Das DOM-Element:
+//   <div class="scroll-progress" role="progressbar" ...></div>
+//
+// JS (scroll-progress.js) setzt --scroll-progress via setProperty().
+// =============================================================================
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--scroll-progress, 0%);
+  height: 3px;
+  background: $color-primary;
+  z-index: 9999;
+  pointer-events: none;
+
+  // Glow-Dot am rechten Ende der Linie
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: $radius-full;
+    background: $color-primary;
+    box-shadow: 0 0 8px 2px rgba($color-primary, .5);
+    opacity: 0;
+    transition: opacity .2s ease;
+  }
+
+  // Glow-Dot einblenden sobald etwas gescrollt wurde
+  &[aria-valuenow]:not([aria-valuenow='0'])::after {
+    opacity: 1;
+  }
+}
