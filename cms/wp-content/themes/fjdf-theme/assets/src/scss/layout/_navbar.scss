@@ -184,6 +184,7 @@
 	flex-shrink: 0;
 	height: var(--btn-height-sm);
 	padding: var(--btn-padding-sm);
+        padding-right: 10px !important;
 	font-size: 0.875rem;
 
 	@include respond-below('lg') { display: none; }
@@ -238,21 +239,24 @@
         display: inline-flex;
         align-items: center;
         gap: 0;
-        padding-right: 0;
-        
+        padding-right: 10px !important;
+        overflow: visible;
 
         .btn__heart {
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
-                width: var(--btn-height-sm);
-                height: var(--btn-height-sm);
+                width: 64px;
+                height: 64px;
                 background: var(--color-gold);
                 color: #ffffff;
-                font-size: 1rem;
+                font-size: 1.4rem;
                 line-height: 1;
                 flex-shrink: 0;
-                margin-left: var(--space-3);
+                margin-left: var(--space-2);
+                margin-right: -18px;
                 border-radius: 50%;
+                box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px 0px;
+                svg { width: 24px; height: 24px; }
         }
 }

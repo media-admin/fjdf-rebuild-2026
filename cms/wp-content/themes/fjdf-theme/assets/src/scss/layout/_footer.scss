@@ -5,6 +5,7 @@
 @use '../abstracts' as *;
 
 .site-footer {
+        --footer-bg: #000000;
 	background: var(--footer-bg);
 	color: var(--footer-color);
 }
@@ -43,7 +44,6 @@
 .site-footer__logo img {
 	height: 56px;
 	width: auto;
-	filter: brightness(0) invert(1);
 
 	@include respond-below('md') { height: 44px; }
 }
@@ -72,7 +72,7 @@
 .site-footer__collab img {
 	height: 36px;
 	width: auto;
-	filter: brightness(0) invert(1);
+
 	opacity: 0.85;
 }
 
@@ -131,15 +131,14 @@
 
 // Footer Nav
 .site-footer__nav-list {
-	display: flex;
-	flex-direction: column;
-	gap: var(--space-3);
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	text-align: right;
-
-	@include respond-below('md') { text-align: left; }
+        display: flex;
+        flex-direction: row;
+        gap: var(--space-8);
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        flex-wrap: wrap;
+        justify-content: center;
 }
 
 .site-footer__nav-list a {
@@ -160,7 +159,7 @@
 	}
 
 	&::after {
-		content: '›';
+            content: ''  ;
 		font-size: 1.1em;
 		opacity: 0.5;
 	}
@@ -238,4 +237,58 @@
 	text-decoration: underline;
 	text-underline-offset: 2px;
 	@include focus-ring;
+}
+
+
+.site-footer__social-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: var(--space-3);
+}
+
+
+.site-footer__social-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: var(--space-3);
+}
+
+// Footer Social Icons (gold background)
+.site-footer__social-label {
+        font-size: var(--text-body-sm);
+        color: var(--color-text-gold);
+        margin-bottom: var(--space-3);
+}
+.site-footer__social-list {
+        display: flex;
+        gap: var(--space-3);
+        list-style: none;
+        padding: 0;
+        margin: 0;
+}
+.site-footer__social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: var(--radius-sm);
+        background: var(--color-gold);
+        color: var(--color-dark);
+        transition: opacity var(--transition-base);
+        &:hover { opacity: 0.8; }
+        svg { width: 20px; height: 20px; }
+}
+// Footer Top: Logo zentriert
+.site-footer__top-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-8);
+}
+.site-footer__logo img {
+        height: 56px;
+        width: auto;
 }

@@ -274,7 +274,7 @@
 }
 
 // Partners
-.partners { @include section-spacing('sm'); }
+.partners { padding-block: var(--space-6); }
 .partners__label { margin-bottom: var(--space-3); }
 .partners__headline {
 	@include heading-serif(var(--text-h3), 500);
