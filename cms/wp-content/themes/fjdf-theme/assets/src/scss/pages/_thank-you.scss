@@ -1,0 +1,65 @@
+// =============================================================================
+// FJDF — Pages: Gracias por tu Donación
+// =============================================================================
+
+@use '../abstracts' as *;
+
+.thank-you-split {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	min-height: calc(100svh - var(--nav-height-desktop));
+
+	@include respond-below('lg') { grid-template-columns: 1fr; }
+}
+
+.thank-you-split__content {
+	display: flex;
+	align-items: center;
+	padding: var(--space-12) var(--space-10);
+
+	@include respond-below('md') { padding: var(--space-10) var(--container-padding); }
+}
+
+.thank-you-split__inner { max-width: 520px; }
+
+.thank-you-split__title {
+	@include heading-serif(var(--text-h1), 500, var(--leading-tight));
+	margin-bottom: var(--space-5);
+}
+
+.thank-you-split__divider {
+	width: 48px;
+	height: 2px;
+	background: var(--color-gold);
+	margin-bottom: var(--space-6);
+}
+
+.thank-you-split__text p {
+	font-size: var(--text-body-lg);
+	color: var(--color-text-secondary);
+	line-height: var(--leading-relaxed);
+}
+
+.thank-you-split__back {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--space-2);
+	margin-top: var(--space-8);
+	color: var(--color-primary);
+	font-weight: var(--font-weight-semibold);
+	text-decoration: none;
+	font-size: var(--text-body);
+	transition: gap var(--transition-base);
+	@include focus-ring;
+
+	&::before { content: '←'; }
+	&:hover { gap: var(--space-3); }
+}
+
+.thank-you-split__image {
+	overflow: hidden;
+
+	@include respond-below('lg') { display: none; }
+}
+
+.thank-you-split__img { @include img-cover; }

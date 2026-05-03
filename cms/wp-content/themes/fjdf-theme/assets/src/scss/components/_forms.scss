@@ -1,14 +1,46 @@
+// =============================================================================
+// FJDF — Components: Forms
+// =============================================================================
+
 @use '../abstracts' as *;
 
-// Forms
-input,
-textarea,
-select {
-  background: var(--color-surface);
-  color: var(--color-text);
-  border-color: var(--color-border);
-  
-  &:focus {
-    border-color: $color-primary;
-  }
+.form-field { margin-bottom: var(--space-4); }
+
+.form-input  { @include input-base; }
+.form-textarea {
+	@include input-base;
+	height: auto;
+	min-height: 120px;
+	padding-block: var(--space-3);
+	resize: vertical;
+}
+
+.form-label {
+	display: block;
+	font-size: var(--text-body-sm);
+	font-weight: var(--font-weight-medium);
+	color: var(--color-text-primary);
+	margin-bottom: var(--space-2);
+}
+
+.form-checkbox {
+	display: flex;
+	align-items: flex-start;
+	gap: var(--space-3);
+	cursor: pointer;
+
+	input[type="checkbox"] {
+		width: 18px;
+		height: 18px;
+		flex-shrink: 0;
+		margin-top: 2px;
+		accent-color: var(--color-primary);
+		cursor: pointer;
+	}
+
+	span {
+		font-size: var(--text-body-sm);
+		color: var(--color-text-secondary);
+		line-height: var(--leading-normal);
+	}
 }

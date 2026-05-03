@@ -1,0 +1,33 @@
+// =============================================================================
+// FJDF — Pages: Noticias Archive
+// =============================================================================
+
+@use '../abstracts' as *;
+
+.archive-header { background: var(--color-cream); }
+.archive-header__title {
+	@include heading-serif(var(--text-h1), 500);
+	@include gold-underline;
+	margin-bottom: var(--space-4);
+}
+.archive-header__desc { color: var(--color-text-secondary); max-width: 640px; }
+
+.otras-noticias__title {
+	@include heading-serif(var(--text-h2), 500);
+	@include gold-underline;
+	margin-bottom: var(--space-8);
+}
+.otras-noticias__grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: var(--space-6);
+	@include respond-below('lg') { grid-template-columns: repeat(2, 1fr); }
+	@include respond-below('sm') { grid-template-columns: 1fr; }
+}
+.otras-noticias__more {
+	display: flex;
+	justify-content: center;
+	margin-top: var(--space-10);
+}
+.load-more-btn .load-more-btn__icon { transition: transform var(--transition-base); }
+.load-more-btn:hover .load-more-btn__icon { transform: translateY(3px); }

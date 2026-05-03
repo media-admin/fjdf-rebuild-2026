@@ -1,0 +1,280 @@
+// =============================================================================
+// FJDF — Design Tokens
+// Juan Diego Flórez Association Austria
+// =============================================================================
+// Alle visuellen Grundwerte als CSS Custom Properties.
+// Eingebunden in :root via base/_root.scss
+// Niemals direkt in Komponenten überschreiben — immer Token verwenden.
+// =============================================================================
+
+:root {
+
+  // ---------------------------------------------------------------------------
+  // FARBEN — Brand
+  // ---------------------------------------------------------------------------
+
+  // Primary: Warmes Orange (CTA-Buttons, Tags, Floating Button, Akzente)
+  --color-primary:          #e05428;
+  --color-primary-hover:    #c4461f;
+  --color-primary-light:    #f9ede8;   // Hintergründe, Hover-States
+
+  // Gold: Akzent (Underlines, Highlights, Logo-Schriftzug "Association")
+  --color-gold:             #f5a200;
+  --color-gold-light:       #fef3d9;
+
+  // Dark: Footer, Overlay-Hintergründe
+  --color-dark:             #1c2340;
+  --color-dark-secondary:   #2a3158;
+
+  // Neutral
+  --color-white:            #ffffff;
+  --color-cream:            #faf8f4;   // Page-Hintergrund
+  --color-cream-dark:       #f3f0ea;   // Abwechselnde Sektionen
+
+  // ---------------------------------------------------------------------------
+  // FARBEN — Text
+  // ---------------------------------------------------------------------------
+
+  --color-text-primary:     #1a1a1a;
+  --color-text-secondary:   #4a4a4a;
+  --color-text-muted:       #7a7a7a;
+  --color-text-inverse:     #ffffff;
+  --color-text-gold:        #f5a200;
+  --color-text-primary-on-dark: #f0ece4;
+
+  // ---------------------------------------------------------------------------
+  // FARBEN — UI
+  // ---------------------------------------------------------------------------
+
+  --color-border:           #e0dbd2;
+  --color-border-light:     #ede9e2;
+  --color-input-bg:         #ffffff;
+  --color-input-border:     #d0cbc2;
+  --color-input-focus:      #e05428;
+
+  // Status
+  --color-success:          #2d7a4f;
+  --color-error:            #c0392b;
+
+  // ---------------------------------------------------------------------------
+  // TYPOGRAFIE — Familien
+  // ---------------------------------------------------------------------------
+
+  // Serif: Headings, Display-Text (Larken Variable Font — selbst gehostet)
+  --font-serif:             'Larken', 'Georgia', serif;
+
+  // Sans: Body, UI, Labels (Aribau Grotesk — selbst gehostet)
+  --font-sans:              'Aribau Grotesk', 'Helvetica Neue', Arial, sans-serif;
+
+  // ---------------------------------------------------------------------------
+  // TYPOGRAFIE — Fluid Scale (clamp)
+  // Basis: 375px (min) → 1440px (max)
+  // ---------------------------------------------------------------------------
+
+  // Display / Hero
+  --text-display:           clamp(2.75rem, 5vw + 1rem, 5rem);      // ~44px → 80px
+
+  // Headings
+  --text-h1:                clamp(2rem, 3.5vw + 0.75rem, 3.5rem);  // ~32px → 56px
+  --text-h2:                clamp(1.625rem, 2.5vw + 0.5rem, 2.5rem); // ~26px → 40px
+  --text-h3:                clamp(1.25rem, 1.5vw + 0.5rem, 1.875rem); // ~20px → 30px
+  --text-h4:                clamp(1.125rem, 1vw + 0.5rem, 1.375rem); // ~18px → 22px
+
+  // Body
+  --text-body-lg:           clamp(1.0625rem, 0.5vw + 0.875rem, 1.25rem); // ~17px → 20px
+  --text-body:              clamp(0.9375rem, 0.25vw + 0.875rem, 1.0625rem); // ~15px → 17px
+  --text-body-sm:           0.875rem; // 14px — Labels, Captions
+
+  // UI
+  --text-label:             0.75rem;  // 12px — Tags, Kategorien (uppercase)
+  --text-btn:               0.9375rem; // 15px — Buttons
+
+  // ---------------------------------------------------------------------------
+  // TYPOGRAFIE — Gewichte
+  // ---------------------------------------------------------------------------
+
+  --font-weight-light:      300;
+  --font-weight-regular:    400;
+  --font-weight-medium:     500;
+  --font-weight-semibold:   600;
+  --font-weight-bold:       700;
+
+  // Serif spezifisch (Cormorant Garamond)
+  --font-weight-serif-regular:  400;
+  --font-weight-serif-medium:   500;
+  --font-weight-serif-bold:     600;
+
+  // ---------------------------------------------------------------------------
+  // TYPOGRAFIE — Line Heights
+  // ---------------------------------------------------------------------------
+
+  --leading-tight:          1.2;   // Headlines
+  --leading-snug:           1.35;  // Sub-Headlines
+  --leading-normal:         1.6;   // Body
+  --leading-relaxed:        1.75;  // Lange Fließtexte
+
+  // ---------------------------------------------------------------------------
+  // TYPOGRAFIE — Letter Spacing
+  // ---------------------------------------------------------------------------
+
+  --tracking-tight:         -0.02em;
+  --tracking-normal:        0;
+  --tracking-wide:          0.05em;   // Tags, Labels (uppercase)
+  --tracking-wider:         0.1em;    // Kategorie-Labels
+
+  // ---------------------------------------------------------------------------
+  // SPACING — Fluid Scale
+  // ---------------------------------------------------------------------------
+
+  --space-1:    clamp(0.25rem,  0.25vw, 0.375rem);    //  4px →  6px
+  --space-2:    clamp(0.5rem,   0.5vw,  0.625rem);     //  8px → 10px
+  --space-3:    clamp(0.75rem,  0.75vw, 1rem);         // 12px → 16px
+  --space-4:    clamp(1rem,     1vw,    1.25rem);       // 16px → 20px
+  --space-5:    clamp(1.25rem,  1.5vw,  1.75rem);      // 20px → 28px
+  --space-6:    clamp(1.5rem,   2vw,    2.25rem);       // 24px → 36px
+  --space-8:    clamp(2rem,     3vw,    3rem);           // 32px → 48px
+  --space-10:   clamp(2.5rem,   4vw,    4rem);           // 40px → 64px
+  --space-12:   clamp(3rem,     5vw,    5rem);           // 48px → 80px
+  --space-16:   clamp(4rem,     7vw,    7rem);           // 64px → 112px
+  --space-20:   clamp(5rem,     9vw,    9rem);           // 80px → 144px
+  --space-24:   clamp(6rem,     11vw,   11rem);          // 96px → 176px
+
+  // Sektions-Abstände
+  --section-gap:            clamp(4rem, 8vw, 8rem);
+  --section-gap-sm:         clamp(2.5rem, 5vw, 5rem);
+
+  // ---------------------------------------------------------------------------
+  // LAYOUT
+  // ---------------------------------------------------------------------------
+
+  --container-max:          1280px;
+  --container-content:      780px;    // Artikel-Content, schmalere Textspalten
+  --container-padding:      clamp(1.25rem, 4vw, 3rem);
+
+  // Sidebar (Desktop Artikel)
+  --sidebar-width:          300px;
+  --sidebar-gap:            clamp(2rem, 4vw, 4rem);
+
+  // ---------------------------------------------------------------------------
+  // BORDER RADIUS
+  // ---------------------------------------------------------------------------
+
+  --radius-sm:              4px;
+  --radius-md:              8px;
+  --radius-lg:              12px;
+  --radius-xl:              16px;
+  --radius-2xl:             24px;
+  --radius-pill:            9999px;
+
+  // ---------------------------------------------------------------------------
+  // SCHATTEN
+  // ---------------------------------------------------------------------------
+
+  --shadow-sm:    0 1px 3px rgba(28, 35, 64, 0.06), 0 1px 2px rgba(28, 35, 64, 0.04);
+  --shadow-md:    0 4px 12px rgba(28, 35, 64, 0.08), 0 2px 4px rgba(28, 35, 64, 0.04);
+  --shadow-lg:    0 8px 24px rgba(28, 35, 64, 0.10), 0 4px 8px rgba(28, 35, 64, 0.06);
+  --shadow-card:  0 2px 8px rgba(28, 35, 64, 0.06);
+
+  // ---------------------------------------------------------------------------
+  // TRANSITIONS
+  // ---------------------------------------------------------------------------
+
+  --transition-fast:        150ms ease;
+  --transition-base:        250ms ease;
+  --transition-slow:        400ms ease;
+  --transition-color:       color var(--transition-base), background-color var(--transition-base), border-color var(--transition-base);
+  --transition-transform:   transform var(--transition-base);
+  --transition-opacity:     opacity var(--transition-base);
+
+  // ---------------------------------------------------------------------------
+  // Z-INDEX
+  // ---------------------------------------------------------------------------
+
+  --z-below:                -1;
+  --z-base:                  0;
+  --z-raised:               10;
+  --z-dropdown:             100;
+  --z-sticky:               200;
+  --z-overlay:              300;
+  --z-modal:                400;
+  --z-floating:             500;   // Floating Dona Button
+  --z-toast:                600;
+
+  // ---------------------------------------------------------------------------
+  // NAVIGATION
+  // ---------------------------------------------------------------------------
+
+  --nav-height-desktop:     72px;
+  --nav-height-mobile:      60px;
+  --nav-bg:                 #faf8f4;
+  --nav-border:             rgba(224, 84, 40, 0.08);
+
+  // ---------------------------------------------------------------------------
+  // KOMPONENTEN — Buttons
+  // ---------------------------------------------------------------------------
+
+  --btn-height:             48px;
+  --btn-height-sm:          38px;
+  --btn-padding:            0 1.75rem;
+  --btn-padding-sm:         0 1.25rem;
+  --btn-radius:             var(--radius-pill);
+  --btn-font-size:          var(--text-btn);
+  --btn-font-weight:        var(--font-weight-semibold);
+  --btn-letter-spacing:     0.01em;
+
+  // ---------------------------------------------------------------------------
+  // KOMPONENTEN — Cards
+  // ---------------------------------------------------------------------------
+
+  --card-bg:                #ffffff;
+  --card-radius:            var(--radius-lg);
+  --card-shadow:            var(--shadow-card);
+  --card-padding:           var(--space-6);
+  --card-border:            1px solid var(--color-border-light);
+
+  // ---------------------------------------------------------------------------
+  // KOMPONENTEN — Forms
+  // ---------------------------------------------------------------------------
+
+  --input-height:           52px;
+  --input-height-sm:        44px;
+  --input-padding:          0 1rem;
+  --input-radius:           var(--radius-md);
+  --input-border:           1px solid var(--color-input-border);
+  --input-font-size:        var(--text-body);
+
+  // ---------------------------------------------------------------------------
+  // KOMPONENTEN — Floating Button
+  // ---------------------------------------------------------------------------
+
+  --floating-btn-width:     36px;
+  --floating-btn-bg:        var(--color-primary);
+  --floating-btn-color:     #ffffff;
+  --floating-btn-radius:    var(--radius-md) 0 0 var(--radius-md);
+
+  // ---------------------------------------------------------------------------
+  // SEKTIONEN — Spezifisch
+  // ---------------------------------------------------------------------------
+
+  // Newsletter (Gelb-Hintergrund)
+  --newsletter-bg:          var(--color-gold);
+  --newsletter-color:       var(--color-dark);
+
+  // Footer
+  --footer-bg:              var(--color-dark);
+  --footer-color:           var(--color-text-primary-on-dark);
+  --footer-border:          rgba(240, 236, 228, 0.1);
+
+  // Stats
+  --stats-number-size:      clamp(2rem, 3vw + 0.5rem, 3rem);
+  --stats-number-color:     var(--color-dark);
+
+  // Kategorie-Tag
+  --tag-bg:                 transparent;
+  --tag-color:              var(--color-gold);
+  --tag-padding:            0;
+  --tag-radius:             var(--radius-sm);
+  --tag-font-size:          var(--text-label);
+  --tag-letter-spacing:     var(--tracking-wider);
+
+}

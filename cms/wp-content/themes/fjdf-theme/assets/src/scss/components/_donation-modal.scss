@@ -1,0 +1,143 @@
+// =============================================================================
+// FJDF — Components: Spendenquittungs-Modal
+// =============================================================================
+
+@use '../abstracts' as *;
+
+.cert-modal {
+	position: fixed;
+	inset: 0;
+	z-index: var(--z-modal);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: var(--space-4);
+
+	// Versteckt bis JS es öffnet
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity var(--transition-base);
+
+	&[aria-hidden="false"] {
+		opacity: 1;
+		pointer-events: auto;
+	}
+}
+
+.cert-modal__overlay {
+	position: absolute;
+	inset: 0;
+	background: rgba(28, 35, 64, 0.6);
+	cursor: pointer;
+}
+
+.cert-modal__dialog {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	width: 100%;
+	max-width: 900px;
+	max-height: 90vh;
+	background: var(--color-white);
+	border-radius: var(--radius-xl);
+	overflow: hidden;
+	box-shadow: var(--shadow-lg);
+
+	transform: scale(0.96) translateY(8px);
+	transition: transform var(--transition-base);
+
+	.cert-modal[aria-hidden="false"] & {
+		transform: scale(1) translateY(0);
+	}
+
+	@include respond-below('md') {
+		flex-direction: column;
+		max-height: 95vh;
+		border-radius: var(--radius-lg);
+	}
+}
+
+// Bild links
+.cert-modal__image {
+	flex: 0 0 45%;
+	overflow: hidden;
+
+	@include respond-below('md') {
+		flex: 0 0 200px;
+		max-height: 200px;
+	}
+}
+
+.cert-modal__img {
+	@include img-cover;
+}
+
+// Formular rechts
+.cert-modal__content {
+	flex: 1;
+	padding: var(--space-10) var(--space-8);
+	overflow-y: auto;
+	position: relative;
+
+	@include respond-below('md') {
+		padding: var(--space-6) var(--space-5);
+	}
+}
+
+.cert-modal__close {
+	position: absolute;
+	top: var(--space-4);
+	right: var(--space-4);
+	width: 36px;
+	height: 36px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.5rem;
+	color: var(--color-text-muted);
+	background: none;
+	border: none;
+	border-radius: var(--radius-md);
+	cursor: pointer;
+	transition: color var(--transition-base), background-color var(--transition-base);
+	@include focus-ring;
+
+	&:hover {
+		color: var(--color-text-primary);
+		background: var(--color-cream-dark);
+	}
+}
+
+.cert-modal__headline {
+	@include heading-serif(var(--text-h2), 500, var(--leading-snug));
+	margin-bottom: var(--space-3);
+}
+
+.cert-modal__subtext {
+	font-size: var(--text-body);
+	color: var(--color-text-secondary);
+	margin-bottom: var(--space-6);
+}
+
+.cert-modal__field {
+	margin-bottom: var(--space-4);
+}
+
+.cert-modal__input {
+	@include input-base;
+}
+
+.cert-modal__submit {
+	width: 100%;
+	justify-content: center;
+	margin-top: var(--space-2);
+}
+
+.cert-modal__feedback {
+	margin-top: var(--space-4);
+	font-size: var(--text-body-sm);
+	min-height: 1.5em;
+
+	&.is-success { color: var(--color-success); }
+	&.is-error   { color: var(--color-error); }
+}

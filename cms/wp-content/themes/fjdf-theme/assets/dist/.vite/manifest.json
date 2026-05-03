@@ -1,136 +1,45 @@
 {
-  "_autoplay-toCOTDLH.js": {
-    "file": "js/chunks/autoplay-toCOTDLH.js",
-    "name": "autoplay"
-  },
-  "_pagination-CNZhpRLA.js": {
-    "file": "js/chunks/pagination-CNZhpRLA.js",
-    "name": "pagination",
-    "imports": [
-      "_autoplay-toCOTDLH.js"
-    ]
-  },
-  "src/js/components/accordion.js": {
-    "file": "js/chunks/accordion-CP8M2-3_.js",
-    "name": "accordion",
-    "src": "src/js/components/accordion.js",
-    "isDynamicEntry": true
-  },
-  "src/js/components/ajax-filters.js": {
-    "file": "js/chunks/ajax-filters-CyxWv7JL.js",
-    "name": "ajax-filters",
-    "src": "src/js/components/ajax-filters.js",
-    "isDynamicEntry": true
-  },
-  "src/js/components/ajax-search.js": {
-    "file": "js/chunks/ajax-search-Bdb-P5xS.js",
-    "name": "ajax-search",
-    "src": "src/js/components/ajax-search.js",
-    "isDynamicEntry": true
-  },
-  "src/js/components/carousel.js": {
-    "file": "js/chunks/carousel-Xw1QnsuX.js",
-    "name": "carousel",
-    "src": "src/js/components/carousel.js",
-    "isDynamicEntry": true,
-    "imports": [
-      "_autoplay-toCOTDLH.js",
-      "_pagination-CNZhpRLA.js"
-    ]
-  },
-  "src/js/components/faq-accordion.js": {
-    "file": "js/chunks/faq-accordion-CqKLevym.js",
-    "name": "faq-accordion",
-    "src": "src/js/components/faq-accordion.js",
-    "isDynamicEntry": true
-  },
-  "src/js/components/google-maps.js": {
-    "file": "js/chunks/google-maps-CyhMY1Pg.js",
-    "name": "google-maps",
-    "src": "src/js/components/google-maps.js",
-    "isDynamicEntry": true
-  },
-  "src/js/components/hero-slider.js": {
-    "file": "js/chunks/hero-slider-BanpZdWP.js",
-    "name": "hero-slider",
-    "src": "src/js/components/hero-slider.js",
-    "isDynamicEntry": true,
-    "imports": [
-      "_autoplay-toCOTDLH.js",
-      "_pagination-CNZhpRLA.js"
-    ]
-  },
-  "src/js/components/image-comparison.js": {
-    "file": "js/chunks/image-comparison-X9KbLWpn.js",
-    "name": "image-comparison",
-    "src": "src/js/components/image-comparison.js",
-    "isDynamicEntry": true
-  },
-  "src/js/components/lightbox.js": {
-    "file": "js/chunks/lightbox-B1uLYu-k.js",
-    "name": "lightbox",
-    "src": "src/js/components/lightbox.js",
-    "isDynamicEntry": true
-  },
-  "src/js/components/load-more.js": {
-    "file": "js/chunks/load-more-D739uZWO.js",
-    "name": "load-more",
-    "src": "src/js/components/load-more.js",
-    "isDynamicEntry": true
-  },
-  "src/js/components/logo-carousel.js": {
-    "file": "js/chunks/logo-carousel-IUluUX5s.js",
-    "name": "logo-carousel",
-    "src": "src/js/components/logo-carousel.js",
-    "isDynamicEntry": true,
-    "imports": [
-      "_autoplay-toCOTDLH.js"
-    ]
+  "_pagination-SShPun6o.js": {
+    "file": "js/chunks/pagination-SShPun6o.js",
+    "name": "pagination"
   },
   "src/js/components/modal.js": {
-    "file": "js/chunks/modal-kjylYpZx.js",
+    "file": "js/chunks/modal-BolmS5uz.js",
     "name": "modal",
     "src": "src/js/components/modal.js",
     "isDynamicEntry": true
   },
-  "src/js/components/scroll-animations.js": {
-    "file": "js/chunks/scroll-animations-BztQwg22.js",
-    "name": "scroll-animations",
-    "src": "src/js/components/scroll-animations.js",
-    "isDynamicEntry": true
-  },
-  "src/js/components/spoiler.js": {
-    "file": "js/chunks/spoiler-DoFYLqm8.js",
-    "name": "spoiler",
-    "src": "src/js/components/spoiler.js",
-    "isDynamicEntry": true
-  },
-  "src/js/components/stats-counter.js": {
-    "file": "js/chunks/stats-counter-DfZySJXS.js",
-    "name": "stats-counter",
-    "src": "src/js/components/stats-counter.js",
-    "isDynamicEntry": true
-  },
-  "src/js/components/tabs.js": {
-    "file": "js/chunks/tabs-Dl31YFOF.js",
-    "name": "tabs",
-    "src": "src/js/components/tabs.js",
-    "isDynamicEntry": true
-  },
-  "src/js/components/testimonials-slider.js": {
-    "file": "js/chunks/testimonials-slider-DVCNfEUj.js",
-    "name": "testimonials-slider",
-    "src": "src/js/components/testimonials-slider.js",
+  "src/js/components/stats-slider.js": {
+    "file": "js/chunks/stats-slider-Cc9_0lyK.js",
+    "name": "stats-slider",
+    "src": "src/js/components/stats-slider.js",
     "isDynamicEntry": true,
     "imports": [
-      "_autoplay-toCOTDLH.js",
-      "_pagination-CNZhpRLA.js"
+      "_pagination-SShPun6o.js"
     ]
   },
-  "src/js/components/video-player.js": {
-    "file": "js/chunks/video-player-dISUGlwe.js",
-    "name": "video-player",
-    "src": "src/js/components/video-player.js",
+  "src/js/donation-form.js": {
+    "file": "js/chunks/donation-form-uxQxjYF8.js",
+    "name": "donation-form",
+    "src": "src/js/donation-form.js",
+    "isDynamicEntry": true
+  },
+  "src/js/gallery.js": {
+    "file": "js/chunks/gallery-YceSWw4y.js",
+    "name": "gallery",
+    "src": "src/js/gallery.js",
+    "isDynamicEntry": true
+  },
+  "src/js/impact-tabs.js": {
+    "file": "js/chunks/impact-tabs-5KFlUD6Y.js",
+    "name": "impact-tabs",
+    "src": "src/js/impact-tabs.js",
+    "isDynamicEntry": true
+  },
+  "src/js/load-more.js": {
+    "file": "js/chunks/load-more-DkjkRMDM.js",
+    "name": "load-more",
+    "src": "src/js/load-more.js",
     "isDynamicEntry": true
   },
   "src/js/main.js": {
@@ -139,32 +48,23 @@
     "src": "src/js/main.js",
     "isEntry": true,
     "dynamicImports": [
-      "src/js/utils/sentry.js",
-      "src/js/components/accordion.js",
-      "src/js/components/lightbox.js",
-      "src/js/components/hero-slider.js",
-      "src/js/components/testimonials-slider.js",
-      "src/js/components/logo-carousel.js",
-      "src/js/components/carousel.js",
+      "src/js/donation-form.js",
+      "src/js/gallery.js",
+      "src/js/load-more.js",
+      "src/js/impact-tabs.js",
+      "src/js/sliders.js",
       "src/js/components/modal.js",
-      "src/js/components/image-comparison.js",
-      "src/js/components/stats-counter.js",
-      "src/js/components/tabs.js",
-      "src/js/components/spoiler.js",
-      "src/js/components/faq-accordion.js",
-      "src/js/components/video-player.js",
-      "src/js/components/scroll-animations.js",
-      "src/js/components/ajax-search.js",
-      "src/js/components/load-more.js",
-      "src/js/components/ajax-filters.js",
-      "src/js/components/google-maps.js"
+      "src/js/components/stats-slider.js"
     ]
   },
-  "src/js/utils/sentry.js": {
-    "file": "js/chunks/sentry-ugU7M3vD.js",
-    "name": "sentry",
-    "src": "src/js/utils/sentry.js",
-    "isDynamicEntry": true
+  "src/js/sliders.js": {
+    "file": "js/chunks/sliders-B_jFhX1w.js",
+    "name": "sliders",
+    "src": "src/js/sliders.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_pagination-SShPun6o.js"
+    ]
   },
   "style.css": {
     "file": "css/style.css",

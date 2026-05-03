@@ -1,114 +1,58 @@
+// =============================================================================
+// FJDF — Components: Buttons
+// =============================================================================
+
 @use '../abstracts' as *;
 
-// =============================================================================
-// Buttons – globale Basis-Klassen
-// Verwendung: class="btn btn--primary" / "btn btn--outline" / "btn btn--ghost"
-// Größen:     btn--sm / btn--lg (optional, default = medium)
-// =============================================================================
-
+// Base
 .btn {
-    display:         inline-flex;
-    align-items:     center;
-    justify-content: center;
-    gap:             $spacing-2;
-    padding:         $spacing-2 $spacing-4;
-    border:          2px solid transparent;
-    border-radius:   $radius-full;
-    font-size:       $font-size-base;
-    font-weight:     $font-weight-semibold;
-    line-height:     1.25;
-    text-decoration: none;
-    white-space:     nowrap;
-    cursor:          pointer;
-    transition:      background-color 0.2s ease, border-color 0.2s ease,
-                     color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+	@include btn-primary;
+}
 
-    &:focus-visible {
-        outline:        2px solid $color-primary;
-        outline-offset: 3px;
-    }
+// Primary (default)
+.btn--primary {
+	background: var(--color-primary);
+	color: #ffffff;
 
-    &:disabled,
-    &[disabled] {
-        opacity: 0.5;
-        cursor:  not-allowed;
-        pointer-events: none;
-    }
+	&:hover { background: var(--color-primary-hover); }
+}
 
-    // ── Varianten ─────────────────────────────────────────────────────────────
+// Outline
+.btn--outline {
+	@include btn-outline;
+}
 
-    &--primary {
-        background: $color-primary;
-        border-color: $color-primary;
-        color: $color-white;
+// Heart Icon (wie in den Designs)
+.btn--heart {
+	gap: var(--space-2);
 
-        &:hover {
-            background:   $color-primary-dark;
-            border-color: $color-primary-dark;
-            transform:    translateY(-1px);
-            box-shadow:   $shadow-md;
+	&::after {
+		content: '♥';
+		font-size: 0.85em;
+		line-height: 1;
+	}
+}
+
+// Small
+.btn--sm {
+	height: var(--btn-height-sm);
+	padding: var(--btn-padding-sm);
+	font-size: var(--text-body-sm);
+}
+
+// Full width
+.btn--full { width: 100%; justify-content: center; }
+
+// Arrow Icon für Content-Buttons
+.btn--primary:not(.btn--heart):not(.btn--heart-circle):not(.site-header__cta):not(.site-footer__cta):not(.donation-cta__btn):not(.newsletter-section__btn) {
+        &::after {
+                content: '';
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='24' viewBox='0 0 25 24' fill='none'%3E%3Cpath d='M15.8998 9.8803L11.3098 5.2903C11.1224 5.10405 10.869 4.99951 10.6048 4.99951C10.3406 4.99951 10.0872 5.10405 9.8998 5.2903C9.80607 5.38327 9.73168 5.49387 9.68091 5.61573C9.63014 5.73759 9.604 5.86829 9.604 6.0003C9.604 6.13232 9.63014 6.26302 9.68091 6.38488C9.73168 6.50674 9.80607 6.61734 9.8998 6.7103L14.4998 11.2903C14.5935 11.3833 14.6679 11.4939 14.7187 11.6157C14.7695 11.7376 14.7956 11.8683 14.7956 12.0003C14.7956 12.1323 14.7695 12.263 14.7187 12.3849C14.6679 12.5067 14.5935 12.6173 14.4998 12.7103L9.8998 17.2903C9.7115 17.4773 9.60518 17.7314 9.60425 17.9968C9.60331 18.2621 9.70783 18.517 9.8948 18.7053C10.0818 18.8936 10.3359 18.9999 10.6013 19.0009C10.8666 19.0018 11.1215 18.8973 11.3098 18.7103L15.8998 14.1203C16.4616 13.5578 16.7772 12.7953 16.7772 12.0003C16.7772 11.2053 16.4616 10.4428 15.8998 9.8803Z' fill='white'/%3E%3C/svg%3E");
+                background-repeat: no-repeat;
+                background-size: contain;
+                flex-shrink: 0;
         }
-
-        &:active {
-            transform:  translateY(0);
-            box-shadow: none;
-        }
-    }
-
-    &--outline {
-        background:   transparent;
-        border-color: $color-primary;
-        color:        $color-primary;
-
-        &:hover {
-            background: $color-primary;
-            color:      $color-white;
-            transform:  translateY(-1px);
-        }
-
-        &:active {
-            transform: translateY(0);
-        }
-    }
-
-    &--ghost {
-        background:   transparent;
-        border-color: var(--color-border);
-        color:        var(--color-text-muted);
-
-        &:hover {
-            border-color: var(--color-text-muted);
-            color:        var(--color-text);
-        }
-    }
-
-    &--secondary {
-        background:   var(--color-surface);
-        border-color: var(--color-border);
-        color:        var(--color-text);
-
-        &:hover {
-            border-color: $color-primary;
-            color:        $color-primary;
-        }
-    }
-
-    // ── Größen ────────────────────────────────────────────────────────────────
-
-    &--sm {
-        padding:   ($spacing-1 + 2px) $spacing-3;
-        font-size: $font-size-sm;
-        gap:       $spacing-1;
-    }
-
-    &--lg {
-        padding:   $spacing-3 $spacing-6;
-        font-size: $font-size-xl;
-    }
-
-    // ── Full-Width ─────────────────────────────────────────────────────────────
-
-    &--full {
-        width: 100%;
-    }
 }

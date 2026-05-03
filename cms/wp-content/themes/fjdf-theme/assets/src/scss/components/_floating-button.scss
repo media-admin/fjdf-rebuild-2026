@@ -1,0 +1,59 @@
+// =============================================================================
+// FJDF — Components: Floating Dona Button
+// Schwebender vertikaler Button rechts — auf allen Seiten
+// =============================================================================
+
+@use '../abstracts' as *;
+
+.floating-dona-btn {
+	position: fixed;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: var(--z-floating);
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: var(--floating-btn-width);
+	padding-block: var(--space-4);
+
+	background: var(--floating-btn-bg);
+	color: var(--floating-btn-color);
+	border-radius: var(--floating-btn-radius);
+	text-decoration: none;
+
+	transition: background-color var(--transition-base),
+	            width var(--transition-base),
+	            transform var(--transition-base);
+
+	@include focus-ring;
+
+	&:hover {
+		background: var(--color-primary-hover);
+		width: 44px;
+	}
+
+	span {
+		writing-mode: vertical-rl;
+		text-orientation: mixed;
+		transform: rotate(180deg);
+		font-family: var(--font-sans);
+		font-size: var(--text-body-sm);
+		font-weight: var(--font-weight-semibold);
+		letter-spacing: var(--tracking-wide);
+		text-transform: uppercase;
+		color: #ffffff;
+		white-space: nowrap;
+		user-select: none;
+	}
+
+	// Auf sehr kleinen Screens etwas schmaler
+	@include respond-below('sm') {
+		width: 30px;
+		padding-block: var(--space-3);
+
+		span { font-size: 0.625rem; }
+	}
+}

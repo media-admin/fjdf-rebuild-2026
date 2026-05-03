@@ -1,0 +1,70 @@
+// =============================================================================
+// FJDF — Pages: Qué Hacemos
+// =============================================================================
+
+@use '../abstracts' as *;
+
+.impact-section__label { width: inherit; margin-bottom: var(--space-3); }
+.impact-section__headline {
+	@include heading-serif(var(--text-h2), 500);
+	text-align: center;
+	@include gold-underline-center;
+	margin-bottom: var(--space-4);
+}
+.impact-section__intro {
+	text-align: center;
+	color: var(--color-text-secondary);
+	max-width: 680px;
+	margin-inline: auto;
+	margin-bottom: var(--space-8);
+}
+.impact-tabpanel { display: none; &.is-active { display: block; } }
+
+.testimonial-featured__inner {
+	display: grid;
+	grid-template-columns: 360px 1fr;
+	gap: var(--space-12);
+	align-items: center;
+	@include respond-below('lg') { grid-template-columns: 1fr; }
+}
+.testimonial-featured__image { border-radius: var(--radius-xl); overflow: hidden; aspect-ratio: 3/4; }
+.testimonial-featured__img   { @include img-cover; }
+.testimonial-featured__label { margin-bottom: var(--space-3); }
+.testimonial-featured__quote {
+	margin-bottom: var(--space-6);
+	p {
+		font-family: var(--font-serif);
+		font-size: var(--text-body-lg);
+		font-style: italic;
+		color: rgba(255,255,255,0.9);
+		line-height: var(--leading-relaxed);
+		margin-bottom: var(--space-4);
+	}
+}
+.testimonial-featured__name  { display: block; color: #ffffff; font-weight: var(--font-weight-semibold); margin-bottom: var(--space-1); font-style: normal; }
+.testimonial-featured__nucleo { font-size: var(--text-body-sm); color: var(--color-text-gold); }
+
+.contrib-section__label { width: inherit; margin-bottom: var(--space-3); }
+.contrib-section__headline {
+	@include heading-serif(var(--text-h2), 500);
+	text-align: center;
+	margin-bottom: var(--space-8);
+}
+.contrib-section__grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: var(--space-6);
+	@include respond-below('md') { grid-template-columns: 1fr; }
+}
+.contrib-item__image {
+	border-radius: var(--radius-lg);
+	overflow: hidden;
+	margin-bottom: var(--space-4);
+	@include aspect-ratio(4, 3);
+}
+.contrib-item__text {
+	font-size: var(--text-body-sm);
+	font-weight: var(--font-weight-medium);
+	color: var(--color-text-primary);
+	text-align: center;
+}

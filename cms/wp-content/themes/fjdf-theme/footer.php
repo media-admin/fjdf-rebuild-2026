@@ -1,100 +1,147 @@
-<footer class="site-footer">
-    <div class="container">
+<?php
+/**
+ * FJDF Theme — footer.php
+ *
+ * @package fjdf
+ */
+?>
 
-        <div class="site-footer__inner">
+<footer class="site-footer" role="contentinfo">
 
-            <?php
-            // ── Logo oder Site-Name ───────────────────────────────────────
-            $logo = function_exists('get_field') ? get_field('logo_desktop', 'option') : null;
-            ?>
-            <div class="site-footer__brand">
-                <?php if ( $logo && ! empty( $logo['url'] ) ) : ?>
-                    <a href="<?php echo esc_url( home_url('/') ); ?>" class="site-footer__logo-link">
-                        <img
-                            src="<?php echo esc_url( $logo['url'] ); ?>"
-                            alt="<?php bloginfo('name'); ?>"
-                            class="site-footer__logo"
-                            loading="lazy"
-                        >
-                    </a>
-                <?php else : ?>
-                    <a href="<?php echo esc_url( home_url('/') ); ?>" class="site-footer__site-name">
-                        <?php bloginfo('name'); ?>
-                    </a>
-                <?php endif; ?>
-            </div>
+        <!-- Footer Top: Logo + Navigation zentriert -->
+        <div class="site-footer__top">
+                <div class="container site-footer__top-inner">
 
-            <?php
-            // ── Footer Navigation ─────────────────────────────────────────
-            if ( has_nav_menu('footer') ) :
-                wp_nav_menu(array(
-                    'theme_location' => 'footer',
-                    'menu_class'     => 'footer-nav__list',
-                    'container'      => 'nav',
-                    'container_class'=> 'site-footer__nav footer-nav',
-                    'container_aria_label' => 'Footer Navigation',
-                    'depth'          => 4,
-                    'fallback_cb'    => false,
-                ));
-            endif;
-            ?>
+                        <?php
+                        $footer_logo = fjdf_option( 'fjdf_footer_logo' );
+                        if ( ! empty( $footer_logo['id'] ) ) : ?>
+                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-footer__logo">
+                                        <?php echo wp_get_attachment_image( $footer_logo['id'], 'fjdf-logo', false, [
+                                                'alt'     => get_bloginfo( 'name' ),
+                                                'loading' => 'lazy',
+                                        ] ); ?>
+                                </a>
+                        <?php else : ?>
+                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-footer__logo-text">
+                                        <?php bloginfo( 'name' ); ?>
+                                </a>
+                        <?php endif; ?>
 
-        </div><!-- .site-footer__inner -->
+                        <!-- Hauptnavigation -->
+                        <?php
+                        wp_nav_menu( [
+                                'theme_location'  => 'primary',
+                                'container'       => 'nav',
+                                'container_class' => 'site-footer__nav',
+                                'container_attr'  => [ 'aria-label' => __( 'Footer Navigation', 'fjdf' ) ],
+                                'menu_class'      => 'site-footer__nav-list',
+                                'fallback_cb'     => false,
+                                'depth'           => 1,
+                        ] );
+                        ?>
 
+                </div>
+        </div><!-- .site-footer__top -->
+
+        <!-- Footer Middle: Collab links, Social + Email rechts -->
+        <div class="site-footer__middle">
+                <div class="container site-footer__middle-inner">
+
+                        <!-- Collaboration -->
+                        <?php
+                        $collab_label = fjdf_option( 'fjdf_footer_collab_label', __( 'Colaboración con:', 'fjdf' ) );
+                        $collab_logo  = fjdf_option( 'fjdf_footer_collab_logo' );
+                        ?>
+                        <div class="site-footer__collab">
+                                <span class="site-footer__collab-label"><?php echo esc_html( $collab_label ); ?></span>
+                                <?php if ( ! empty( $collab_logo['id'] ) ) : ?>
+                                        <?php echo wp_get_attachment_image( $collab_logo['id'], 'fjdf-logo', false, [
+                                                'alt'     => 'Sinfonía por el Perú',
+                                                'loading' => 'lazy',
+                                        ] ); ?>
+                                <?php endif; ?>
+                        </div>
+
+                        <!-- Social + Email -->
+                        <div class="site-footer__social-wrap">
+                                <ul class="site-footer__social-list" role="list">
+                                        <?php
+                                        $socials = [
+                                                'fjdf_social_facebook'  => 'Facebook',
+                                                'fjdf_social_linkedin'  => 'LinkedIn',
+                                                'fjdf_social_instagram' => 'Instagram',
+                                                'fjdf_social_youtube'   => 'YouTube',
+                                        ];
+                                        foreach ( $socials as $field => $label ) :
+                                                $url = fjdf_option( $field );
+                                                if ( ! $url ) continue;
+                                        ?>
+                                                <li>
+                                                        <a href="<?php echo esc_url( $url ); ?>"
+                                                           target="_blank"
+                                                           rel="noopener noreferrer"
+                                                           class="site-footer__social-link"
+                                                           aria-label="<?php echo esc_attr( $label ); ?>">
+                                                                <?php echo esc_html( $label ); ?>
+                                                        </a>
+                                                </li>
+                                        <?php endforeach; ?>
+                                </ul>
+
+                                <?php $contact_email = fjdf_option( 'fjdf_contact_email', 'kontakt@friendsofjuandiegoflorez.org' ); ?>
+                                <?php if ( $contact_email ) : ?>
+                                        <p class="site-footer__email">
+                                                <?php esc_html_e( 'E-Mail:', 'fjdf' ); ?>
+                                                <a href="mailto:<?php echo esc_attr( $contact_email ); ?>" class="site-footer__email-link">
+                                                        <?php echo esc_html( $contact_email ); ?>
+                                                </a>
+                                        </p>
+                                <?php endif; ?>
+                        </div>
+
+                </div>
+        </div><!-- .site-footer__middle -->
+
+        <!-- Footer Bottom: Legal + Copyright -->
         <div class="site-footer__bottom">
+                <div class="container site-footer__bottom-inner">
 
-            <p class="site-footer__copyright">
-                &copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.
-                <?php esc_html_e('Alle Rechte vorbehalten.', 'custom-theme'); ?>
-            </p>
+                        <?php
+                        wp_nav_menu( [
+                                'theme_location'  => 'footer-legal',
+                                'container'       => 'nav',
+                                'container_class' => 'site-footer__legal-nav',
+                                'container_attr'  => [ 'aria-label' => __( 'Rechtliche Links', 'fjdf' ) ],
+                                'menu_class'      => 'site-footer__legal-list',
+                                'fallback_cb'     => false,
+                                'depth'           => 1,
+                        ] );
+                        ?>
 
-            <?php
-            // ── Footer Legal Navigation ───────────────────────────────────────────
-            if ( has_nav_menu('footer-legal') ) :
-                wp_nav_menu([
-                    'theme_location'       => 'footer-legal',
-                    'menu_class'           => 'footer-legal__list',
-                    'container'            => 'nav',
-                    'container_class'      => 'footer-legal',
-                    'container_aria_label' => __('Rechtliche Links', 'custom-theme'),
-                    'depth'                => 1,       // Nur eine Ebene – keine Submenüs
-                    'fallback_cb'          => false,
-                ]);
-            endif;
-            ?>
+                        <p class="site-footer__copyright">
+                                <?php echo wp_kses_post( fjdf_copyright() ); ?>
+                        </p>
 
+                        <?php if ( fjdf_option( 'fjdf_footer_agency_credit', true ) ) : ?>
+                                <p class="site-footer__credit">
+                                        <?php esc_html_e( 'Website by', 'fjdf' ); ?>
+                                        <a href="https://media-lab.at"
+                                           target="_blank"
+                                           rel="noopener noreferrer"
+                                           class="site-footer__credit-link">Media Lab</a>
+                                </p>
+                        <?php endif; ?>
+
+                </div>
         </div><!-- .site-footer__bottom -->
 
-        <div class="site-footer__credit">
-
-            <p>
-                <?php esc_html_e('Konzept und Programmierung:', 'custom-theme'); ?>
-                    <a 
-                    href="https://www.media-lab.at"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >Media Lab Tritremmel GmbH</a>
-            </p>
-        </div>
-
-    </div><!-- .container -->
-</footer>
-
-</div><!-- #page -->
+</footer><!-- .site-footer -->
 
 <?php
-// ── Back-to-Top Button ────────────────────────────────────────────────────
-if ( function_exists('get_field') && get_field('btt_enabled', 'option') ) : ?>
-<button
-    class="back-to-top"
-    aria-label="<?php esc_attr_e('Zurück nach oben', 'custom-theme'); ?>"
-    type="button"
->
-    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <polyline points="18 15 12 9 6 15"></polyline>
-    </svg>
-</button>
-<?php endif; ?>
+if ( ! is_page_template( 'page-thank-you.php' ) ) :
+        fjdf_cert_modal();
+endif;
+?>
 
 <?php wp_footer(); ?>
 </body>

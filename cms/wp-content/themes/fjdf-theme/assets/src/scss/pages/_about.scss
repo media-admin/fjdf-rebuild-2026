@@ -1,0 +1,85 @@
+// =============================================================================
+// FJDF — Pages: Nosotros
+// =============================================================================
+
+@use '../abstracts' as *;
+
+.page-hero {
+	position: relative;
+	overflow: hidden;
+	height: clamp(300px, 45vw, 560px);
+	background: var(--color-dark);
+}
+.page-hero__image { @include overlay(transparent); }
+.page-hero__img { @include img-cover; opacity: 0.8; }
+.page-hero__content {
+	position: relative;
+	z-index: 2;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding-bottom: var(--space-10);
+}
+.page-hero__headline {
+	@include heading-serif(var(--text-h1), 500);
+	color: #ffffff;
+	max-width: 700px;
+}
+.page-hero__subtext {
+	color: rgba(255,255,255,0.85);
+	max-width: 600px;
+	margin-top: var(--space-4);
+}
+
+.nosotros-intro__inner { max-width: 780px; margin-inline: auto; }
+.nosotros-intro__headline {
+	@include heading-serif(var(--text-h1), 500);
+	@include gold-underline;
+	margin-bottom: var(--space-6);
+}
+.nosotros-intro__bridge {
+	font-family: var(--font-serif);
+	font-size: var(--text-body-lg);
+	font-style: italic;
+	color: var(--color-gold);
+	border-left: 3px solid var(--color-gold);
+	padding-left: var(--space-5);
+	margin-top: var(--space-6);
+}
+
+.nosotros-gallery__main {
+	border-radius: var(--radius-xl);
+	overflow: hidden;
+	margin-bottom: var(--space-4);
+	@include aspect-ratio(16, 8);
+	transition: opacity var(--transition-base);
+}
+.nosotros-gallery__main-img { @include img-cover; }
+.nosotros-gallery__thumbs {
+	display: flex;
+	gap: var(--space-2);
+	flex-wrap: wrap;
+}
+.nosotros-gallery__thumb {
+	width: 80px;
+	height: 56px;
+	border-radius: var(--radius-md);
+	overflow: hidden;
+	border: 2px solid transparent;
+	cursor: pointer;
+	padding: 0;
+	background: none;
+	transition: border-color var(--transition-base);
+	@include focus-ring;
+	img { @include img-cover; }
+	&.is-active { border-color: var(--color-primary); }
+	&:hover { border-color: var(--color-primary-hover); }
+}
+
+.nosotros-history__inner { max-width: 780px; margin-inline: auto; }
+.nosotros-history__headline {
+	@include heading-serif(var(--text-h3), 500);
+	color: var(--color-gold);
+	margin-bottom: var(--space-5);
+}

@@ -1,0 +1,194 @@
+// =============================================================================
+// FJDF — Pages: Dona y Súmate
+// =============================================================================
+
+@use '../abstracts' as *;
+
+.donate-layout {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	min-height: calc(100svh - var(--nav-height-desktop));
+
+	@include respond-below('lg') { grid-template-columns: 1fr; }
+}
+
+.donate-layout__image {
+	position: sticky;
+	top: var(--nav-height-desktop);
+	height: calc(100svh - var(--nav-height-desktop));
+	overflow: hidden;
+	@include respond-below('lg') { display: none; }
+}
+.donate-layout__img { @include img-cover; }
+
+.donate-layout__form-wrap {
+	overflow-y: auto;
+	padding: var(--space-12) var(--space-10);
+	@include respond-below('md') { padding: var(--space-8) var(--container-padding); }
+}
+.donate-layout__form-inner { max-width: 520px; }
+
+.donate-header { margin-bottom: var(--space-8); }
+.donate-header__title {
+	@include heading-serif(var(--text-h1), 500);
+	@include gold-underline;
+	margin-bottom: var(--space-4);
+}
+.donate-header__subtext { color: var(--color-text-secondary); margin-bottom: var(--space-3); }
+.donate-header__cert-link { margin: 0; }
+.link-btn {
+	background: none;
+	border: none;
+	padding: 0;
+	color: var(--color-primary);
+	font-family: var(--font-sans);
+	font-size: var(--text-body-sm);
+	text-decoration: underline;
+	text-underline-offset: 2px;
+	cursor: pointer;
+	@include focus-ring;
+}
+
+// Steps
+.donate-step { margin-bottom: var(--space-8); }
+.donate-step__label {
+	display: flex;
+	align-items: center;
+	gap: var(--space-3);
+	font-family: var(--font-sans);
+	font-size: var(--text-body-lg);
+	font-weight: var(--font-weight-semibold);
+	color: var(--color-text-primary);
+	margin-bottom: var(--space-5);
+}
+.donate-step__num {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 28px;
+	height: 28px;
+	background: var(--color-primary);
+	color: #ffffff;
+	border-radius: 50%;
+	font-size: var(--text-body-sm);
+	font-weight: var(--font-weight-bold);
+	flex-shrink: 0;
+}
+
+// Frequency Tabs
+.donate-frequency {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	border: 1.5px solid var(--color-border);
+	border-radius: var(--radius-lg);
+	overflow: hidden;
+	margin-bottom: var(--space-4);
+}
+.donate-frequency__btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-2);
+	padding: var(--space-3) var(--space-4);
+	font-family: var(--font-sans);
+	font-size: var(--text-body);
+	font-weight: var(--font-weight-medium);
+	color: var(--color-text-secondary);
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	transition: var(--transition-color);
+	@include focus-ring;
+	&.is-active, &[aria-selected="true"] {
+		background: var(--color-primary-light);
+		color: var(--color-primary);
+	}
+	+ .donate-frequency__btn { border-left: 1.5px solid var(--color-border); }
+}
+.donate-frequency__icon { font-size: 0.75em; color: var(--color-gold); }
+
+// Amount Grid
+.donate-amounts { display: none; &.is-active { display: block; } }
+.donate-amounts__grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: var(--space-3);
+}
+.donate-amount-option {
+	display: block;
+	cursor: pointer;
+	input[type="radio"] { @include visually-hidden; }
+}
+.donate-amount-option__label {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-2);
+	padding: var(--space-3) var(--space-4);
+	border: 1.5px solid var(--color-border);
+	border-radius: var(--radius-md);
+	font-size: var(--text-body);
+	color: var(--color-text-secondary);
+	transition: var(--transition-color), border-color var(--transition-base);
+	strong { font-size: var(--text-body-lg); color: var(--color-text-primary); }
+}
+.donate-amount-option input:checked + .donate-amount-option__label {
+	border-color: var(--color-primary);
+	background: var(--color-primary-light);
+	color: var(--color-primary);
+	strong { color: var(--color-primary); }
+}
+.donate-custom-input {
+	border: none;
+	outline: none;
+	background: transparent;
+	font-family: var(--font-sans);
+	font-size: var(--text-body);
+	width: 100px;
+	color: var(--color-text-primary);
+	&::placeholder { color: var(--color-text-muted); }
+}
+
+// Payment Methods
+.donate-payment-methods {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: var(--space-3);
+	@include respond-below('sm') { grid-template-columns: repeat(2, 1fr); }
+}
+.donate-payment-option {
+	cursor: pointer;
+	input[type="radio"] { @include visually-hidden; }
+}
+.donate-payment-option__inner {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-2);
+	padding: var(--space-4);
+	border: 1.5px solid var(--color-border);
+	border-radius: var(--radius-md);
+	transition: var(--transition-color), border-color var(--transition-base);
+	img { height: 24px; width: auto; object-fit: contain; }
+	span { font-size: var(--text-body-sm); color: var(--color-text-secondary); }
+}
+.donate-payment-option input:checked + .donate-payment-option__inner {
+	border-color: var(--color-primary);
+	background: var(--color-primary-light);
+	span { color: var(--color-primary); }
+}
+
+// Form Fields
+.donate-form__fields { display: flex; flex-direction: column; gap: var(--space-3); margin-bottom: var(--space-5); }
+.donate-submit { width: 100%; justify-content: center; }
+
+// Cert Section (unter dem Formular)
+.cert-section__inner { max-width: 600px; }
+.cert-section__headline {
+	@include heading-serif(var(--text-h2), 500);
+	@include gold-underline;
+	margin-bottom: var(--space-4);
+}
+.cert-section__subtext { color: var(--color-text-secondary); margin-bottom: var(--space-6); }
+.cert-section__fields { display: flex; flex-direction: column; gap: var(--space-3); margin-bottom: var(--space-5); }

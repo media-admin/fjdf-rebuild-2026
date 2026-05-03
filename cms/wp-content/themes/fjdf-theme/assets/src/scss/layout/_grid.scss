@@ -1,14 +1,23 @@
+// =============================================================================
+// FJDF — Layout: Grid
+// Wird bei Bedarf erweitert.
+// =============================================================================
+
 @use '../abstracts' as *;
 
-// =============================================================================
-// Grid System
-// Version: 1.2.0
-//
-// Änderungen:
-//   - gap: $spacing-4 → var(--space-lg) (fluid statt fix)
-// =============================================================================
-
 .grid {
-    display: grid;
-    gap:     var(--space-lg);
+	display: grid;
+	gap: var(--space-6);
+}
+
+.grid--2 { grid-template-columns: repeat(2, 1fr); }
+.grid--3 { grid-template-columns: repeat(3, 1fr); }
+
+@include respond-below('lg') {
+	.grid--3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@include respond-below('sm') {
+	.grid--2,
+	.grid--3 { grid-template-columns: 1fr; }
 }

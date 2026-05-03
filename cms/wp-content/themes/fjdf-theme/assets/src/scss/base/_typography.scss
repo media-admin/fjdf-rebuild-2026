@@ -1,184 +1,227 @@
+// =============================================================================
+// FJDF — Base: Reset & Typography
+// =============================================================================
+
 @use '../abstracts' as *;
 
-// =============================================================================
-// TYPOGRAPHY
-// Media Lab Starter Kit
-// Version: 1.2.0 – Fluid Responsive System
-//
-// Alle Schriftgrößen nutzen CSS Custom Properties (--text-*) aus _variables.scss.
-// Diese skalieren via clamp() flüssig zwischen Mobile und Desktop –
-// kein manueller @media-Query für Font-Sizes mehr nötig.
-// =============================================================================
 
+// ---------------------------------------------------------------------------
+// RESET
+// ---------------------------------------------------------------------------
 
-// ─────────────────────────────────────────────────────────────────
-// BODY
-// ─────────────────────────────────────────────────────────────────
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
 
 body {
-  font-family: $font-primary;
-  font-size:   var(--text-base);    // clamp(15px → 16px)
-  font-weight: $font-weight-normal;
-  color:       var(--color-text);
-  line-height: $line-height-base;
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--leading-normal);
+  color: var(--color-text-primary);
+  background-color: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-
-// ─────────────────────────────────────────────────────────────────
-// HEADINGS
-// ─────────────────────────────────────────────────────────────────
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight:   $font-weight-bold;
-  line-height:   $line-height-tight;
-  margin-bottom: var(--space-md);   // fluid statt fixem $spacing-3
-  color:         var(--color-text);
+img,
+video,
+svg {
+  display: block;
+  max-width: 100%;
 }
 
-// Fluid Heading Scale – skaliert ohne @media-Queries
-// Werte entsprechen den clamp()-Ranges aus _variables.scss:
-h1 { font-size: var(--text-h1);  }  // clamp(32px → 48px)
-h2 { font-size: var(--text-5xl); }  // clamp(32px → 40px)
-h3 { font-size: var(--text-4xl); }  // clamp(28px → 32px)
-h4 { font-size: var(--text-2xl); }  // clamp(20px → 24px)
-h5 { font-size: var(--text-xl);  }  // clamp(18px → 20px)
-h6 { font-size: var(--text-lg);  }  // clamp(16px → 18px)
-
-
-// ─────────────────────────────────────────────────────────────────
-// PARAGRAPHS & INLINE
-// ─────────────────────────────────────────────────────────────────
-
-p {
-  margin-bottom: var(--space-md);
+p,
+h1, h2, h3, h4, h5, h6,
+blockquote,
+figure,
+figcaption,
+ul, ol, dl,
+pre {
+  margin: 0;
+  padding: 0;
 }
-
-strong {
-  font-weight: $font-weight-bold;
-}
-
-em {
-  font-style: italic;
-}
-
-small {
-  font-size: var(--text-sm);  // clamp(13px → 14px)
-}
-
-
-// ─────────────────────────────────────────────────────────────────
-// LINKS
-// ─────────────────────────────────────────────────────────────────
-
-a {
-  color:      var(--color-primary);
-  transition: color 0.15s ease;
-
-  &:hover {
-    color: #{$color-primary-darker};
-  }
-
-  &:focus-visible {
-    outline:        2px solid var(--color-primary);
-    outline-offset: 2px;
-    border-radius:  2px;
-  }
-}
-
-
-// ─────────────────────────────────────────────────────────────────
-// LISTS
-// ─────────────────────────────────────────────────────────────────
 
 ul, ol {
-  padding-left:  var(--space-md);
-  margin-bottom: var(--space-md);
+  list-style: none;
 }
 
-li {
-  margin-bottom: var(--space-xs);
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-
-// ─────────────────────────────────────────────────────────────────
-// BLOCKQUOTE
-// ─────────────────────────────────────────────────────────────────
-
-blockquote {
-  border-left:   4px solid var(--color-primary);
-  padding-left:  var(--space-md);
-  margin:        var(--space-lg) 0;
-  font-size:     var(--text-lg);
-  font-style:    italic;
-  color:         var(--color-text-muted);
-  line-height:   $line-height-relaxed;
+button,
+input,
+select,
+textarea {
+  font: inherit;
 }
 
-
-// ─────────────────────────────────────────────────────────────────
-// CODE & PRE
-// ─────────────────────────────────────────────────────────────────
-
-code {
-  font-family:   'Courier New', Courier, monospace;
-  font-size:     var(--text-sm);
-  background:    var(--color-surface);
-  border:        1px solid var(--color-border);
-  border-radius: $radius-sm;
-  padding:       0.1em 0.4em;
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
 }
 
-pre {
-  font-family:   'Courier New', Courier, monospace;
-  font-size:     var(--text-sm);
-  background:    var(--color-surface);
-  border:        1px solid var(--color-border);
-  border-radius: $radius-base;
-  padding:       var(--space-md);
-  overflow-x:    auto;
-  margin-bottom: var(--space-md);
+address {
+  font-style: normal;
+}
 
-  code {
-    background:    none;
-    border:        none;
-    padding:       0;
-    font-size:     inherit;
+// ---------------------------------------------------------------------------
+// TYPOGRAFIE DEFAULTS
+// ---------------------------------------------------------------------------
+
+h1, .h1 {
+  @include heading-serif(var(--text-h1), 500, var(--leading-tight));
+  color: var(--color-text-primary);
+}
+
+h2, .h2 {
+  @include heading-serif(var(--text-h2), 500, var(--leading-snug));
+  color: var(--color-text-primary);
+}
+
+h3, .h3 {
+  @include heading-serif(var(--text-h3), 500, var(--leading-snug));
+  color: var(--color-text-primary);
+}
+
+h4, .h4 {
+  @include heading-serif(var(--text-h4), 500, var(--leading-snug));
+  color: var(--color-text-primary);
+}
+
+h5, .h5 {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--leading-snug);
+  color: var(--color-text-primary);
+}
+
+h6, .h6 {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--leading-snug);
+  color: var(--color-text-primary);
+}
+
+p {
+  font-size: var(--text-body);
+  line-height: var(--leading-normal);
+  color: var(--color-text-secondary);
+
+  & + p {
+    margin-top: var(--space-4);
   }
 }
 
+// Content-Bereich (Artikel, ACF-Felder)
+.entry-content {
+  h2 { @include gold-underline(40px); margin-bottom: var(--space-5); }
+  h3 { margin-bottom: var(--space-4); }
 
-// ─────────────────────────────────────────────────────────────────
-// HR
-// ─────────────────────────────────────────────────────────────────
+  p, ul, ol {
+    margin-bottom: var(--space-4);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+  }
 
-hr {
-  border:        none;
-  border-top:    1px solid var(--color-border);
-  margin:        var(--space-xl) 0;
+  ul, ol {
+    padding-left: 1.5em;
+    list-style: revert;
+  }
+
+  a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color var(--transition-base);
+
+    &:hover { color: var(--color-primary-hover); }
+  }
+
+  blockquote {
+    margin-block: var(--space-8);
+    padding: var(--space-5) var(--space-6);
+    border-left: 3px solid var(--color-gold);
+    background: var(--color-cream-dark);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+
+    p {
+      font-family: var(--font-serif);
+      font-size: var(--text-body-lg);
+      font-style: italic;
+      color: var(--color-dark);
+      margin: 0;
+    }
+  }
+
+  strong { font-weight: var(--font-weight-semibold); color: var(--color-text-primary); }
 }
 
+// Display Heading (Hero-Schriften)
+.display-heading {
+  @include heading-serif(var(--text-display), 500, var(--leading-tight));
+}
 
-// ─────────────────────────────────────────────────────────────────
-// UTILITY CLASSES
-// Fluid Text-Size Helper – direkt im HTML nutzbar
-// ─────────────────────────────────────────────────────────────────
+// Kategorie Label
+.category-label {
+  @include category-label;
+  display: inline-block;
+}
 
-.text-xs   { font-size: var(--text-xs);   }
-.text-sm   { font-size: var(--text-sm);   }
-.text-base { font-size: var(--text-base); }
-.text-lg   { font-size: var(--text-lg);   }
-.text-xl   { font-size: var(--text-xl);   }
-.text-2xl  { font-size: var(--text-2xl);  }
-.text-3xl  { font-size: var(--text-3xl);  }
-.text-4xl  { font-size: var(--text-4xl);  }
-.text-5xl  { font-size: var(--text-5xl);  }
-.text-hero { font-size: var(--text-hero); }
+// ---------------------------------------------------------------------------
+// ACCESSIBILITY
+// ---------------------------------------------------------------------------
 
-.text-muted   { color: var(--color-text-muted); }
-.text-light   { color: var(--color-text-light); }
-.text-primary { color: var(--color-primary);    }
+.screen-reader-text {
+  @include visually-hidden;
+}
 
-.font-normal   { font-weight: $font-weight-normal;   }
-.font-medium   { font-weight: $font-weight-medium;   }
-.font-semibold { font-weight: $font-weight-semibold; }
-.font-bold     { font-weight: $font-weight-bold;     }
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+// Skip Link (Starter Kit kompatibel)
+.skip-link {
+  @include visually-hidden;
+
+  &:focus {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    width: auto;
+    height: auto;
+    padding: 0.75rem 1.5rem;
+    background: var(--color-primary);
+    color: #ffffff;
+    border-radius: var(--radius-md);
+    font-weight: var(--font-weight-semibold);
+    z-index: var(--z-toast);
+    clip: auto;
+    overflow: visible;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// REDUCED MOTION
+// ---------------------------------------------------------------------------
+
+@include reduced-motion {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,84 @@
+// =============================================================================
+// FJDF — Components: Newsletter Sektion
+// Goldener Hintergrund, Headline + Form + Bild rechts
+// =============================================================================
+
+@use '../abstracts' as *;
+
+.newsletter-section {
+	background: var(--newsletter-bg);
+	color: var(--newsletter-color);
+	overflow: hidden;
+	position: relative;
+	@include section-spacing('sm');
+        padding-block: var(--space-6) 0;
+}
+
+.newsletter-section__inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--space-8);
+
+	@include respond-below('md') {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
+
+.newsletter-section__content {
+	flex: 1;
+	max-width: 580px;
+}
+
+.newsletter-section__headline {
+        @include heading-serif(clamp(1.1rem, 1.8vw, 1.6rem), 500, var(--leading-snug));
+	color: var(--color-dark);
+	margin-bottom: var(--space-6);
+}
+
+// Form
+.newsletter-section__form-row {
+	display: flex;
+	gap: var(--space-3);
+	flex-wrap: wrap;
+}
+
+.newsletter-section__input {
+	@include input-base;
+	flex: 1;
+	min-width: 200px;
+	background: rgba(255, 255, 255, 0.9);
+	border-color: transparent;
+
+	&:focus {
+		background: #ffffff;
+		border-color: var(--color-dark);
+		box-shadow: 0 0 0 3px rgba(28, 35, 64, 0.12);
+	}
+}
+
+.newsletter-section__btn {
+	flex-shrink: 0;
+	background: var(--color-primary);
+	color: #ffffff;
+
+	&:hover { background: var(--color-primary-hover); }
+}
+
+// Dekoratives Bild
+.newsletter-section__image {
+	flex-shrink: 0;
+	width: clamp(160px, 20vw, 260px);
+	align-self: flex-end;
+
+	@include respond-below('md') { display: none; }
+}
+
+.newsletter-section__img {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	object-position: top center;
+	display: block;
+}

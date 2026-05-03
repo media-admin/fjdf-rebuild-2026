@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 24" width="80" height="24" role="img" aria-label="Klarna">
+  <rect width="80" height="24" rx="4" fill="#FFB3C7"/>
+  <text x="40" y="17" font-family="Arial,sans-serif" font-size="12" font-weight="700"
+        fill="#17120E" text-anchor="middle" letter-spacing="0.5">Klarna</text>
+</svg>

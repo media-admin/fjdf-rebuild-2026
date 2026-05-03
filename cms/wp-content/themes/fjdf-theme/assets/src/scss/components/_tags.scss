@@ -1,0 +1,16 @@
+// =============================================================================
+// FJDF — Components: Tags & Category Labels
+// =============================================================================
+
+@use '../abstracts' as *;
+
+.category-label {
+	@include category-label;
+	display: inline-block;
+	background: var(--tag-bg);
+	color: var(--tag-color);
+	padding: var(--tag-padding);
+	border-radius: var(--tag-radius);
+	font-size: var(--tag-font-size);
+	letter-spacing: var(--tag-letter-spacing);
+}

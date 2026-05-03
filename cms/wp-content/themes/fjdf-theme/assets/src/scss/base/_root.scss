@@ -1,0 +1,115 @@
+// =============================================================================
+// FJDF — Base: Root & Font Faces
+// =============================================================================
+
+@use '../abstracts' as *;
+
+
+// ---------------------------------------------------------------------------
+// FONT FACES
+// Self-hosted via assets/public/fonts/ → dist/fonts/ (Vite publicDir)
+//
+// Ordnerstruktur:
+//   assets/public/fonts/larken/
+//   assets/public/fonts/aribau/
+// ---------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------
+// LARKEN — Variable Font (Serif/Display, Headings)
+// Quelle: larkenvariablegx.woff2 / larkenvariableitalicgx.woff2
+// font-weight: 100 900 deckt alle Schnitte ab (Thin → Black)
+// ---------------------------------------------------------------------------
+
+@font-face {
+  font-family: 'Larken';
+  src: url('../fonts/larken/larkenvariablegx.woff2') format('woff2-variations'),
+       url('../fonts/larken/larkenvariablegx.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Larken';
+  src: url('../fonts/larken/larkenvariableitalicgx.woff2') format('woff2-variations'),
+       url('../fonts/larken/larkenvariableitalicgx.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+
+// ---------------------------------------------------------------------------
+// ARIBAU GROTESK — Statische Schnitte (Sans, Body & UI)
+// Nur die tatsächlich genutzten Weights laden (Performance)
+// ---------------------------------------------------------------------------
+
+// Regular 400
+@font-face {
+  font-family: 'Aribau Grotesk';
+  src: url('../fonts/aribau/aribaugrotesk-rg.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Regular Italic 400
+@font-face {
+  font-family: 'Aribau Grotesk';
+  src: url('../fonts/aribau/aribaugrotesk-rgit.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+// Medium 500
+@font-face {
+  font-family: 'Aribau Grotesk';
+  src: url('../fonts/aribau/aribaugrotesk-md.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Medium Italic 500
+@font-face {
+  font-family: 'Aribau Grotesk';
+  src: url('../fonts/aribau/aribaugrotesk-mdit.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+// Bold 700
+@font-face {
+  font-family: 'Aribau Grotesk';
+  src: url('../fonts/aribau/aribaugrotesk-bd.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+// ---------------------------------------------------------------------------
+// CSS CUSTOM PROPERTIES
+// Die eigentliche Token-Deklaration sitzt in _tokens.scss und wird via
+// @use in :root eingebunden. Hier nur die Fonts, da sie Font-Face brauchen.
+// ---------------------------------------------------------------------------
+
+:root {
+  // Fonts explizit hier für spätere Überschreibbarkeit
+  --font-serif: 'Larken', 'Georgia', serif;
+  --font-sans:  'Aribau Grotesk', 'Helvetica Neue', Arial, sans-serif;
+
+  // Scroll behavior
+  scroll-behavior: smooth;
+
+  // Box sizing
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}

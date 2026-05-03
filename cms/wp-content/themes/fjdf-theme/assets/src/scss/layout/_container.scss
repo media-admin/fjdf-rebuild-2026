@@ -1,0 +1,18 @@
+// =============================================================================
+// FJDF — Layout: Container & Grid
+// =============================================================================
+
+@use '../abstracts' as *;
+
+// Container
+.container {
+	@include container;
+}
+
+.container--narrow {
+	@include container(var(--container-content));
+}
+
+// Section Spacing
+.section { @include section-spacing; }
+.section--sm { @include section-spacing('sm'); }
