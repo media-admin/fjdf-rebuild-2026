@@ -63,10 +63,10 @@ get_header();
 			<?php endif; ?>
 
 			<?php if ( $hero_scroll ) : ?>
-				<p class="hero__scroll" aria-hidden="true">
+				<a href="#about" class="hero__scroll" aria-hidden="true">
 					<span><?php echo esc_html( $hero_scroll ); ?></span>
 					<span class="hero__scroll-arrow">↓</span>
-				</p>
+				</a>
 			<?php endif; ?>
 		</div>
 	</section>
@@ -108,31 +108,31 @@ get_header();
 			<?php endif; ?>
 		</div>
         <?php if ( ! empty( $stats_bar ) ) : ?>
-                <section class="stats-slider" aria-label="<?php esc_attr_e( 'Kennzahlen', 'fjdf' ); ?>">
-                        <div class="container">
-                                <div class="swiper js-stats-slider">
-                                        <div class="swiper-wrapper">
-                                                <?php foreach ( $stats_bar as $stat ) : ?>
-                                                        <div class="swiper-slide">
-                                                                <div class="stats-slider__item">
-                                                                        <?php if ( ! empty( $stat['icon']['id'] ) ) : ?>
-                                                                                <div class="stats-slider__icon" aria-hidden="true">
-                                                                                        <?php echo wp_get_attachment_image( $stat['icon']['id'], 'medium', false, [ 'alt' => '' ] ); ?>
-                                                                                </div>
-                                                                        <?php endif; ?>
-                                                                        <div class="stats-slider__text">
-                                                                                <strong class="stats-slider__number"><?php echo esc_html( $stat['number'] ); ?></strong>
-                                                                                <span class="stats-slider__label"><?php echo esc_html( $stat['label'] ); ?></span>
-                                                                        </div>
-                                                                </div>
-                                                        </div>
-                                                <?php endforeach; ?>
-                                        </div>
-                                        <div class="swiper-pagination"></div>
-                                </div>
-                        </div>
-                </section>
-        <?php endif; ?>
+		<section class="stats-slider" aria-label="<?php esc_attr_e( 'Kennzahlen', 'fjdf' ); ?>">
+			<div class="container">
+				<div class="swiper js-stats-slider">
+					<div class="swiper-wrapper">
+						<?php foreach ( $stats_bar as $stat ) : ?>
+							<div class="swiper-slide">
+								<div class="stats-slider__item">
+									<?php if ( ! empty( $stat['icon']['id'] ) ) : ?>
+										<div class="stats-slider__icon" aria-hidden="true">
+											<?php echo wp_get_attachment_image( $stat['icon']['id'], 'medium', false, [ 'alt' => '' ] ); ?>
+										</div>
+									<?php endif; ?>
+									<div class="stats-slider__text">
+										<strong class="stats-slider__number"><?php echo esc_html( $stat['number'] ); ?></strong>
+										<span class="stats-slider__label"><?php echo esc_html( $stat['label'] ); ?></span>
+									</div>
+								</div>
+							</div>
+						<?php endforeach; ?>
+					</div>
+				</div>
+				<div class="swiper-pagination js-stats-pagination"></div>
+			</div>
+		</section>
+		<?php endif; ?>
 
 	</section>
 
@@ -151,7 +151,11 @@ get_header();
 		<div class="container what-teaser__inner">
 			<?php if ( ! empty( $what_image['id'] ) ) : ?>
 				<div class="what-teaser__image">
-					<?php echo fjdf_image( $what_image, 'fjdf-portrait', 'what-teaser__img' ); ?>
+					<?php
+					$what_img_url = ! empty( $what_image['url'] ) ? $what_image['url'] : wp_get_attachment_url( $what_image['id'] );
+					$what_img_alt = ! empty( $what_image['alt'] ) ? esc_attr( $what_image['alt'] ) : '';
+					?>
+					<img src="<?php echo esc_url( $what_img_url ); ?>" class="what-teaser__img" alt="<?php echo $what_img_alt; ?>" loading="lazy">
 				</div>
 			<?php endif; ?>
 
@@ -411,7 +415,11 @@ get_header();
 			</div>
 			<?php if ( ! empty( $cta_image['id'] ) ) : ?>
 				<div class="donation-cta__image" aria-hidden="true">
-					<?php echo fjdf_image( $cta_image, 'fjdf-portrait', 'donation-cta__img' ); ?>
+					<?php
+					$cta_img_url = ! empty( $cta_image['url'] ) ? $cta_image['url'] : wp_get_attachment_url( $cta_image['id'] );
+					$cta_img_alt = ! empty( $cta_image['alt'] ) ? esc_attr( $cta_image['alt'] ) : '';
+					?>
+					<img src="<?php echo esc_url( $cta_img_url ); ?>" class="donation-cta__img" alt="<?php echo $cta_img_alt; ?>" loading="lazy">
 				</div>
 			<?php endif; ?>
 		</div>

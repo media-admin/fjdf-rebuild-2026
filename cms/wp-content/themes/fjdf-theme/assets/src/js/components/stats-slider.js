@@ -1,35 +1,38 @@
 import Swiper from 'swiper';
 import { Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
 
 export default class StatsSlider {
-        constructor() {
-                const el = document.querySelector('.js-stats-slider');
-                if (!el) return;
+    constructor() {
+        const el = document.querySelector('.js-stats-slider');
+        if (!el) return;
 
-                const swiper = new Swiper(el, {
-                        modules: [Pagination, Autoplay],
-                        slidesPerView: 1,
-                        spaceBetween: 0,
-                        loop: false,
-                        autoplay: {
-                                delay: 3000,
-                                disableOnInteraction: false,
-                                pauseOnMouseEnter: true,
-                        },
-                        pagination: {
-                                el: el.querySelector('.swiper-pagination'),
-                                clickable: true,
-                        },
-                        on: {
-                                afterInit(s) {
-                                        // Transform-Bug: manuell auf Slide 0 zurücksetzen
-                                        s.wrapperEl.style.transform = 'translate3d(0px, 0px, 0px)';
-                                        s.activeIndex = 0;
-                                        s.realIndex = 0;
-                                        s.updateProgress();
-                                        s.updateSlidesClasses();
-                                }
-                        }
-                });
-        }
+        // Slides 3x duplizieren damit Loop-Klone entstehen können
+        const wrapper = el.querySelector('.swiper-wrapper');
+        const originalSlides = [...wrapper.children];
+        originalSlides.forEach(slide => {
+            wrapper.appendChild(slide.cloneNode(true));
+            wrapper.appendChild(slide.cloneNode(true));
+        });
+
+        new Swiper(el, {
+            modules: [Pagination, Autoplay],
+            slidesPerView: 1,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+            pagination: {
+                el: document.querySelector('.js-stats-pagination'),
+                clickable: true,
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+    }
 }
