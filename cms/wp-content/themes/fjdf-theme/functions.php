@@ -61,6 +61,19 @@ function fjdf_setup(): void {
 
 add_action( 'wp_enqueue_scripts', 'fjdf_enqueue_assets' );
 
+add_action( 'wp_head', function () {
+    $f = get_template_directory_uri() . '/assets/dist/fonts/';
+    echo '<style>
+@font-face{font-family:"Larken";src:url("' . $f . 'larken/larkenvariablegx.woff2") format("woff2-variations");font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:"Larken";src:url("' . $f . 'larken/larkenvariableitalicgx.woff2") format("woff2-variations");font-weight:100 900;font-style:italic;font-display:swap}
+@font-face{font-family:"Aribau Grotesk";src:url("' . $f . 'aribau/aribaugrotesk-rg.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Aribau Grotesk";src:url("' . $f . 'aribau/aribaugrotesk-rgit.woff2") format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Aribau Grotesk";src:url("' . $f . 'aribau/aribaugrotesk-md.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Aribau Grotesk";src:url("' . $f . 'aribau/aribaugrotesk-mdit.woff2") format("woff2");font-weight:500;font-style:italic;font-display:swap}
+@font-face{font-family:"Aribau Grotesk";src:url("' . $f . 'aribau/aribaugrotesk-bd.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+</style>';
+}, 1 );
+
 add_filter( 'script_loader_tag', 'fjdf_add_module_type', 10, 3 );
 
 function fjdf_add_module_type( string $tag, string $handle, string $src ): string {
