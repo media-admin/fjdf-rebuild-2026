@@ -171,7 +171,7 @@
 	display: block;
 	font-family: var(--font-serif);
 	font-size: var(--stats-number-size);
-	font-weight: 600;
+	font-weight: 400;
 	color: var(--color-dark);
 	margin-bottom: var(--space-2);
 }
@@ -360,7 +360,7 @@
 			background: var(--color-gold);
 			width: 48px;
 			height: 2px;
-			margin: .5em 0;
+			margin: .5em auto;
 			display: block;
 		}
 	}

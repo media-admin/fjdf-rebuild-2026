@@ -18,14 +18,17 @@ if ( document.querySelector( '.dona-layout' ) ) {
 	import( './donation-form.js' );
 }
 
-if ( document.querySelector( '.about-gallery__thumbs' ) ) {
-	import( './gallery.js' );
+if ( document.querySelector( '.js-gallery-thumbs' ) ) {
+	import( './components/gallery.js' );
 }
 
 if ( document.querySelector( '#load-more-news' ) ) {
 	import( './load-more.js' );
 }
 
+if ( document.querySelector( '.js-testimonial-slider' ) ) {
+	import( './components/testimonial-slider.js' );
+}
 if ( document.querySelector( '.impact-tabs' ) ) {
 	import( './impact-tabs.js' );
 }

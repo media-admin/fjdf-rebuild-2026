@@ -14,7 +14,7 @@
 
 .thank-you-split__content {
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	padding: var(--space-12) var(--space-10);
 
 	@include respond-below('md') { padding: var(--space-10) var(--container-padding); }
@@ -27,12 +27,7 @@
 	margin-bottom: var(--space-5);
 }
 
-.thank-you-split__divider {
-	width: 48px;
-	height: 2px;
-	background: var(--color-gold);
-	margin-bottom: var(--space-6);
-}
+.thank-you-split__divider { display: none; }
 
 .thank-you-split__text p {
 	font-size: var(--text-body-lg);

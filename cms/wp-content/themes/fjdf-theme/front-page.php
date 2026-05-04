@@ -268,74 +268,7 @@ get_header();
 <?php /* ================================================================
 	   6. TESTIMONIALS
 	   ================================================================ */ ?>
-	<?php
-	$test_label    = fjdf_field( 'fjdf_testimonial_label',    6, 'ZEUGNIS' );
-	$test_headline = fjdf_field( 'fjdf_testimonial_headline', 6, __( 'Erfahren Sie mehr über die Erlebnisse unserer Begünstigten', 'fjdf' ) );
-	$testimonials  = fjdf_field( 'fjdf_testimonials',         6, [] );
-	$video_id      = get_post_meta( 6, 'fjdf_testimonial_video_id', true ) ?: '30lFwLSgJHo';
-	$video_thumb   = get_field( 'fjdf_testimonial_video_thumb', 6 );
-	$first         = ! empty( $testimonials ) ? $testimonials[0] : null;
-	?>
-	<section class="testimonials-new section bg-white">
-		<div class="container testimonials-new__inner">
-
-			<?php if ( $test_label ) : ?>
-				<p class="testimonials-new__label category-label u-text-center"><?php echo esc_html( $test_label ); ?></p>
-			<?php endif; ?>
-
-			<?php if ( $test_headline ) : ?>
-				<h2 class="testimonials-new__headline"><?php echo esc_html( $test_headline ); ?></h2>
-			<?php endif; ?>
-
-			<?php if ( $first && ! empty( $first['quote'] ) ) : ?>
-				<blockquote class="testimonials-new__quote">
-					<p><?php echo esc_html( $first['quote'] ); ?></p>
-					<footer>
-						<cite class="testimonials-new__cite">
-							— <?php echo esc_html( $first['name'] ); ?><?php if ( ! empty( $first['origin'] ) ) : ?>, <?php echo esc_html( $first['origin'] ); ?><?php endif; ?>
-						</cite>
-					</footer>
-				</blockquote>
-			<?php endif; ?>
-
-		</div>
-
-		<?php if ( $video_id ) : ?>
-			<div class="testimonials-new__video-wrap">
-				<button class="testimonials-new__video-thumb"
-				        data-modal-trigger="video-modal-testimonial"
-				        aria-label="<?php esc_attr_e( 'Video abspielen', 'fjdf' ); ?>">
-					<img class="testimonials-new__video-img"
-					     src="<?php echo ! empty( $video_thumb['url'] ) ? esc_url( $video_thumb['url'] ) : 'https://img.youtube.com/vi/' . esc_attr( $video_id ) . '/maxresdefault.jpg'; ?>"
-					     alt="<?php echo ! empty( $video_thumb['alt'] ) ? esc_attr( $video_thumb['alt'] ) : esc_attr__( 'Video Vorschaubild', 'fjdf' ); ?>"
-					     loading="lazy">
-					<div class="testimonials-new__play" aria-hidden="true">
-						<svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-							<circle cx="30" cy="30" r="30" fill="rgba(245,162,0,0.9)"/>
-							<polygon points="24,18 24,42 44,30" fill="white"/>
-						</svg>
-					</div>
-				</button>
-			</div>
-
-			<!-- Video Modal -->
-			<div class="modal modal--lg" id="video-modal-testimonial" role="dialog" aria-modal="true" aria-label="<?php esc_attr_e( 'Video', 'fjdf' ); ?>" aria-hidden="true">
-				<div class="modal__overlay" data-modal-close></div>
-				<div class="modal__dialog modal__dialog--video">
-					<button class="modal__close" data-modal-close aria-label="<?php esc_attr_e( 'Schließen', 'fjdf' ); ?>">&times;</button>
-					<div class="modal__video-wrap">
-						<iframe width="100%" height="100%"
-						        src=""
-						        data-src="https://www.youtube.com/embed/<?php echo esc_attr( $video_id ); ?>?autoplay=1&rel=0&modestbranding=1"
-						        title="<?php esc_attr_e( 'Zeugnis Video', 'fjdf' ); ?>"
-						        frameborder="0"
-						        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-						        allowfullscreen></iframe>
-					</div>
-				</div>
-			</div>
-		<?php endif; ?>
-	</section>
+	<?php fjdf_video_testimonial( 6 ); ?>
 
 
         <?php /* ================================================================
@@ -387,43 +320,7 @@ get_header();
         <?php /* ================================================================
            7. DONATION CTA BLOCK
 	   ================================================================ */ ?>
-	<?php
-	$cta_head    = fjdf_field( 'fjdf_cta_headline', 6, __( 'Spenden und mitmachen', 'fjdf' ) );
-	$cta_text    = fjdf_field( 'fjdf_cta_text', 6 );
-	$cta_btn_l   = fjdf_field( 'fjdf_cta_button_label', 6, __( 'Jetzt spenden', 'fjdf' ) );
-	$cta_btn_u   = fjdf_field( 'fjdf_cta_button_url', 6 );
-	$cta_note    = fjdf_field( 'fjdf_cta_note', 6 );
-	$cta_image   = fjdf_field( 'fjdf_cta_image', 6 );
-	?>
-	<section class="donation-cta section">
-		<div class="container donation-cta__inner">
-			<div class="donation-cta__content">
-				<h2 class="donation-cta__headline"><?php echo esc_html( $cta_head ); ?></h2>
-				<?php if ( $cta_text ) : ?>
-					<p class="donation-cta__text"><?php echo esc_html( $cta_text ); ?></p>
-				<?php endif; ?>
-				<?php if ( $cta_btn_u ) : ?>
-					<a href="<?php echo esc_url( $cta_btn_u ); ?>" class="btn btn--primary btn--heart donation-cta__btn">
-						<?php echo esc_html( $cta_btn_l ); ?>
-					</a>
-				<?php endif; ?>
-				<?php if ( $cta_note ) : ?>
-					<div class="donation-cta__note">
-						<?php echo wp_kses_post( $cta_note ); ?>
-					</div>
-				<?php endif; ?>
-			</div>
-			<?php if ( ! empty( $cta_image['id'] ) ) : ?>
-				<div class="donation-cta__image" aria-hidden="true">
-					<?php
-					$cta_img_url = ! empty( $cta_image['url'] ) ? $cta_image['url'] : wp_get_attachment_url( $cta_image['id'] );
-					$cta_img_alt = ! empty( $cta_image['alt'] ) ? esc_attr( $cta_image['alt'] ) : '';
-					?>
-					<img src="<?php echo esc_url( $cta_img_url ); ?>" class="donation-cta__img" alt="<?php echo $cta_img_alt; ?>" loading="lazy">
-				</div>
-			<?php endif; ?>
-		</div>
-	</section>
+	<?php fjdf_donation_cta(); ?>
 
 	<?php /* ================================================================
 	   8. PARTNER LOGOS

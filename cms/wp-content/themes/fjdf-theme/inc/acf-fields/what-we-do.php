@@ -43,6 +43,19 @@ acf_add_local_field_group( [
 		],
 
 		// =====================================================================
+			// =====================================================================
+			// TAB: Intro
+			// =====================================================================
+			[ 'key' => 'field_fjdf_what_tab_intro', 'label' => __( 'Intro', 'fjdf' ), 'type' => 'tab' ],
+			[
+				'key' => 'field_fjdf_what_intro_text', 'label' => __( 'Einleitungstext', 'fjdf' ),
+				'name' => 'fjdf_what_intro_text', 'type' => 'textarea', 'rows' => 4,
+			],
+			[
+				'key' => 'field_fjdf_what_intro_bridge', 'label' => __( 'Bridge-Text (fett/kursiv)', 'fjdf' ),
+				'name' => 'fjdf_what_intro_bridge', 'type' => 'text',
+			],
+
 		// TAB: Impact tabs
 		// =====================================================================
 		[ 'key' => 'field_fjdf_what_tab_impact', 'label' => __( 'Impact Tabs', 'fjdf' ), 'type' => 'tab' ],
@@ -60,6 +73,10 @@ acf_add_local_field_group( [
 			'key' => 'field_fjdf_what_impact_intro', 'label' => __( 'Einleitungstext', 'fjdf' ),
 			'name' => 'fjdf_what_impact_intro', 'type' => 'textarea', 'rows' => 3,
 			'default_value' => __( 'Mit der Unterstützung von österreichischen Spendern haben über 30.000 Kinder und Jugendliche in Peru Zugang zu kostenlosem Musikunterricht.', 'fjdf' ),
+		],
+		[
+			'key' => 'field_fjdf_what_impact_portrait', 'label' => __( 'Portrait neben Tabs', 'fjdf' ),
+			'name' => 'fjdf_what_impact_portrait', 'type' => 'image', 'return_format' => 'array', 'preview_size' => 'thumbnail',
 		],
 		[
 			'key' => 'field_fjdf_what_tabs', 'label' => __( 'Impact Tabs (max. 3)', 'fjdf' ),
@@ -87,6 +104,36 @@ acf_add_local_field_group( [
 		// TAB: Testimonial
 		// =====================================================================
 		[ 'key' => 'field_fjdf_what_tab_testimonial', 'label' => __( 'Testimonial', 'fjdf' ), 'type' => 'tab' ],
+			[
+				'key' => 'field_fjdf_what_testimonial_label', 'label' => __( 'Abschnitts-Label', 'fjdf' ),
+				'name' => 'fjdf_testimonial_label', 'type' => 'text',
+				'default_value' => __( 'ZEUGNIS', 'fjdf' ),
+			],
+			[
+				'key' => 'field_fjdf_what_testimonial_headline', 'label' => __( 'Headline', 'fjdf' ),
+				'name' => 'fjdf_testimonial_headline', 'type' => 'text',
+				'default_value' => __( 'Erfahren Sie mehr über die Erlebnisse unserer Begünstigten', 'fjdf' ),
+			],
+			[
+				'key' => 'field_fjdf_what_testimonial_video_id', 'label' => __( 'YouTube Video-ID', 'fjdf' ),
+				'name' => 'fjdf_testimonial_video_id', 'type' => 'text',
+				'default_value' => '30lFwLSgJHo',
+			],
+			[
+				'key' => 'field_fjdf_what_testimonial_video_thumb', 'label' => __( 'Video Vorschaubild', 'fjdf' ),
+				'name' => 'fjdf_testimonial_video_thumb', 'type' => 'image', 'return_format' => 'array', 'preview_size' => 'thumbnail',
+			],
+			[
+				'key' => 'field_fjdf_what_testimonials', 'label' => __( 'Testimonials', 'fjdf' ),
+				'name' => 'fjdf_testimonials', 'type' => 'repeater', 'layout' => 'block',
+				'button_label' => __( 'Testimonial hinzufügen', 'fjdf' ),
+				'sub_fields' => [
+					[ 'key' => 'field_fjdf_what_test_quote2', 'label' => __( 'Zitat', 'fjdf' ), 'name' => 'quote', 'type' => 'textarea', 'rows' => 4 ],
+					[ 'key' => 'field_fjdf_what_test_name2', 'label' => __( 'Name', 'fjdf' ), 'name' => 'name', 'type' => 'text' ],
+					[ 'key' => 'field_fjdf_what_test_origin2', 'label' => __( 'Herkunft', 'fjdf' ), 'name' => 'origin', 'type' => 'text' ],
+					[ 'key' => 'field_fjdf_what_test_image2', 'label' => __( 'Portrait', 'fjdf' ), 'name' => 'image', 'type' => 'image', 'return_format' => 'array', 'preview_size' => 'thumbnail' ],
+				],
+			],
 		[
 			'key' => 'field_fjdf_what_test_label', 'label' => __( 'Abschnitts-Label', 'fjdf' ),
 			'name' => 'fjdf_what_test_label', 'type' => 'text',

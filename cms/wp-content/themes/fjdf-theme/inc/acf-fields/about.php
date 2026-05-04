@@ -70,17 +70,17 @@ acf_add_local_field_group( [
 		],
 
 		// =====================================================================
-		// TAB: History
+		// TAB: Mission
 		// =====================================================================
-		[ 'key' => 'field_fjdf_about_tab_history', 'label' => __( 'Geschichte', 'fjdf' ), 'type' => 'tab' ],
+		[ 'key' => 'field_fjdf_about_tab_mission', 'label' => __( 'Mission', 'fjdf' ), 'type' => 'tab' ],
 		[
-			'key' => 'field_fjdf_about_history_label', 'label' => __( 'Label', 'fjdf' ),
-			'name' => 'fjdf_about_history_label', 'type' => 'text',
-			'default_value' => __( 'Seit 2023 mobilisieren wir Solidarität, um Leben durch Musik zu verändern', 'fjdf' ),
+			'key' => 'field_fjdf_about_mission_headline', 'label' => __( 'Headline', 'fjdf' ),
+			'name' => 'fjdf_about_mission_headline', 'type' => 'text',
+			'default_value' => __( 'Wir mobilisieren Solidarität, um Leben durch Musik zu verändern', 'fjdf' ),
 		],
 		[
-			'key' => 'field_fjdf_about_history_text', 'label' => __( 'Text', 'fjdf' ),
-			'name' => 'fjdf_about_history_text', 'type' => 'wysiwyg', 'tabs' => 'visual', 'toolbar' => 'basic', 'media_upload' => 0,
+			'key' => 'field_fjdf_about_mission_text', 'label' => __( 'Text', 'fjdf' ),
+			'name' => 'fjdf_about_mission_text', 'type' => 'textarea', 'rows' => 4,
 		],
 
 	],
