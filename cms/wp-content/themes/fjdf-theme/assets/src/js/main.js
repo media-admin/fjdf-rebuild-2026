@@ -26,6 +26,9 @@ if ( document.querySelector( '#load-more-news' ) ) {
 	import( './load-more.js' );
 }
 
+if ( document.querySelector( '.js-news-slider' ) ) {
+	import( './components/news-slider.js' );
+}
 if ( document.querySelector( '.js-testimonial-slider' ) ) {
 	import( './components/testimonial-slider.js' );
 }

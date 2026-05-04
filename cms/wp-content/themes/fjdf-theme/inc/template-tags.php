@@ -46,6 +46,7 @@ function fjdf_news_card( int $post_id, string $size = 'card' ): void {
 				</p>
 			<?php endif; ?>
 
+				<p class="news-card__date"><?php echo esc_html( get_the_date( 'j. F Y', $post_id ) ); ?></p>
 			<a href="<?php echo esc_url( get_permalink( $post_id ) ); ?>"
 			   class="news-card__link"
 			   aria-label="<?php printf( esc_attr__( 'Weiterlesen: %s', 'fjdf' ), esc_attr( get_the_title( $post_id ) ) ); ?>">
@@ -100,6 +101,7 @@ function fjdf_news_card_featured( int $post_id ): void {
 				</p>
 			<?php endif; ?>
 
+				<p class="news-card-featured__date"><?php echo esc_html( get_the_date( 'j. F Y', $post_id ) ); ?></p>
 			<a href="<?php echo esc_url( get_permalink( $post_id ) ); ?>"
 			   class="news-card-featured__link"
 			   aria-label="<?php printf( esc_attr__( 'Weiterlesen: %s', 'fjdf' ), esc_attr( get_the_title( $post_id ) ) ); ?>">

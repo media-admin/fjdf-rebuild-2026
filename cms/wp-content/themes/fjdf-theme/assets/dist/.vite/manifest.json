@@ -1,4 +1,11 @@
 {
+  "_autoplay-DAVppaIO.js": {
+    "file": "js/chunks/autoplay-DAVppaIO.js",
+    "name": "autoplay",
+    "imports": [
+      "_create-element-if-not-defined-DJFP74Cr.js"
+    ]
+  },
   "_create-element-if-not-defined-DJFP74Cr.js": {
     "file": "js/chunks/create-element-if-not-defined-DJFP74Cr.js",
     "name": "create-element-if-not-defined"
@@ -17,13 +24,6 @@
       "_create-element-if-not-defined-DJFP74Cr.js"
     ]
   },
-  "_swiper-DEd7bkGO.js": {
-    "file": "js/chunks/swiper-DEd7bkGO.js",
-    "name": "swiper",
-    "imports": [
-      "_create-element-if-not-defined-DJFP74Cr.js"
-    ]
-  },
   "src/js/components/back-to-top.js": {
     "file": "js/chunks/back-to-top-WXqPq5Mp.js",
     "name": "back-to-top",
@@ -37,58 +37,68 @@
     "isDynamicEntry": true
   },
   "src/js/components/gallery.js": {
-    "file": "js/chunks/gallery-Cnfr6IAg.js",
+    "file": "js/chunks/gallery-IrC-0ydc.js",
     "name": "gallery",
     "src": "src/js/components/gallery.js",
     "isDynamicEntry": true,
     "imports": [
-      "_swiper-DEd7bkGO.js",
+      "_autoplay-DAVppaIO.js",
       "_navigation-CPhIwiah.js",
       "_create-element-if-not-defined-DJFP74Cr.js"
     ]
   },
   "src/js/components/modal.js": {
-    "file": "js/chunks/modal-BbbAIZ8_.js",
+    "file": "js/chunks/modal-u39Y6ZKw.js",
     "name": "modal",
     "src": "src/js/components/modal.js",
     "isDynamicEntry": true
   },
+  "src/js/components/news-slider.js": {
+    "file": "js/chunks/news-slider-BAb0EWEn.js",
+    "name": "news-slider",
+    "src": "src/js/components/news-slider.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_navigation-CPhIwiah.js",
+      "_create-element-if-not-defined-DJFP74Cr.js"
+    ]
+  },
   "src/js/components/stats-slider.js": {
-    "file": "js/chunks/stats-slider-C4S_tXei.js",
+    "file": "js/chunks/stats-slider-DdG8cYyd.js",
     "name": "stats-slider",
     "src": "src/js/components/stats-slider.js",
     "isDynamicEntry": true,
     "imports": [
-      "_swiper-DEd7bkGO.js",
+      "_autoplay-DAVppaIO.js",
       "_pagination-Dl2pkSi_.js",
       "_create-element-if-not-defined-DJFP74Cr.js"
     ]
   },
   "src/js/components/testimonial-slider.js": {
-    "file": "js/chunks/testimonial-slider-D7rbPwtP.js",
+    "file": "js/chunks/testimonial-slider-CVltR-ye.js",
     "name": "testimonial-slider",
     "src": "src/js/components/testimonial-slider.js",
     "isDynamicEntry": true,
     "imports": [
-      "_swiper-DEd7bkGO.js",
+      "_autoplay-DAVppaIO.js",
       "_pagination-Dl2pkSi_.js",
       "_create-element-if-not-defined-DJFP74Cr.js"
     ]
   },
   "src/js/donation-form.js": {
-    "file": "js/chunks/donation-form-CMfea4Cx.js",
+    "file": "js/chunks/donation-form-DfoC5WKf.js",
     "name": "donation-form",
     "src": "src/js/donation-form.js",
     "isDynamicEntry": true
   },
   "src/js/impact-tabs.js": {
-    "file": "js/chunks/impact-tabs-C2p_kpE4.js",
+    "file": "js/chunks/impact-tabs-C9FThyXM.js",
     "name": "impact-tabs",
     "src": "src/js/impact-tabs.js",
     "isDynamicEntry": true
   },
   "src/js/load-more.js": {
-    "file": "js/chunks/load-more-Ca2nW8H5.js",
+    "file": "js/chunks/load-more-BBsDTIAf.js",
     "name": "load-more",
     "src": "src/js/load-more.js",
     "isDynamicEntry": true
@@ -102,6 +112,7 @@
       "src/js/donation-form.js",
       "src/js/components/gallery.js",
       "src/js/load-more.js",
+      "src/js/components/news-slider.js",
       "src/js/components/testimonial-slider.js",
       "src/js/impact-tabs.js",
       "src/js/sliders.js",
@@ -112,7 +123,7 @@
     ]
   },
   "src/js/sliders.js": {
-    "file": "js/chunks/sliders-HOEoub_K.js",
+    "file": "js/chunks/sliders-IyjYklV-.js",
     "name": "sliders",
     "src": "src/js/sliders.js",
     "isDynamicEntry": true,
