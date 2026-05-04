@@ -98,19 +98,29 @@ $yt_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewB
 
                         <p class="site-footer__copyright"><?php echo wp_kses_post( fjdf_copyright() ); ?></p>
 
-                        <?php if ( fjdf_option( 'fjdf_footer_agency_credit', true ) ) : ?>
-                                <p class="site-footer__credit">
-                                        <?php esc_html_e( 'Website by', 'fjdf' ); ?>
-                                        <a href="https://media-lab.at" target="_blank" rel="noopener noreferrer" class="site-footer__credit-link">Media Lab</a>
-                                </p>
-                        <?php endif; ?>
 
                 </div>
         </div>
 
+        <!-- Agency Credit -->
+        <?php if ( fjdf_option( 'fjdf_footer_agency_credit', true ) ) : ?>
+        <div class="site-footer__agency">
+                <div class="container">
+                        <?php
+                        $credit_text = function_exists("get_field") ? get_field("white_label_footer_text", "option") : "";
+                        if ( empty($credit_text) ) $credit_text = 'Website by <a href="https://media-lab.at" target="_blank" rel="noopener noreferrer">Media Lab</a>';
+                        ?>
+                        <p class="site-footer__credit"><?php echo wp_kses_post( $credit_text ); ?></p>
+                </div>
+        </div>
+        <?php endif; ?>
+
 </footer>
 
 <?php if ( ! is_page_template( 'page-thank-you.php' ) ) : fjdf_cert_modal(); endif; ?>
+<button class="back-to-top" aria-label="Zurück nach oben">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</button>
 <?php wp_footer(); ?>
 </body>
 </html>

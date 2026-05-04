@@ -54,8 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
 // Modal
 import('./components/modal.js').then(m => new m.default());
 import("./components/stats-slider.js").then(m => new m.default());
-
-// Video Modal: autoplay beim Öffnen, stop beim Schließen
+import("./components/back-to-top.js").then(m => new m.default());
+import("./components/cookie-notice.js").then(m => new m.default());// Video Modal: autoplay beim Öffnen, stop beim Schließen
 document.addEventListener('DOMContentLoaded', () => {
     const videoModal = document.getElementById('video-modal-testimonial');
     if (!videoModal) return;

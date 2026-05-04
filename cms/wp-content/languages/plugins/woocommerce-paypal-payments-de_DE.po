@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WooCommerce PayPal Payments - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-05-03 12:38:38+0000\n"
+"PO-Revision-Date: 2026-05-03 23:47:53+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -904,7 +904,7 @@ msgstr "Warenkorb"
 #: modules/ppcp-blocks/extensions.php:13
 msgctxt "Name of Buttons Location"
 msgid "Express Checkout"
-msgstr "Express-Zahlung"
+msgstr "Express-Kasse"
 
 #. translators: %s - BLIK, iDeal, Mercado Pago, etc.
 #: modules/ppcp-wc-gateway/src/FundingSource/FundingSourceRenderer.php:70

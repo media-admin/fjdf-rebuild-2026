@@ -292,3 +292,11 @@
         height: 56px;
         width: auto;
 }
+
+// Agency Credit Block
+.site-footer__agency {
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding-block: var(--space-4);
+        padding-bottom: var(--space-8);
+        text-align: center;
+}

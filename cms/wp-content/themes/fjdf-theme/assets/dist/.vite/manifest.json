@@ -1,43 +1,55 @@
 {
-  "_pagination-SShPun6o.js": {
-    "file": "js/chunks/pagination-SShPun6o.js",
+  "_pagination-B4-Pt6D7.js": {
+    "file": "js/chunks/pagination-B4-Pt6D7.js",
     "name": "pagination"
   },
+  "src/js/components/back-to-top.js": {
+    "file": "js/chunks/back-to-top-WXqPq5Mp.js",
+    "name": "back-to-top",
+    "src": "src/js/components/back-to-top.js",
+    "isDynamicEntry": true
+  },
+  "src/js/components/cookie-notice.js": {
+    "file": "js/chunks/cookie-notice-SZ2km4v1.js",
+    "name": "cookie-notice",
+    "src": "src/js/components/cookie-notice.js",
+    "isDynamicEntry": true
+  },
   "src/js/components/modal.js": {
-    "file": "js/chunks/modal-BolmS5uz.js",
+    "file": "js/chunks/modal-CWlAhA6a.js",
     "name": "modal",
     "src": "src/js/components/modal.js",
     "isDynamicEntry": true
   },
   "src/js/components/stats-slider.js": {
-    "file": "js/chunks/stats-slider-Cc9_0lyK.js",
+    "file": "js/chunks/stats-slider-enpY5sjm.js",
     "name": "stats-slider",
     "src": "src/js/components/stats-slider.js",
     "isDynamicEntry": true,
     "imports": [
-      "_pagination-SShPun6o.js"
+      "_pagination-B4-Pt6D7.js"
     ]
   },
   "src/js/donation-form.js": {
-    "file": "js/chunks/donation-form-uxQxjYF8.js",
+    "file": "js/chunks/donation-form-Duu4fRJA.js",
     "name": "donation-form",
     "src": "src/js/donation-form.js",
     "isDynamicEntry": true
   },
   "src/js/gallery.js": {
-    "file": "js/chunks/gallery-YceSWw4y.js",
+    "file": "js/chunks/gallery-DsqXwVmy.js",
     "name": "gallery",
     "src": "src/js/gallery.js",
     "isDynamicEntry": true
   },
   "src/js/impact-tabs.js": {
-    "file": "js/chunks/impact-tabs-5KFlUD6Y.js",
+    "file": "js/chunks/impact-tabs-CFLrEHKZ.js",
     "name": "impact-tabs",
     "src": "src/js/impact-tabs.js",
     "isDynamicEntry": true
   },
   "src/js/load-more.js": {
-    "file": "js/chunks/load-more-DkjkRMDM.js",
+    "file": "js/chunks/load-more-_Nwc-E-q.js",
     "name": "load-more",
     "src": "src/js/load-more.js",
     "isDynamicEntry": true
@@ -54,16 +66,18 @@
       "src/js/impact-tabs.js",
       "src/js/sliders.js",
       "src/js/components/modal.js",
-      "src/js/components/stats-slider.js"
+      "src/js/components/stats-slider.js",
+      "src/js/components/back-to-top.js",
+      "src/js/components/cookie-notice.js"
     ]
   },
   "src/js/sliders.js": {
-    "file": "js/chunks/sliders-B_jFhX1w.js",
+    "file": "js/chunks/sliders-CRsEByho.js",
     "name": "sliders",
     "src": "src/js/sliders.js",
     "isDynamicEntry": true,
     "imports": [
-      "_pagination-SShPun6o.js"
+      "_pagination-B4-Pt6D7.js"
     ]
   },
   "style.css": {

@@ -18,11 +18,11 @@
 }
 
 .site-header__inner {
-	@include flex-between;
-	height: 100%;
-	gap: var(--space-6);
+        @include flex-between;
+        height: 100%;
+        gap: var(--space-6);
+        padding-block: 1rem;
 }
-
 // Logo
 .site-header__logo {
 	display: flex;
@@ -258,5 +258,13 @@
                 border-radius: 50%;
                 box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px 0px;
                 svg { width: 24px; height: 24px; }
+        }
+}
+
+.custom-logo-link .custom-logo {
+        width: var(--logo-w-desktop, auto) !important;
+        height: auto !important;
+        @include respond-below('lg') {
+                width: var(--logo-w-mobile, var(--logo-w-desktop, auto)) !important;
         }
 }

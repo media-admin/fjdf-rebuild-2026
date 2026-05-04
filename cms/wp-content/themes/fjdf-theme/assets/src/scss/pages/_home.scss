@@ -693,3 +693,21 @@
         line-height: var(--leading-relaxed);
         text-align: center;
 }
+// Stats Slider: Slides vor Swiper-Init verstecken
+.js-stats-slider {
+        overflow: hidden;
+        .swiper-slide {
+                min-width: 100%;
+        }
+        &:not(.swiper-initialized) .swiper-slide + .swiper-slide {
+                display: none;
+        }
+}
+
+.js-stats-slider:not(.swiper-initialized) .swiper-wrapper {
+        opacity: 0;
+}
+.js-stats-slider.swiper-initialized .swiper-wrapper {
+        opacity: 1;
+        transition: opacity 0.3s ease;
+}

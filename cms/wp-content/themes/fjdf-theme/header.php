@@ -14,10 +14,16 @@
 	<?php esc_html_e( 'Zum Inhalt springen', 'fjdf' ); ?>
 </a>
 
-<?php fjdf_floating_button(); ?>
 
 <header class="site-header" id="site-header" role="banner">
-	<div class="site-header__inner container">
+	<?php
+		$logo_w_desktop = fjdf_option( 'logo_desktop_width' );
+		$logo_w_mobile  = fjdf_option( 'logo_mobile_width' );
+		$header_style = '';
+		if ( $logo_w_desktop ) $header_style .= '--logo-w-desktop: ' . intval( $logo_w_desktop ) . 'px;';
+		if ( $logo_w_mobile )  $header_style .= '--logo-w-mobile: ' . intval( $logo_w_mobile ) . 'px;';
+		?>
+		<div class="site-header__inner container"<?php if ( $header_style ) echo ' style="' . esc_attr( $header_style ) . '"'; ?>>
 
 		<!-- Logo -->
 		<a class="site-header__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php bloginfo( 'name' ); ?> – <?php esc_attr_e( 'Zur Startseite', 'fjdf' ); ?>">
