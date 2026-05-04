@@ -26,6 +26,9 @@ if ( document.querySelector( '#load-more-news' ) ) {
 	import( './load-more.js' );
 }
 
+// Lightbox immer laden (wird auf Single Posts benötigt)
+import Lightbox from './components/lightbox.js';
+new Lightbox();
 if ( document.querySelector( '.js-news-slider' ) ) {
 	import( './components/news-slider.js' );
 }

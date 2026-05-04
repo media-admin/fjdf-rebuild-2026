@@ -12,11 +12,13 @@
 }
 
 .single-post { flex: 1; min-width: 0; }
+.single-post-page { background: var(--color-white); }
 
 .single-post__header { margin-bottom: var(--space-6); }
 .single-post__cat    { margin-bottom: var(--space-3); }
+.single-post__date   { font-size: var(--text-body-sm); color: var(--color-text-muted); margin-bottom: var(--space-4); }
 .single-post__title  {
-	@include heading-serif(var(--text-h1), 500);
+	@include heading-serif(var(--text-h2), 500);
 	margin-bottom: var(--space-4);
 }
 .single-post__excerpt {
@@ -27,7 +29,7 @@
 	border-radius: var(--radius-xl);
 	overflow: hidden;
 	margin-bottom: var(--space-8);
-	@include aspect-ratio(16, 8);
+	@include aspect-ratio(16, 9);
 }
 .single-post__img { @include img-cover; }
 
@@ -61,3 +63,117 @@
 	&:hover { color: var(--color-primary); }
 }
 .breadcrumb__separator { color: var(--color-text-muted); font-size: var(--text-body-sm); }
+
+// Divider zwischen Content und Sidebar
+.single-post-layout {
+	.news-sidebar {
+		border-left: 1px solid var(--color-border);
+		padding-left: var(--sidebar-gap);
+	}
+}
+
+// Sidebar-Card Datum
+.news-sidebar__date {
+	display: block;
+	font-size: var(--text-label);
+	color: var(--color-text-muted);
+	margin-top: var(--space-1);
+}
+
+// Sidebar-Card Border
+.news-sidebar__item a {
+	border: 1px solid var(--color-border-light);
+}
+
+// Share Buttons
+.single-post__share {
+	margin-top: var(--space-10);
+	padding-top: var(--space-6);
+	border-top: 1px solid var(--color-border);
+	display: flex;
+	align-items: center;
+	gap: var(--space-4);
+}
+.single-post__share-label {
+	font-size: var(--text-body-sm);
+	font-weight: var(--font-weight-semibold);
+	color: var(--color-text-muted);
+}
+.single-post__share-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	background: var(--color-cream-dark);
+	color: var(--color-text-primary);
+	transition: background var(--transition-base);
+	text-decoration: none;
+	&:hover { background: var(--color-primary); color: #fff; }
+}
+
+// Post Navigation
+.post-navigation {
+	display: flex;
+	justify-content: space-between;
+	gap: var(--space-6);
+	margin-top: var(--space-8);
+	padding-top: var(--space-6);
+	border-top: 1px solid var(--color-border);
+}
+.single-post-nav__item {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-1);
+	max-width: 45%;
+	text-decoration: none;
+	&--next { text-align: right; margin-left: auto; }
+}
+.single-post-nav__label {
+	font-size: var(--text-label);
+	color: var(--color-text-muted);
+	text-transform: uppercase;
+	letter-spacing: var(--tracking-wider);
+}
+.single-post-nav__title {
+	font-size: var(--text-body-sm);
+	font-weight: var(--font-weight-semibold);
+	color: var(--color-primary);
+	transition: color var(--transition-base);
+	&:hover { color: var(--color-primary-hover); }
+}
+
+// Post Navigation (WP Standard)
+.post-navigation {
+	margin-top: var(--space-8);
+	padding-top: var(--space-6);
+	border-top: 1px solid var(--color-border);
+}
+.post-navigation .nav-links {
+	display: flex;
+	justify-content: space-between;
+	gap: var(--space-6);
+}
+.post-navigation .nav-previous,
+.post-navigation .nav-next {
+	flex: 1;
+}
+.post-navigation .nav-next { text-align: right; }
+.post-navigation .nav-subtitle {
+	display: block;
+	font-size: var(--text-label);
+	color: var(--color-text-muted);
+	text-transform: uppercase;
+	letter-spacing: var(--tracking-wider);
+	margin-bottom: var(--space-1);
+}
+.post-navigation .nav-title {
+	display: block;
+	font-size: var(--text-body-sm);
+	font-weight: var(--font-weight-semibold);
+	color: var(--color-primary);
+}
+.post-navigation a:hover .nav-title {
+	text-decoration: underline;
+}

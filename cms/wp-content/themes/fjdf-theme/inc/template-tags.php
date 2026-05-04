@@ -134,13 +134,14 @@ function fjdf_other_news_sidebar( int $current_post_id, int $count = 3 ): void {
 		return;
 	}
 	?>
-	<aside class="other-news-sidebar" aria-label="<?php esc_attr_e( 'Weitere Beiträge', 'fjdf' ); ?>">
-		<p class="other-news-sidebar__label"><?php esc_html_e( 'WEITERE BEITRÄGE', 'fjdf' ); ?></p>
-		<ul class="other-news-sidebar__list">
+	<aside class="news-sidebar" aria-label="<?php esc_attr_e( 'Weitere Beiträge', 'fjdf' ); ?>">
+		<p class="news-sidebar__label"><?php esc_html_e( 'WEITERE BEITRÄGE', 'fjdf' ); ?></p>
+		<ul class="news-sidebar__list">
 			<?php foreach ( $posts as $post ) : ?>
-				<li class="other-news-sidebar__item">
+				<li class="news-sidebar__item">
 					<a href="<?php echo esc_url( get_permalink( $post->ID ) ); ?>">
 						<?php echo esc_html( get_the_title( $post->ID ) ); ?>
+						<span class="news-sidebar__date"><?php echo esc_html( get_the_date( 'j. F Y', $post->ID ) ); ?></span>
 					</a>
 				</li>
 			<?php endforeach; ?>

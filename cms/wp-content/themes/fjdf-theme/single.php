@@ -25,6 +25,7 @@ the_post();
 			<header class="single-post__header">
 				<?php fjdf_post_category( get_the_ID(), 'single-post__cat category-label' ); ?>
 				<h1 class="single-post__title"><?php the_title(); ?></h1>
+				<p class="single-post__date"><?php echo esc_html( get_the_date( 'j. F Y' ) ); ?></p>
 				<?php if ( get_the_excerpt() ) : ?>
 					<p class="single-post__excerpt"><?php echo esc_html( get_the_excerpt() ); ?></p>
 				<?php endif; ?>
@@ -43,6 +44,17 @@ the_post();
 			<div class="single-post__content entry-content">
 				<?php the_content(); ?>
 			</div>
+				<!-- Share Buttons (Agency Core) -->
+				<div class="single-post__share">
+					<?php echo do_shortcode( '[medialab_share]' ); ?>
+				</div>
+
+				<!-- Post Navigation -->
+				<?php the_post_navigation( [
+					'prev_text' => '<span class="nav-subtitle">&#8592; Vorheriger Beitrag</span><span class="nav-title">%title</span>',
+					'next_text' => '<span class="nav-subtitle">Nächster Beitrag &#8594;</span><span class="nav-title">%title</span>',
+				] ); ?>
+
 
 			<!-- Mobile: Other News Carousel -->
 			<aside class="single-post__mobile-news" aria-label="<?php esc_attr_e( 'Weitere Beiträge', 'fjdf' ); ?>">

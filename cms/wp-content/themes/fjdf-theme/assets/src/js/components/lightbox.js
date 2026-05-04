@@ -40,6 +40,26 @@ export default class Lightbox {
         this.openWPGallery(container, gallery);
       }
 
+      // ── 3. Entry-Content Bilder ─────────────────────────────────────────────
+      const entryImg = e.target.closest('.entry-content img, .entry-content figure img');
+      if (entryImg && !entryImg.closest('[data-lightbox], .wp-lightbox-container')) {
+        e.preventDefault();
+        const allImgs = Array.from(document.querySelectorAll('.entry-content img')).filter(
+          img => !img.closest('.wp-lightbox-container')
+        );
+        this.images = allImgs.map(img => ({
+          href: img.src,
+          alt:  img.alt || '',
+          dataset: {}
+        }));
+        this.currentIndex = allImgs.indexOf(entryImg);
+        if (this.currentIndex < 0) this.currentIndex = 0;
+        this.resetZoom();
+        this.showImage();
+        this.lightbox.classList.add('is-active');
+        document.body.style.overflow = 'hidden';
+        return;
+      }
     }, true); // capture: true
 
     document.addEventListener('keydown', (e) => {

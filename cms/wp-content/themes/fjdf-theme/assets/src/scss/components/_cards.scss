@@ -93,21 +93,21 @@
 }
 
 // Otras Noticias Sidebar
-.otras-noticias-sidebar {
+.news-sidebar {
 	width: var(--sidebar-width);
 	flex-shrink: 0;
 
 	@include respond-below('lg') { display: none; }
 }
 
-.otras-noticias-sidebar__label {
+.news-sidebar__label {
 	@include category-label;
 	margin-bottom: var(--space-4);
 }
 
-.otras-noticias-sidebar__list { display: flex; flex-direction: column; gap: var(--space-3); }
+.news-sidebar__list { display: flex; flex-direction: column; gap: var(--space-3); }
 
-.otras-noticias-sidebar__item a {
+.news-sidebar__item a {
 	display: block;
 	padding: var(--space-3) var(--space-4);
 	background: var(--color-cream);
