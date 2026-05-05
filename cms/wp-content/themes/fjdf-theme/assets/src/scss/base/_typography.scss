@@ -77,12 +77,12 @@ address {
 // ---------------------------------------------------------------------------
 
 h1, .h1 {
-  @include heading-serif(var(--text-h1), 500, var(--leading-tight));
+  @include heading-serif(var(--text-h1), 400, var(--leading-tight));
   color: var(--color-text-primary);
 }
 
 h2, .h2 {
-  @include heading-serif(var(--text-h2), 500, var(--leading-snug));
+  @include heading-serif(var(--text-h2), 400, var(--leading-snug));
   color: var(--color-text-primary);
 }
 
@@ -225,3 +225,5 @@ p {
     scroll-behavior: auto !important;
   }
 }
+h1 strong, h2 strong { font-weight: 500; }
+h1 strong, h2 strong { font-weight: 500; }

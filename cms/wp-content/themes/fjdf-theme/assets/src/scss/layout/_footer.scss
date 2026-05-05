@@ -213,7 +213,7 @@
 	font-size: var(--text-label);
 	color: var(--footer-color);
 	opacity: 0.5;
-	text-align: center;
+	text-align: right;
 	flex: 1;
 
 	@include respond-below('md') {
@@ -278,7 +278,7 @@
         background: var(--color-gold);
         color: var(--color-dark);
         transition: opacity var(--transition-base);
-        &:hover { opacity: 0.8; }
+	&:hover { background: var(--color-primary); color: #fff; }
         svg { width: 20px; height: 20px; }
 }
 // Footer Top: Logo zentriert
@@ -299,4 +299,12 @@
         padding-block: var(--space-4);
         padding-bottom: var(--space-8);
         text-align: center;
+}
+
+.site-footer__legal-nav {
+	@include respond-below('md') { justify-content: center; text-align: center; }
+}
+
+.site-footer__legal-nav {
+	@include respond-below('md') { justify-content: center; text-align: center; }
 }
