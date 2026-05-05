@@ -49,6 +49,12 @@
 			?>
 		</nav>
 
+                <!-- Language Switcher -->
+                <?php if ( function_exists( 'pll_the_languages' ) ) : ?>
+                <ul class="site-header__lang-switcher">
+                        <?php pll_the_languages( [ 'show_flags' => 0, 'show_names' => 1, 'display_names_as' => 'slug', 'echo' => 1 ] ); ?>
+                </ul>
+                <?php endif; ?>
 		<!-- CTA Button -->
 		<?php
 		$cta_url   = fjdf_option( 'fjdf_floating_url' ) ?: get_page_link( get_page_by_path( 'spenden' ) );
