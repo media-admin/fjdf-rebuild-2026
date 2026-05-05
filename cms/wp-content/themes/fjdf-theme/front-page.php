@@ -29,6 +29,7 @@ get_header();
 	   ================================================================ */ ?>
 	<?php
 	$hero_image      = fjdf_field( 'fjdf_hero_image', 6 );
+	$hero_person_image = fjdf_field( 'fjdf_hero_person_image', 6 );
 	$hero_headline   = fjdf_field( 'fjdf_hero_headline', 6, __( 'Lass die Träume der Kinder in Peru wahr werden', 'fjdf' ) );
 	$hero_subtext    = fjdf_field( 'fjdf_hero_subtext', 6 );
 	$hero_cta_label  = fjdf_field( 'fjdf_hero_cta_label', 6, __( 'Jetzt spenden', 'fjdf' ) );
@@ -38,36 +39,49 @@ get_header();
 	<section class="hero" aria-label="<?php esc_attr_e( 'Hero', 'fjdf' ); ?>">
 		<?php if ( ! empty( $hero_image['id'] ) ) : ?>
 			<div class="hero__bg" aria-hidden="true">
-				<?php echo wp_get_attachment_image( $hero_image['id'], 'fjdf-hero', false, [
-					'class'   => 'hero__bg-img',
-					'loading' => 'eager',
-					'fetchpriority' => 'high',
-					'alt'     => '',
-				] ); ?>
+				<?php
+				$_url    = $hero_image["url"] ?? "";
+				$_srcset = wp_get_attachment_image_srcset( $hero_image["id"], "fjdf-hero" );
+				$_sizes  = wp_get_attachment_image_sizes( $hero_image["id"], "fjdf-hero" );
+				?>
+				<img src="<?php echo esc_url( $_url ); ?>"
+					class="hero__bg-img"
+					alt=""
+					loading="eager"
+					fetchpriority="high"
+					<?php if ( $_srcset ) echo 'srcset="' . esc_attr( $_srcset ) . '"'?>
+					<?php if ( $_sizes ) echo ' sizes="' . esc_attr( $_sizes ) . '"'?>>
 			</div>
 		<?php endif; ?>
 
 		<div class="hero__overlay" aria-hidden="true"></div>
 
-		<div class="container hero__content">
-			<h1 class="hero__headline"><?php echo wp_kses_post( $hero_headline ); ?></h1>
-
-			<?php if ( $hero_subtext ) : ?>
-				<p class="hero__subtext"><?php echo esc_html( $hero_subtext ); ?></p>
+		<div class="container hero__content<?php echo ! empty( $hero_person_image['id'] ) ? ' hero__content--split' : ''; ?>">
+			<?php if ( ! empty( $hero_person_image['id'] ) ) : ?>
+				<div class="hero__person" aria-hidden="true">
+					<?php echo wp_get_attachment_image( $hero_person_image['id'], 'large', false, [ 'class' => 'hero__person-img', 'loading' => 'eager', 'alt' => '' ] ); ?>
+				</div>
 			<?php endif; ?>
+			<div class="hero__text">
+				<h1 class="hero__headline"><?php echo wp_kses_post( $hero_headline ); ?></h1>
 
-			<?php if ( $hero_cta_url ) : ?>
-				<a href="<?php echo esc_url( $hero_cta_url ); ?>" class="btn btn--primary hero__cta">
-					<?php echo esc_html( $hero_cta_label ); ?>
-				</a>
-			<?php endif; ?>
+				<?php if ( $hero_subtext ) : ?>
+					<p class="hero__subtext"><?php echo esc_html( $hero_subtext ); ?></p>
+				<?php endif; ?>
 
-			<?php if ( $hero_scroll ) : ?>
-				<a href="#about" class="hero__scroll" aria-hidden="true">
-					<span><?php echo esc_html( $hero_scroll ); ?></span>
-					<span class="hero__scroll-arrow">↓</span>
-				</a>
-			<?php endif; ?>
+				<?php if ( $hero_cta_url ) : ?>
+					<a href="<?php echo esc_url( $hero_cta_url ); ?>" class="btn btn--primary hero__cta">
+						<?php echo esc_html( $hero_cta_label ); ?>
+					</a>
+				<?php endif; ?>
+
+				<?php if ( $hero_scroll ) : ?>
+					<a href="#about" class="hero__scroll" aria-hidden="true">
+						<span><?php echo esc_html( $hero_scroll ); ?></span>
+						<span class="hero__scroll-arrow">↓</span>
+					</a>
+				<?php endif; ?>
+			</div>
 		</div>
 	</section>
 

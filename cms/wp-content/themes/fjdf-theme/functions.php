@@ -336,3 +336,13 @@ add_filter( 'get_custom_logo', function( $html ) {
 add_filter( 'fjdf_give_form_id', function() {
 	return 51;
 } );
+
+/**
+ * width/height Attribute vom Hero-Hintergrundbild entfernen
+ */
+add_filter( 'wp_get_attachment_image_attributes', function( $attr, $attachment, $size ) {
+	if ( isset( $attr['class'] ) && strpos( $attr['class'], 'hero__bg-img' ) !== false ) {
+		unset( $attr['width'], $attr['height'] );
+	}
+	return $attr;
+}, 10, 3 );

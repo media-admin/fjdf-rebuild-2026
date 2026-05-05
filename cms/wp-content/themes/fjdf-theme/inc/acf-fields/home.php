@@ -52,6 +52,15 @@ acf_add_local_field_group( [
 			'default_value' => __( 'Jetzt spenden', 'fjdf' ),
 		],
 		[ 'key' => 'field_fjdf_hero_cta_url', 'label' => __( 'CTA Button URL', 'fjdf' ), 'name' => 'fjdf_hero_cta_url', 'type' => 'url' ],
+			[
+				'key'          => 'field_fjdf_hero_person_image',
+				'label'        => __( 'Person Bild (freigestellt)', 'fjdf' ),
+				'name'         => 'fjdf_hero_person_image',
+				'type'         => 'image',
+				'return_format' => 'array',
+				'preview_size' => 'medium',
+				'instructions' => __( 'Freigestelltes Personenbild (PNG mit Transparenz empfohlen). Wird links im Hero angezeigt.', 'fjdf' ),
+			],
 		[
 			'key' => 'field_fjdf_hero_scroll_label', 'label' => __( 'Scroll-Hinweis Text', 'fjdf' ),
 			'name' => 'fjdf_hero_scroll_label', 'type' => 'text',
