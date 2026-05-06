@@ -142,8 +142,9 @@ get_header();
 							</div>
 						<?php endforeach; ?>
 					</div>
+					<!-- Pagination INNERHALB des swiper-Elements: -->
+					<div class="swiper-pagination js-stats-pagination"></div>
 				</div>
-				<div class="swiper-pagination js-stats-pagination"></div>
 			</div>
 		</section>
 		<?php endif; ?>
