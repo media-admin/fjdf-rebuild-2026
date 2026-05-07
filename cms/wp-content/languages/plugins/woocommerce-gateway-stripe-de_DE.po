@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WooCommerce Stripe Payment Gateway - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-05-04 08:34:35+0000\n"
+"PO-Revision-Date: 2026-05-05 09:42:30+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -67,10 +67,23 @@ msgstr "product_review_rating muss zwischen 1 und 5 liegen. Erhaltener Wert: %s"
 msgid "inventory_quantity must be non-negative, got: %d"
 msgstr "inventory_quantity darf nicht negativ sein. Erhaltener Wert: %d"
 
+#. translators: %s: file path
+#: includes/agentic-commerce/class-wc-stripe-agentic-commerce-csv-feed.php:218
+msgid "Failed to open file for writing: %s"
+msgstr "Die Datei konnte nicht zum Schreiben geöffnet werden: %s"
+
 #: includes/ajax-handlers/class-wc-stripe-checkout-sessions-ajax-handler.php:34
 #: includes/ajax-handlers/class-wc-stripe-checkout-sessions-ajax-handler.php:110
 msgid "Your cart is currently empty."
 msgstr "Dein Warenkorb ist derzeit leer."
+
+#: includes/class-wc-stripe-intent-controller.php:1384
+msgid "We can't process your payment method change at this time. Please try again later."
+msgstr "Wir können deine Zahlungsart derzeit nicht verarbeiten. Bitte versuche es später erneut."
+
+#: includes/admin/class-wc-stripe-admin-notices.php:444
+msgid "Review Settings"
+msgstr "Einstellungen überprüfen"
 
 #: includes/admin/stripe-settings.php:225 build/upe-settings.js:4
 msgid "If enabled, returning customers can check out using payment details securely stored by Stripe. No payment information is stored on your store."

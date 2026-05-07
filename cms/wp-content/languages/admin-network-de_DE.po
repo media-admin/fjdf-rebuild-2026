@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 6.9.x - Administration - Network Admin package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-05-01 20:49:43+0000\n"
+"PO-Revision-Date: 2026-05-05 01:17:50+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -107,7 +107,7 @@ msgstr "Wenn noch keine Versionsaktualisierung des Cores stattgefunden hat, hat 
 
 #: wp-admin/network/upgrade.php:29
 msgid "Only use this screen once you have updated to a new version of WordPress through Updates/Available Updates (via the Network Administration navigation menu or the Toolbar). Clicking the Upgrade Network button will step through each site in the network, five at a time, and make sure any database updates are applied."
-msgstr "Benutze diese Ansicht nur, wenn du über „Aktualisierungen > Verfügbare Aktualisierungen“ auf eine neue WordPress-Version aktualisiert hast; etwa über das Netzwerk-Administrationsmenü oder die Werkzeugleiste. Durch Klick auf den „Netzwerk aktualisieren“-Button wirst du schrittweise durch jede Website im Netzwerk geführt, immer fünf zugleich, um sicherzustellen, dass alle Datenbankaktualisierungen angewandt wurden."
+msgstr "Benutze diese Ansicht nur, wenn du über „Aktualisierungen > Verfügbare Aktualisierungen“ auf eine neue WordPress-Version aktualisiert hast; etwa über das Menü Netzwerkverwaltung oder die Werkzeugleiste. Durch Klick auf den „Netzwerk aktualisieren“-Button wirst du schrittweise durch jede Website im Netzwerk geführt, immer fünf zugleich, um sicherzustellen, dass alle Datenbankaktualisierungen angewandt wurden."
 
 #: wp-admin/network/themes.php:446
 msgid "You cannot delete a theme while it is active on the main site."
@@ -902,7 +902,7 @@ msgstr "Die Auswahl von Unterverzeichnis-Websites ist deaktiviert, wenn diese Ei
 
 #: wp-admin/network.php:65
 msgid "Once you add this code and refresh your browser, multisite should be enabled. This screen, now in the Network Admin navigation menu, will keep an archive of the added code. You can toggle between Network Admin and Site Admin by clicking on the Network Admin or an individual site name under the My Sites dropdown in the Toolbar."
-msgstr "Sobald du diesen Code hinzugefügt hast und deinen Browser neu lädst, sollte die Multisite aktiviert sein. Diese Ansicht zeigt nun das Netzwerk-Administrationsmenü und enthält eine Archivierung des hinzugefügten Codes. Du kannst zwischen der Netzwerk-Administration und der Website-Administration wechseln, indem du auf &#8222;Netzwerkverwaltung&#8220; oder die individuelle Website unter dem &#8222;Meine Websites&#8220;-Aufklappmenü in der Werkzeugleiste klickst."
+msgstr "Sobald du diesen Code hinzugefügt hast und deinen Browser neu lädst, sollte die Multisite aktiviert sein. Diese Ansicht zeigt nun das Menü Netzwerkverwaltung und enthält eine Archivierung des hinzugefügten Codes. Du kannst zwischen der Netzwerkverwaltung und der Website-Administration wechseln, indem du auf &#8222;Netzwerkverwaltung&#8220; oder die individuelle Website unter dem &#8222;Meine Websites&#8220;-Aufklappmenü in der Werkzeugleiste klickst."
 
 #: wp-admin/network.php:64
 msgid "Add the designated lines of code to wp-config.php (just before <code>/*...stop editing...*/</code>) and <code>.htaccess</code> (replacing the existing WordPress rules)."

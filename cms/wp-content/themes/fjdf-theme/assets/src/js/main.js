@@ -39,7 +39,7 @@ if ( document.querySelector( '.impact-tabs' ) ) {
 	import( './impact-tabs.js' );
 }
 
-if ( document.querySelector( '.testimonials__slider' ) || document.querySelector( '.otras-noticias-carousel' ) ) {
+if ( document.querySelector( '.testimonials__slider' ) || document.querySelector( '.otras-noticias-carousel' ) || document.querySelector( '.js-stats-slider' ) ) {
 	import( './sliders.js' );
 }
 
@@ -62,7 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Modal
 import('./components/modal.js').then(m => new m.default());
-import("./components/stats-slider.js").then(m => new m.default());
 import("./components/back-to-top.js").then(m => new m.default());
 import("./components/cookie-notice.js").then(m => new m.default());// Video Modal: autoplay beim Öffnen, stop beim Schließen
 document.addEventListener('DOMContentLoaded', () => {

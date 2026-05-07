@@ -1,28 +1,28 @@
 {
-  "_autoplay-DAVppaIO.js": {
-    "file": "js/chunks/autoplay-DAVppaIO.js",
+  "_autoplay-CcTtKx7l.js": {
+    "file": "js/chunks/autoplay-CcTtKx7l.js",
     "name": "autoplay",
     "imports": [
-      "_create-element-if-not-defined-DJFP74Cr.js"
+      "_swiper-B1fLABZb.js"
     ]
   },
-  "_create-element-if-not-defined-DJFP74Cr.js": {
-    "file": "js/chunks/create-element-if-not-defined-DJFP74Cr.js",
-    "name": "create-element-if-not-defined"
-  },
-  "_navigation-CPhIwiah.js": {
-    "file": "js/chunks/navigation-CPhIwiah.js",
+  "_navigation-sBV_XkN2.js": {
+    "file": "js/chunks/navigation-sBV_XkN2.js",
     "name": "navigation",
     "imports": [
-      "_create-element-if-not-defined-DJFP74Cr.js"
+      "_swiper-B1fLABZb.js"
     ]
   },
-  "_pagination-Dl2pkSi_.js": {
-    "file": "js/chunks/pagination-Dl2pkSi_.js",
+  "_pagination-8K8IuC86.js": {
+    "file": "js/chunks/pagination-8K8IuC86.js",
     "name": "pagination",
     "imports": [
-      "_create-element-if-not-defined-DJFP74Cr.js"
+      "_swiper-B1fLABZb.js"
     ]
+  },
+  "_swiper-B1fLABZb.js": {
+    "file": "js/chunks/swiper-B1fLABZb.js",
+    "name": "swiper"
   },
   "src/js/components/back-to-top.js": {
     "file": "js/chunks/back-to-top-WXqPq5Mp.js",
@@ -37,68 +37,57 @@
     "isDynamicEntry": true
   },
   "src/js/components/gallery.js": {
-    "file": "js/chunks/gallery-IrC-0ydc.js",
+    "file": "js/chunks/gallery-C5XFUj92.js",
     "name": "gallery",
     "src": "src/js/components/gallery.js",
     "isDynamicEntry": true,
     "imports": [
-      "_autoplay-DAVppaIO.js",
-      "_navigation-CPhIwiah.js",
-      "_create-element-if-not-defined-DJFP74Cr.js"
+      "_autoplay-CcTtKx7l.js",
+      "_navigation-sBV_XkN2.js",
+      "_swiper-B1fLABZb.js"
     ]
   },
   "src/js/components/modal.js": {
-    "file": "js/chunks/modal-u39Y6ZKw.js",
+    "file": "js/chunks/modal-BbbAIZ8_.js",
     "name": "modal",
     "src": "src/js/components/modal.js",
     "isDynamicEntry": true
   },
   "src/js/components/news-slider.js": {
-    "file": "js/chunks/news-slider-BAb0EWEn.js",
+    "file": "js/chunks/news-slider-DNO6m7Ut.js",
     "name": "news-slider",
     "src": "src/js/components/news-slider.js",
     "isDynamicEntry": true,
     "imports": [
-      "_navigation-CPhIwiah.js",
-      "_create-element-if-not-defined-DJFP74Cr.js"
-    ]
-  },
-  "src/js/components/stats-slider.js": {
-    "file": "js/chunks/stats-slider-B3bSrG1J.js",
-    "name": "stats-slider",
-    "src": "src/js/components/stats-slider.js",
-    "isDynamicEntry": true,
-    "imports": [
-      "_autoplay-DAVppaIO.js",
-      "_pagination-Dl2pkSi_.js",
-      "_create-element-if-not-defined-DJFP74Cr.js"
+      "_navigation-sBV_XkN2.js",
+      "_swiper-B1fLABZb.js"
     ]
   },
   "src/js/components/testimonial-slider.js": {
-    "file": "js/chunks/testimonial-slider-CVltR-ye.js",
+    "file": "js/chunks/testimonial-slider-BoP6B2fb.js",
     "name": "testimonial-slider",
     "src": "src/js/components/testimonial-slider.js",
     "isDynamicEntry": true,
     "imports": [
-      "_autoplay-DAVppaIO.js",
-      "_pagination-Dl2pkSi_.js",
-      "_create-element-if-not-defined-DJFP74Cr.js"
+      "_autoplay-CcTtKx7l.js",
+      "_pagination-8K8IuC86.js",
+      "_swiper-B1fLABZb.js"
     ]
   },
   "src/js/donation-form.js": {
-    "file": "js/chunks/donation-form-DfoC5WKf.js",
+    "file": "js/chunks/donation-form-CMfea4Cx.js",
     "name": "donation-form",
     "src": "src/js/donation-form.js",
     "isDynamicEntry": true
   },
   "src/js/impact-tabs.js": {
-    "file": "js/chunks/impact-tabs-C9FThyXM.js",
+    "file": "js/chunks/impact-tabs-C2p_kpE4.js",
     "name": "impact-tabs",
     "src": "src/js/impact-tabs.js",
     "isDynamicEntry": true
   },
   "src/js/load-more.js": {
-    "file": "js/chunks/load-more-BBsDTIAf.js",
+    "file": "js/chunks/load-more-Ca2nW8H5.js",
     "name": "load-more",
     "src": "src/js/load-more.js",
     "isDynamicEntry": true
@@ -117,20 +106,19 @@
       "src/js/impact-tabs.js",
       "src/js/sliders.js",
       "src/js/components/modal.js",
-      "src/js/components/stats-slider.js",
       "src/js/components/back-to-top.js",
       "src/js/components/cookie-notice.js"
     ]
   },
   "src/js/sliders.js": {
-    "file": "js/chunks/sliders-IyjYklV-.js",
+    "file": "js/chunks/sliders-CbRApwfp.js",
     "name": "sliders",
     "src": "src/js/sliders.js",
     "isDynamicEntry": true,
     "imports": [
-      "_navigation-CPhIwiah.js",
-      "_pagination-Dl2pkSi_.js",
-      "_create-element-if-not-defined-DJFP74Cr.js"
+      "_navigation-sBV_XkN2.js",
+      "_pagination-8K8IuC86.js",
+      "_swiper-B1fLABZb.js"
     ]
   },
   "style.css": {

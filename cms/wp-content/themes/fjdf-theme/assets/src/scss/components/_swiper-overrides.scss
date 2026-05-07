@@ -1,37 +1,23 @@
-@use '../abstracts' as *;
-
 // Swiper Override – lädt nach Swiper-CSS aus JS-Bundle
 // Muss als letzter @use in style.scss stehen
 .swiper-pagination-bullet {
   width: 10px !important;
   height: 10px !important;
   border-radius: 50% !important;
-  width: 10px !important;
-  height: 10px !important;
-  border-radius: 50% !important;
-  background: $color-primary !important;
+  background: var(--color-primary) !important;
   opacity: 0.3 !important;
 }
-
 .swiper-pagination-bullet-active {
-  background: $color-primary !important;
+  background: var(--color-primary) !important;
   opacity: 1 !important;
 }
-
 .swiper-button-prev,
 .swiper-button-next {
-  color: $color-primary !important;
+  color: var(--color-primary) !important;
 }
-
 // Hero-Slider: weiße Bullets
 .hero-slider {
   .swiper-pagination-bullet {
-  width: 10px !important;
-  height: 10px !important;
-  border-radius: 50% !important;
-  width: 10px !important;
-  height: 10px !important;
-  border-radius: 50% !important;
     background: #ffffff !important;
     opacity: 0.5 !important;
   }
@@ -44,11 +30,9 @@
     color: #ffffff !important;
   }
 }
-
 // Carousel ohne Bild – Caption-Styling
 .carousel-grid__image--empty {
   position: relative;
-
   .carousel-grid__overlay,
   + .carousel-grid__caption {
     position: absolute;
@@ -58,7 +42,6 @@
     padding: 32px;
   }
 }
-
 .carousel-grid__item:has(.carousel-grid__image--empty) {
   .carousel-grid__caption {
     position: absolute;
@@ -71,4 +54,17 @@
     .carousel-grid__title { color: #fff; }
     .carousel-grid__subtitle { color: rgba(255,255,255,0.8); }
   }
+}
+// Stats Slider
+.stats-slider__clip {
+  overflow: hidden;
+  position: relative;
+}
+.stats-slider .swiper {
+  overflow: hidden;
+}
+
+// Stats Slider: transition-property fix
+.js-stats-slider .swiper-wrapper {
+    transition-property: transform !important;
 }

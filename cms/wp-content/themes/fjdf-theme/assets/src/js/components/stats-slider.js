@@ -10,10 +10,11 @@ export default class StatsSlider {
 
         new Swiper(el, {
             modules: [Pagination, Autoplay],
-            loop: true,
-            loopAdditionalSlides: 3,
+            rewind: true,
+            speed: 600,
             slidesPerView: 1,
             spaceBetween: 24,
+            grabCursor: true,
             autoplay: {
                 delay: 3000,
                 disableOnInteraction: false,
