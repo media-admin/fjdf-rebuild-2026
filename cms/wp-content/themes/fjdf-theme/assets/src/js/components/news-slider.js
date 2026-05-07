@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Navigation } from 'swiper/modules';
+import { Navigation } from 'swiper';
 import 'swiper/css';
 
 export default class NewsSlider {

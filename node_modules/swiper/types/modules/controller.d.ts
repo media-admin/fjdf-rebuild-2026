@@ -1,4 +1,4 @@
-import type Swiper from '../swiper-class.d.ts';
+import Swiper from '../swiper-class';
 
 export interface ControllerMethods {
   /**
@@ -13,9 +13,9 @@ export interface ControllerEvents {}
 export interface ControllerOptions {
   /**
    * Pass here another Swiper instance or array with Swiper instances that should be controlled
-   * by this Swiper. Also accepts string with CSS selector of Swiper element, or HTMLElement of Swiper element
+   * by this Swiper
    */
-  control?: Swiper | Swiper[] | string | HTMLElement | null;
+  control?: Swiper | Swiper[];
 
   /**
    * Set to `true` and controlling will be in inverse direction

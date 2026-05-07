@@ -1,28 +1,7 @@
 {
-  "_autoplay-CcTtKx7l.js": {
-    "file": "js/chunks/autoplay-CcTtKx7l.js",
-    "name": "autoplay",
-    "imports": [
-      "_swiper-B1fLABZb.js"
-    ]
-  },
-  "_navigation-sBV_XkN2.js": {
-    "file": "js/chunks/navigation-sBV_XkN2.js",
-    "name": "navigation",
-    "imports": [
-      "_swiper-B1fLABZb.js"
-    ]
-  },
-  "_pagination-8K8IuC86.js": {
-    "file": "js/chunks/pagination-8K8IuC86.js",
-    "name": "pagination",
-    "imports": [
-      "_swiper-B1fLABZb.js"
-    ]
-  },
-  "_swiper-B1fLABZb.js": {
-    "file": "js/chunks/swiper-B1fLABZb.js",
-    "name": "swiper"
+  "_swiper.min-vN7Zd2AR.js": {
+    "file": "js/chunks/swiper.min-vN7Zd2AR.js",
+    "name": "swiper.min"
   },
   "src/js/components/back-to-top.js": {
     "file": "js/chunks/back-to-top-WXqPq5Mp.js",
@@ -37,57 +16,52 @@
     "isDynamicEntry": true
   },
   "src/js/components/gallery.js": {
-    "file": "js/chunks/gallery-C5XFUj92.js",
+    "file": "js/chunks/gallery-C9IEdh2Y.js",
     "name": "gallery",
     "src": "src/js/components/gallery.js",
     "isDynamicEntry": true,
     "imports": [
-      "_autoplay-CcTtKx7l.js",
-      "_navigation-sBV_XkN2.js",
-      "_swiper-B1fLABZb.js"
+      "_swiper.min-vN7Zd2AR.js"
     ]
   },
   "src/js/components/modal.js": {
-    "file": "js/chunks/modal-BbbAIZ8_.js",
+    "file": "js/chunks/modal-xk0Lk_EK.js",
     "name": "modal",
     "src": "src/js/components/modal.js",
     "isDynamicEntry": true
   },
   "src/js/components/news-slider.js": {
-    "file": "js/chunks/news-slider-DNO6m7Ut.js",
+    "file": "js/chunks/news-slider-DMy8pAV5.js",
     "name": "news-slider",
     "src": "src/js/components/news-slider.js",
     "isDynamicEntry": true,
     "imports": [
-      "_navigation-sBV_XkN2.js",
-      "_swiper-B1fLABZb.js"
+      "_swiper.min-vN7Zd2AR.js"
     ]
   },
   "src/js/components/testimonial-slider.js": {
-    "file": "js/chunks/testimonial-slider-BoP6B2fb.js",
+    "file": "js/chunks/testimonial-slider-CJ439rYW.js",
     "name": "testimonial-slider",
     "src": "src/js/components/testimonial-slider.js",
     "isDynamicEntry": true,
     "imports": [
-      "_autoplay-CcTtKx7l.js",
-      "_pagination-8K8IuC86.js",
-      "_swiper-B1fLABZb.js"
+      "_swiper.min-vN7Zd2AR.js"
     ]
   },
   "src/js/donation-form.js": {
-    "file": "js/chunks/donation-form-CMfea4Cx.js",
+    "file": "js/chunks/donation-form-Dl9xFXAx.js",
     "name": "donation-form",
     "src": "src/js/donation-form.js",
     "isDynamicEntry": true
   },
   "src/js/impact-tabs.js": {
-    "file": "js/chunks/impact-tabs-C2p_kpE4.js",
+    "file": "js/chunks/impact-tabs-BKv9tIDC.js",
     "name": "impact-tabs",
     "src": "src/js/impact-tabs.js",
     "isDynamicEntry": true
   },
   "src/js/load-more.js": {
-    "file": "js/chunks/load-more-Ca2nW8H5.js",
+    "file": "js/chunks/load-more-BePPjjiD.js",
     "name": "load-more",
     "src": "src/js/load-more.js",
     "isDynamicEntry": true
@@ -111,14 +85,12 @@
     ]
   },
   "src/js/sliders.js": {
-    "file": "js/chunks/sliders-CbRApwfp.js",
+    "file": "js/chunks/sliders-CFCBGNj2.js",
     "name": "sliders",
     "src": "src/js/sliders.js",
     "isDynamicEntry": true,
     "imports": [
-      "_navigation-sBV_XkN2.js",
-      "_pagination-8K8IuC86.js",
-      "_swiper-B1fLABZb.js"
+      "_swiper.min-vN7Zd2AR.js"
     ]
   },
   "style.css": {

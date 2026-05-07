@@ -1,36 +1,22 @@
-import Swiper from 'swiper';
-import { Navigation, Pagination, A11y } from 'swiper/modules';
-import 'swiper/css';
+import Swiper, { Navigation, Pagination, Autoplay, A11y } from 'swiper';
 import 'swiper/css';
 
 // ---------------------------------------------------------------------------
-// Stats Slider — Custom Interval Autoplay, endlos
+// Stats Slider — Swiper v8, loop: true, 3 Slides, 3 Dots
 // ---------------------------------------------------------------------------
 const statsSliderEl = document.querySelector( '.js-stats-slider' );
 if ( statsSliderEl ) {
-	const AUTOPLAY_DELAY = 5000;
-	let autoTimer = null;
-
-	const stopAuto  = ()          => { clearInterval( autoTimer ); autoTimer = null; };
-	const startAuto = ( swiper )  => {
-		stopAuto();
-		autoTimer = setInterval( () => {
-			if ( swiper.isEnd ) {
-				swiper.slideTo( 0, 0 );   // sofortiger Sprung — gleicher Inhalt, unsichtbar
-			} else {
-				swiper.slideNext();
-			}
-		}, AUTOPLAY_DELAY );
-	};
-
 	new Swiper( statsSliderEl, {
-		modules:       [ Pagination ],
-		loop:          false,
-		speed:         900,
-		cssEase:       'ease-in-out',
+		modules:       [ Pagination, Autoplay ],
+		loop:          true,
+		speed:         500,
 		slidesPerView: 1,
 		spaceBetween:  24,
 		grabCursor:    true,
+		autoplay: {
+			delay:                5000,
+			disableOnInteraction: false,
+		},
 		pagination: {
 			el:        '.js-stats-pagination',
 			clickable: true,
@@ -38,16 +24,6 @@ if ( statsSliderEl ) {
 		breakpoints: {
 			640:  { slidesPerView: 2, spaceBetween: 24 },
 			1024: { slidesPerView: 3, spaceBetween: 32 },
-		},
-		on: {
-			init( swiper ) {
-				requestAnimationFrame( () => {
-					swiper.update();
-					startAuto( swiper );
-				} );
-			},
-			touchStart() { stopAuto(); },
-			touchEnd( swiper )   { startAuto( swiper ); },
 		},
 	} );
 }

@@ -2,7 +2,7 @@
  * Hero Slider Component
  */
 import Swiper from 'swiper';
-import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper';
 
 export default class HeroSlider {
   constructor() {

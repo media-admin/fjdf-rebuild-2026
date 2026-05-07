@@ -135,12 +135,6 @@ get_header();
 								<div class="stats-slider__text"><strong class="stats-slider__number"><?php echo esc_html( $stat['number'] ); ?></strong><span class="stats-slider__label"><?php echo esc_html( $stat['label'] ); ?></span></div>
 							</div></div>
 						<?php endforeach; ?>
-						<?php foreach ( $stats_bar as $stat ) : ?>
-							<div class="swiper-slide" aria-hidden="true"><div class="stats-slider__item">
-								<?php if ( ! empty( $stat['icon']['id'] ) ) : ?><div class="stats-slider__icon" aria-hidden="true"><?php echo wp_get_attachment_image( $stat['icon']['id'], 'medium', false, [ 'alt' => '' ] ); ?></div><?php endif; ?>
-								<div class="stats-slider__text"><strong class="stats-slider__number"><?php echo esc_html( $stat['number'] ); ?></strong><span class="stats-slider__label"><?php echo esc_html( $stat['label'] ); ?></span></div>
-							</div></div>
-						<?php endforeach; ?>
 					</div>
 					<div class="swiper-pagination js-stats-pagination"></div>
 				</div>

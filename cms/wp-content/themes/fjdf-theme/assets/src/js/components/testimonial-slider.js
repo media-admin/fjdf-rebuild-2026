@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Pagination, Autoplay } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper';
 import 'swiper/css';
 
 export default class TestimonialSlider {

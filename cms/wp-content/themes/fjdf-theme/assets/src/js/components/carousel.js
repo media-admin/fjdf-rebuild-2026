@@ -2,7 +2,7 @@
  * Carousel Component (Swiper-based)
  */
 import Swiper from 'swiper';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay } from 'swiper';
 
 export default class Carousel {
   constructor() {

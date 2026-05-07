@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Navigation, Thumbs, Autoplay } from 'swiper/modules';
+import { Navigation, Thumbs, Autoplay } from 'swiper';
 import 'swiper/css';
 
 export default class Gallery {
