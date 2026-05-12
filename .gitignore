@@ -38,7 +38,7 @@
 !/cms/wp-content/plugins/media-lab-seo/
 !/cms/wp-content/plugins/media-lab-woocommerce/
 
-# Janecka Custom Plugin (wird versioniert)
+# FJDF Custom Plugin (wird versioniert)
 !/cms/wp-content/plugins/fjdf-project/
 
 # ============================================
@@ -46,7 +46,7 @@
 # ============================================
 /cms/wp-content/themes/twenty*/
 
-# Juwelier Janecka Theme (wird versioniert)
+# FJDF Theme (wird versioniert)
 !/cms/wp-content/themes/fjdf-theme/
 
 # Build-Artefakte innerhalb des Themes
@@ -95,6 +95,7 @@ Thumbs.db
 *.zip
 *.tar.gz
 docs-backup/
+backup-vor-refactoring-20260424.sql
 
 # ============================================
 # ENVIRONMENT
@@ -102,3 +103,4 @@ docs-backup/
 .env
 .env.*
 .vscode/sftp.json
+sftp.json

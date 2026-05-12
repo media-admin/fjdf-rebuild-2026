@@ -8,10 +8,15 @@
  *   3. Nur essenzielle Cookies
  *   4. Individuelle Datenschutz-Präferenzen → öffnet Modal
  *
+ * Mehrsprachigkeit:
+ *   Alle UI-Texte werden von PHP via window.cookieConsent.texts geliefert.
+ *   Die JS-Fallbacks sind absichtlich sprachneutral/leer – sie greifen nur,
+ *   wenn kein PHP-Config-Objekt vorhanden ist (z.B. im Storybook/Preview).
+ *
  * WICHTIG: export default class – main.js importiert als Default und
  *          ruft `new CookieConsent()` auf. Keine Auto-Instanz im Modul.
  *
- * @since 1.6.1
+ * @since 1.9.0
  */
 
 export default class CookieConsent {
@@ -21,26 +26,27 @@ export default class CookieConsent {
         this.version    = window.cookieConsent?.version || '1';
 
         this.categories = window.cookieConsent?.categories || {
-            necessary:  { label: 'Notwendig',  description: 'Technisch erforderliche Cookies für die Grundfunktionen der Website.', required: true },
-            statistics: { label: 'Statistik',   description: 'Helfen uns zu verstehen, wie Besucher die Website nutzen.', required: false },
-            marketing:  { label: 'Marketing',   description: 'Werden verwendet, um Besuchern relevante Werbung zu zeigen.', required: false },
-            comfort:    { label: 'Komfort',     description: 'Ermöglichen eingebettete Inhalte wie YouTube-Videos oder Google Maps.', required: false },
+            necessary:  { label: 'Necessary',  description: 'Technically required cookies.', required: true },
+            statistics: { label: 'Statistics',  description: 'Help us understand visitor behaviour.',  required: false },
+            marketing:  { label: 'Marketing',   description: 'Used for personalised advertising.',      required: false },
+            comfort:    { label: 'Comfort',     description: 'Enable embedded content.',                required: false },
         };
 
-        // Defaults – werden durch PHP-Config (window.cookieConsent.texts) überschrieben.
-        // Merge statt OR-Operator: fehlende Keys fallen auf Defaults zurück.
+        // Sprachneutrale Fallback-Texte – werden durch window.cookieConsent.texts
+        // vollständig überschrieben (PHP liefert immer alle Felder).
         const _textDefaults = {
-            bannerText:    'Wir benötigen Ihre Einwilligung, bevor Sie unsere Website weiter besuchen können.\n\nWir verwenden Cookies und andere Technologien auf unserer Website. Einige von ihnen sind essenziell, während andere uns helfen, diese Website und Ihre Erfahrung zu verbessern. Personenbezogene Daten können verarbeitet werden (z. B. IP-Adressen). Weitere Informationen über die Verwendung Ihrer Daten finden Sie in unserer <a href="{privacyUrl}" class="cookie-banner__link">Datenschutzerklärung</a>. Sie können Ihre Auswahl jederzeit unter <a href="#" class="cookie-banner__link js-cookie-settings">Einstellungen</a> widerrufen oder anpassen.',
-            bannerTextUSA: 'Einige Services verarbeiten personenbezogene Daten in den USA. Mit Ihrer Einwilligung willigen Sie auch in die Verarbeitung Ihrer Daten in den USA gemäß Art. 49 (1) lit. a DSGVO ein.',
-            acceptAll:     'Ich akzeptiere alle',
-            saveConsent:   'Einwilligung speichern',
-            essentialOnly: 'Nur essenzielle Cookies akzeptieren',
-            openSettings:  'Individuelle Datenschutz-Präferenzen',
-            modalTitle:    'Cookie-Einstellungen',
-            modalIntro:    'Hier können Sie Ihre Cookie-Einstellungen jederzeit anpassen.',
-            saveSettings:  'Auswahl speichern',
-            privacyUrl:    '/datenschutz',
-            alwaysActive:  'Immer aktiv',
+            bannerTitle:   '',
+            bannerText:    '',
+            bannerTextUSA: '', // Leer = wird nicht angezeigt; wird von PHP befüllt wenn nötig
+            acceptAll:     'Accept all',
+            saveConsent:   'Save consent',
+            essentialOnly: 'Essential cookies only',
+            openSettings:  'Settings',
+            modalTitle:    'Cookie settings',
+            modalIntro:    '',
+            saveSettings:  'Save selection',
+            privacyUrl:    '/',
+            alwaysActive:  'Always active',
         };
         this.texts = { ..._textDefaults, ...( window.cookieConsent?.texts || {} ) };
         // privacyUrl kann auch direkt auf window.cookieConsent gesetzt sein
@@ -94,9 +100,10 @@ export default class CookieConsent {
 
         // ── Banner ────────────────────────────────────────────────────────────
         this.banner = this._el( `
-            <div class="cookie-banner" role="dialog" aria-modal="true" aria-label="Cookie-Einstellungen">
+            <div class="cookie-banner" role="dialog" aria-modal="true" aria-label="${this.texts.modalTitle || 'Cookie settings'}">
                 <div class="cookie-banner__inner">
                     <div class="cookie-banner__body">
+                        ${this.texts.bannerTitle ? `<h2 class="cookie-banner__title">${this.texts.bannerTitle}</h2>` : ''}
                         <div class="cookie-banner__text">${paragraphs}</div>
                         ${this.texts.bannerTextUSA
                             ? `<p class="cookie-banner__text cookie-banner__text--usa">${this.texts.bannerTextUSA}</p>`
@@ -314,16 +321,10 @@ export default class CookieConsent {
         this._openModal();
     }
 
-    // ── In cookie-notice.js einfügen ──────────────────────────────────────────────
-    // Position: direkt nach der openSettings() Methode (ganz am Ende der Klasse,
-    // vor der schließenden })
-
-    // ── Public API (Ergänzung) ────────────────────────────────────────────────────
-
     /**
      * Akzeptiert eine einzelne Kategorie programmatisch.
      * Bestehende Consent-Werte anderer Kategorien bleiben erhalten.
-     * Feuert cookies:changed → _google-maps.js lädt die Karte sofort nach.
+     * Feuert cookies:changed → google-maps.js lädt die Karte sofort nach.
      *
      * @param {string} category – z.B. 'comfort', 'statistics', 'marketing'
      */
@@ -332,12 +333,7 @@ export default class CookieConsent {
             console.warn( `[CookieConsent] Unbekannte Kategorie: "${category}"` );
             return;
         }
-
-        // Aktuellen Consent laden oder leeres Objekt
         const current = this.consent || {};
-
-        // Neue Consent-Map aufbauen: notwendig immer true,
-        // Ziel-Kategorie auf true, Rest unverändert
         const updated = {};
         Object.keys( this.categories ).forEach( key => {
             if ( this.categories[ key ].required ) {
@@ -346,9 +342,7 @@ export default class CookieConsent {
                 updated[ key ] = key === category ? true : ( current[ key ] ?? false );
             }
         } );
-
         this._saveConsent( updated );
-        // _saveConsent feuert cookies:changed → GoogleMapConsent._handleConsentChange lädt die Karte
     }
 
 }
