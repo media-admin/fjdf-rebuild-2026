@@ -34,12 +34,12 @@
 
 # Agentur-Plugins (werden versioniert)
 !/cms/wp-content/plugins/media-lab-agency-core/
-!/cms/wp-content/plugins/media-lab-analytics/
+!/cms/wp-content/plugins/media-lab-backup/
 !/cms/wp-content/plugins/media-lab-seo/
 !/cms/wp-content/plugins/media-lab-woocommerce/
 
 # FJDF Custom Plugin (wird versioniert)
-!/cms/wp-content/plugins/fjdf-project/
+!/cms/wp-content/plugins/fjdf-plugin/
 
 # ============================================
 # THEMES
