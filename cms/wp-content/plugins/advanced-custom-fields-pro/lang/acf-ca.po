@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-05-13T15:21:32+00:00\n"
+"PO-Revision-Date: 2026-06-29T18:36:20+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -20,6 +20,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: gettext\n"
 "Project-Id-Version: Advanced Custom Fields\n"
+
+#: src/Site_Health/Site_Health.php:1009
+msgid "Datastore Enabled"
+msgstr ""
+
+#: includes/local-json.php:154
+msgid ""
+"ACF saved your changes to the database, but could not update the Local JSON "
+"file. Check that the configured Local JSON save path is writable."
+msgstr ""
+
+#: includes/ajax/class-acf-ajax-upgrade.php:45
+msgid "Invalid site ID."
+msgstr ""
 
 #. translators: 1: number of post types, 2: number of blocks using ACF schema
 #: src/Site_Health/Site_Health.php:999
@@ -1378,6 +1392,7 @@ msgstr ""
 #: includes/ajax/class-acf-ajax-local-json-diff.php:46
 #: includes/ajax/class-acf-ajax-query-users.php:42
 #: includes/ajax/class-acf-ajax-upgrade.php:33
+#: includes/ajax/class-acf-ajax-upgrade.php:40
 #: includes/ajax/class-acf-ajax-user-setting.php:47
 #: src/AI/GEO/FieldSettings.php:82
 msgid "Sorry, you do not have permission to do that."
@@ -2457,8 +2472,8 @@ msgstr ""
 
 #: src/Blocks/Bindings.php:41
 msgctxt "The core ACF block binding source name for fields on the current page"
-msgid "ACF Fields"
-msgstr "Camps de l'ACF"
+msgid "Custom Fields"
+msgstr "Camps personalitzats"
 
 #: includes/admin/views/browse-fields-modal.php:24
 msgid "ACF PRO Feature"
@@ -3720,7 +3735,7 @@ msgstr "Afegeix o Suprimeix Elements"
 #. translators: %s Plural form of taxonomy name
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:421
 msgid "Add or remove %s"
-msgstr "Afegeix o suprimeix %s"
+msgstr "Afegeix o elimina %s"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:401
 msgid "Separate tags with commas"
@@ -4767,7 +4782,7 @@ msgstr "Nou %s"
 #: includes/admin/views/acf-post-type/advanced-settings.php:226
 #: includes/admin/views/acf-post-type/advanced-settings.php:246
 msgid "Add New Post"
-msgstr "Afegeix una nova entrada"
+msgstr "Afegeix una entrada"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:225
 msgid "At the top of the editor screen when adding a new item."
@@ -6324,7 +6339,7 @@ msgid "Show this field group if"
 msgstr "Mostra aquest grup de camps si"
 
 #: includes/admin/views/upgrade/upgrade.php:94
-#: includes/ajax/class-acf-ajax-upgrade.php:43
+#: includes/ajax/class-acf-ajax-upgrade.php:57
 msgid "No updates available."
 msgstr "No hi ha actualitzacions disponibles."
 
@@ -6713,28 +6728,28 @@ msgstr "Desconegut"
 msgid "Field type does not exist"
 msgstr "El tipus de camp no existeix"
 
-#: includes/forms/form-front.php:228
+#: includes/forms/form-front.php:235
 msgid "Spam Detected"
 msgstr "S'ha detectat brossa"
 
-#: includes/forms/form-front.php:111
+#: includes/forms/form-front.php:118
 msgid "Post updated"
 msgstr "S'ha actualitzat l'entrada"
 
-#: includes/forms/form-front.php:110
+#: includes/forms/form-front.php:117
 msgid "Update"
 msgstr "Actualitza"
 
-#: includes/forms/form-front.php:71
+#: includes/forms/form-front.php:78
 msgid "Validate Email"
 msgstr "Valida el correu electrònic"
 
-#: includes/fields.php:336 includes/forms/form-front.php:63
+#: includes/fields.php:336 includes/forms/form-front.php:70
 msgid "Content"
 msgstr "Contingut"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:33
-#: includes/forms/form-front.php:54
+#: includes/forms/form-front.php:61
 msgid "Title"
 msgstr "Títol"
 
@@ -6840,7 +6855,7 @@ msgstr "Edita"
 msgid "The changes you made will be lost if you navigate away from this page"
 msgstr "Perdreu els canvis que heu fet si abandoneu aquesta pàgina"
 
-#: includes/api/api-helpers.php:3075
+#: includes/api/api-helpers.php:3080
 msgid "File type must be %s."
 msgstr "El tipus de fitxer ha de ser %s."
 
@@ -6849,51 +6864,51 @@ msgstr "El tipus de fitxer ha de ser %s."
 #: includes/admin/views/acf-field-group/conditional-logic.php:191
 #: includes/admin/views/acf-field-group/location-group.php:14
 #: includes/admin/views/acf-field-group/locations.php:43
-#: includes/api/api-helpers.php:3072
+#: includes/api/api-helpers.php:3077
 msgid "or"
 msgstr "o"
 
-#: includes/api/api-helpers.php:3048
+#: includes/api/api-helpers.php:3053
 msgid "File size must not exceed %s."
 msgstr "La mida del fitxer no ha de superar %s."
 
-#: includes/api/api-helpers.php:3044
+#: includes/api/api-helpers.php:3049
 msgid "File size must be at least %s."
 msgstr "La mida del fitxer ha de ser almenys %s."
 
-#: includes/api/api-helpers.php:3031
+#: includes/api/api-helpers.php:3036
 msgid "Image height must not exceed %dpx."
 msgstr "L'alçada de la imatge no pot ser superior a %dpx."
 
-#: includes/api/api-helpers.php:3027
+#: includes/api/api-helpers.php:3032
 msgid "Image height must be at least %dpx."
 msgstr "L'alçada de la imatge ha de ser almenys de %dpx."
 
-#: includes/api/api-helpers.php:3015
+#: includes/api/api-helpers.php:3020
 msgid "Image width must not exceed %dpx."
 msgstr "L'amplada de la imatge no pot ser superior a %dpx."
 
-#: includes/api/api-helpers.php:3011
+#: includes/api/api-helpers.php:3016
 msgid "Image width must be at least %dpx."
 msgstr "L'amplada de la imatge ha de ser almenys de %dpx."
 
-#: includes/api/api-helpers.php:1445 includes/api/api-term.php:149
+#: includes/api/api-helpers.php:1450 includes/api/api-term.php:149
 msgid "(no title)"
 msgstr "(sense títol)"
 
-#: includes/api/api-helpers.php:790
+#: includes/api/api-helpers.php:795
 msgid "Full Size"
 msgstr "Mida completa"
 
-#: includes/api/api-helpers.php:755
+#: includes/api/api-helpers.php:760
 msgid "Large"
 msgstr "Gran"
 
-#: includes/api/api-helpers.php:754
+#: includes/api/api-helpers.php:759
 msgid "Medium"
 msgstr "Mitjana"
 
-#: includes/api/api-helpers.php:753
+#: includes/api/api-helpers.php:758
 msgid "Thumbnail"
 msgstr "Miniatura"
 
@@ -7969,16 +7984,16 @@ msgstr "Selector de data"
 
 #: includes/fields/class-acf-field-image.php:247
 #: includes/fields/class-acf-field-image.php:283
-#: includes/fields/class-acf-field-oembed.php:249
+#: includes/fields/class-acf-field-oembed.php:282
 msgid "Width"
 msgstr "Amplada"
 
-#: includes/fields/class-acf-field-oembed.php:246
-#: includes/fields/class-acf-field-oembed.php:258
+#: includes/fields/class-acf-field-oembed.php:279
+#: includes/fields/class-acf-field-oembed.php:291
 msgid "Embed Size"
 msgstr "Mida de la incrustació"
 
-#: includes/fields/class-acf-field-oembed.php:206
+#: includes/fields/class-acf-field-oembed.php:239
 msgid "Enter URL"
 msgstr "Introduïu la URL"
 
@@ -8088,7 +8103,7 @@ msgstr "Personalitzeu l'alçada del mapa"
 #: includes/fields/class-acf-field-google-map.php:230
 #: includes/fields/class-acf-field-image.php:258
 #: includes/fields/class-acf-field-image.php:294
-#: includes/fields/class-acf-field-oembed.php:261
+#: includes/fields/class-acf-field-oembed.php:294
 msgid "Height"
 msgstr "Alçada"
 
