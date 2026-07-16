@@ -191,7 +191,7 @@
 
 .testimonial-slider__nav {
 	position: absolute;
-	top: 50%;
+	top: calc(50% - 28px); // 28px = halber padding-bottom-Wert (56px / 2)
 	transform: translateY(-50%);
 	z-index: 10;
 	background: var(--color-gold);
@@ -219,5 +219,22 @@
 		width: 10px;
 		height: 10px;
 		&-active { opacity: 1; }
+	}
+	.swiper {
+		position: relative;
+		padding-bottom: 56px; // Platz für die Pagination reservieren (ersetzt margin-top: space-8)
+	}
+	.swiper-wrapper { display: flex; }
+	.swiper-pagination {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin-top: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 6px;
+		height: 24px;
 	}
 }

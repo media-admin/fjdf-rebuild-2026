@@ -127,9 +127,15 @@ $contrib_items   = fjdf_field( 'fjdf_what_contrib_items', false, [] );
 	<?php endif; ?>
 
 	<?php /* ================================================================
-	   4. VIDEO TESTIMONIAL
-	   ================================================================ */ ?>
-	<?php fjdf_video_testimonial( get_the_ID() ); ?>
+		4. VIDEO TESTIMONIAL
+		================================================================ */ ?>
+		<?php
+		$home_id = function_exists( 'pll_get_post' ) ? pll_get_post( 6, pll_current_language() ) : 6;
+		if ( ! $home_id ) {
+			$home_id = 6; // Fallback, falls Übersetzung fehlt
+		}
+		fjdf_video_testimonial( $home_id );
+		?>
 
 	<?php /* ================================================================
 	   4b. TESTIMONIAL SLIDER
