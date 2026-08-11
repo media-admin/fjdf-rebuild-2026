@@ -103,4 +103,4 @@ backup-vor-refactoring-20260424.sql
 .env
 .env.*
 .vscode/sftp.json
-sftp.json
+sftp.json.DS_Store
