@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticIniteb1e6cf5a24c1661be2afa3dd329fb86
+class ComposerStaticInita892dd54e4ab2e79915fa6e762b177fc
 {
     public static $files = array (
         '3773ef3f09c37da5478d578e32b03a4b' => __DIR__ . '/..' . '/automattic/jetpack-assets/actions.php',
@@ -12,7 +12,7 @@ class ComposerStaticIniteb1e6cf5a24c1661be2afa3dd329fb86
     );
 
     public static $prefixLengthsPsr4 = array (
-        'A' => 
+        'A' =>
         array (
             'Automattic\\WCServices\\' => 22,
             'Automattic\\Jetpack\\Autoloader\\' => 30,
@@ -20,11 +20,11 @@ class ComposerStaticIniteb1e6cf5a24c1661be2afa3dd329fb86
     );
 
     public static $prefixDirsPsr4 = array (
-        'Automattic\\WCServices\\' => 
+        'Automattic\\WCServices\\' =>
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
-        'Automattic\\Jetpack\\Autoloader\\' => 
+        'Automattic\\Jetpack\\Autoloader\\' =>
         array (
             0 => __DIR__ . '/..' . '/automattic/jetpack-autoloader/src',
         ),
@@ -109,6 +109,7 @@ class ComposerStaticIniteb1e6cf5a24c1661be2afa3dd329fb86
         'Automattic\\WCServices\\StoreNotices\\StoreNoticeTypes' => __DIR__ . '/../..' . '/src/StoreNotices/StoreNoticeTypes.php',
         'Automattic\\WCServices\\StoreNotices\\StoreNoticesController' => __DIR__ . '/../..' . '/src/StoreNotices/StoreNoticesController.php',
         'Automattic\\WCServices\\StoreNotices\\StoreNoticesNotifier' => __DIR__ . '/../..' . '/src/StoreNotices/StoreNoticesNotifier.php',
+        'Automattic\\WCServices\\Tax\\Address' => __DIR__ . '/../..' . '/src/Tax/Address.php',
         'Automattic\\WCServices\\Utils' => __DIR__ . '/../..' . '/src/Utils.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Jetpack_IXR_Client' => __DIR__ . '/..' . '/automattic/jetpack-connection/legacy/class-jetpack-ixr-client.php',
@@ -123,9 +124,9 @@ class ComposerStaticIniteb1e6cf5a24c1661be2afa3dd329fb86
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticIniteb1e6cf5a24c1661be2afa3dd329fb86::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticIniteb1e6cf5a24c1661be2afa3dd329fb86::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticIniteb1e6cf5a24c1661be2afa3dd329fb86::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInita892dd54e4ab2e79915fa6e762b177fc::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInita892dd54e4ab2e79915fa6e762b177fc::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInita892dd54e4ab2e79915fa6e762b177fc::$classMap;
 
         }, null, ClassLoader::class);
     }
