@@ -11,6 +11,7 @@ export default class NewsSlider {
             modules: [Navigation],
             slidesPerView: 1,
             spaceBetween: 24,
+            loop: true,
             navigation: {
                 nextEl: '.js-news-next',
                 prevEl: '.js-news-prev',

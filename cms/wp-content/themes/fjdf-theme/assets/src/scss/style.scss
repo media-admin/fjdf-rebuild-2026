@@ -40,5 +40,5 @@
 @use 'components/lightbox';
 @use 'components/page-hero';
 @use 'components/stats';
-@use 'components/swiper-overrides';
 @use 'components/honeypot';
+@use 'components/swiper-overrides'; // Overrides für Swiper.js -> has to be loaded after Swiper.js styles

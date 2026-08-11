@@ -15,6 +15,12 @@
 .swiper-button-next {
   color: var(--color-primary) !important;
 }
+
+// News-Slider: Pfeil ausblenden statt disabled anzeigen, wenn zu wenig Slides
+.other-news__nav.swiper-button-lock {
+  display: none;
+}
+
 // Hero-Slider: weiße Bullets
 .hero-slider {
   .swiper-pagination-bullet {
