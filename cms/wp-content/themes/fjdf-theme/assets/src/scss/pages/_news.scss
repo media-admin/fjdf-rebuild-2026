@@ -15,7 +15,7 @@
 }
 .archive-header__desc {
 	color: var(--color-text-secondary);
-	max-width: 640px;
+	// max-width: 640px;
 	margin-inline: auto;
 }
 
@@ -74,8 +74,9 @@
 
 // Featured Post schmäler
 .section--sm .container > .news-card-featured {
-	max-width: 780px;
+	max-width: 90%; // vorher: 780px;
 	margin-inline: auto;
+	background: var(--color-cream);
 }
 
 // Datum-Styling
