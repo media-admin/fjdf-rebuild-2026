@@ -37,29 +37,35 @@ $shortcode   = $args['shortcode']   ?? fjdf_option( 'fjdf_newsletter_shortcode' 
 				</div>
 			<?php else : ?>
 				<!-- Fallback: simple HTML form -->
-				<form class="newsletter-section__form"
-				      action="#"
-				      method="post"
-				      aria-label="<?php esc_attr_e( 'Newsletter anmelden', 'fjdf' ); ?>">
-					<?php wp_nonce_field( 'fjdf_newsletter', 'fjdf_newsletter_nonce' ); ?>
-					<div class="newsletter-section__form-row">
-						<label for="newsletter-email" class="screen-reader-text">
-							<?php esc_html_e( 'E-Mail-Adresse', 'fjdf' ); ?>
-						</label>
-						<input
-							type="email"
-							id="newsletter-email"
-							name="email"
-							class="newsletter-section__input"
-							placeholder="<?php echo esc_attr( $placeholder ); ?>"
-							required
-							autocomplete="email"
-						>
-						<button type="submit" class="newsletter-section__btn btn btn--primary">
-							<?php echo esc_html( $button ); ?>
-						</button>
-					</div>
-				</form>
+				<form class="newsletter-section__form" method="post" aria-label="<?php esc_attr_e( 'Newsletter anmelden', 'fjdf' ); ?>">
+    <?php wp_nonce_field( 'fjdf_newsletter', 'fjdf_newsletter_nonce' ); ?>
+
+    <div class="newsletter-section__form-row">
+        <label for="newsletter-email" class="screen-reader-text"><?php esc_html_e( 'E-Mail-Adresse', 'fjdf' ); ?></label>
+        <input type="email" id="newsletter-email" name="email" class="newsletter-section__input"
+               placeholder="<?php echo esc_attr( $placeholder ); ?>" required autocomplete="email">
+        <button type="submit" class="newsletter-section__btn btn btn--primary">
+            <?php echo esc_html( $button ); ?>
+        </button>
+    </div>
+
+    <label class="form-checkbox newsletter-section__consent">
+		<input type="checkbox" name="consent" id="newsletter-consent" required>
+		<span>
+			<?php
+			$privacy_id  = fjdf_translate_id( (int) get_option( 'wp_page_for_privacy_policy' ) );
+			$privacy_url = $privacy_id ? get_permalink( $privacy_id ) : get_privacy_policy_url();
+
+			printf(
+				fjdf_str( 'Ich stimme der %s zu und möchte den Newsletter erhalten.' ),
+				'<a href="' . esc_url( $privacy_url ) . '" target="_blank">' . esc_html( fjdf_str( 'Datenschutzerklärung' ) ) . '</a>'
+			);
+			?>
+		</span>
+	</label>
+
+    <div class="newsletter-section__feedback" aria-live="polite"></div>
+</form>
 			<?php endif; ?>
 		</div>
 
