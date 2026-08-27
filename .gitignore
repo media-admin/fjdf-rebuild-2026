@@ -29,14 +29,9 @@
 # PLUGINS – Drittanbieter (nicht versionieren)
 # ============================================
 /cms/wp-content/plugins/*
-/cms/wp-content/languages/plugins/
-/cms/wp-content/languages/themes/
+/cms/wp-content/languages/
 
 # Agentur-Plugins (werden versioniert)
-!/cms/wp-content/plugins/media-lab-agency-core/
-!/cms/wp-content/plugins/media-lab-backup/
-!/cms/wp-content/plugins/media-lab-seo/
-!/cms/wp-content/plugins/media-lab-woocommerce/
 
 # FJDF Custom Plugin (wird versioniert)
 !/cms/wp-content/plugins/fjdf-plugin/
@@ -104,3 +99,5 @@ backup-vor-refactoring-20260424.sql
 .env.*
 .vscode/sftp.json
 sftp.json.DS_Store
+/cms/wp-content/mlbkp-temp/
+/cms/wp-content/mlbkp-temp/
