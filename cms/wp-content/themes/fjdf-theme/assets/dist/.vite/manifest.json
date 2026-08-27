@@ -1,6 +1,6 @@
 {
-  "_swiper.min-vN7Zd2AR.js": {
-    "file": "js/chunks/swiper.min-vN7Zd2AR.js",
+  "_swiper.min-B9k-zMnm.js": {
+    "file": "js/chunks/swiper.min-B9k-zMnm.js",
     "name": "swiper.min"
   },
   "src/js/components/back-to-top.js": {
@@ -15,53 +15,71 @@
     "src": "src/js/components/cookie-notice.js",
     "isDynamicEntry": true
   },
+  "src/js/components/custom-amount-i18n.js": {
+    "file": "js/chunks/custom-amount-i18n-DC5AcLvq.js",
+    "name": "custom-amount-i18n",
+    "src": "src/js/components/custom-amount-i18n.js",
+    "isDynamicEntry": true
+  },
+  "src/js/components/donation-modal-trigger.js": {
+    "file": "js/chunks/donation-modal-trigger-Mb1npZ1A.js",
+    "name": "donation-modal-trigger",
+    "src": "src/js/components/donation-modal-trigger.js",
+    "isDynamicEntry": true
+  },
   "src/js/components/gallery.js": {
-    "file": "js/chunks/gallery-C9IEdh2Y.js",
+    "file": "js/chunks/gallery-Agcu1VAE.js",
     "name": "gallery",
     "src": "src/js/components/gallery.js",
     "isDynamicEntry": true,
     "imports": [
-      "_swiper.min-vN7Zd2AR.js"
+      "_swiper.min-B9k-zMnm.js"
     ]
   },
   "src/js/components/modal.js": {
-    "file": "js/chunks/modal-xk0Lk_EK.js",
+    "file": "js/chunks/modal-_R7zCgZe.js",
     "name": "modal",
     "src": "src/js/components/modal.js",
     "isDynamicEntry": true
   },
   "src/js/components/news-slider.js": {
-    "file": "js/chunks/news-slider-DHhzfa4A.js",
+    "file": "js/chunks/news-slider-dg1n-042.js",
     "name": "news-slider",
     "src": "src/js/components/news-slider.js",
     "isDynamicEntry": true,
     "imports": [
-      "_swiper.min-vN7Zd2AR.js"
+      "_swiper.min-B9k-zMnm.js"
     ]
   },
+  "src/js/components/newsletter-form.js": {
+    "file": "js/chunks/newsletter-form-CvfThUEv.js",
+    "name": "newsletter-form",
+    "src": "src/js/components/newsletter-form.js",
+    "isDynamicEntry": true
+  },
   "src/js/components/testimonial-slider.js": {
-    "file": "js/chunks/testimonial-slider-mMuxfje5.js",
+    "file": "js/chunks/testimonial-slider-DFCJGkSR.js",
     "name": "testimonial-slider",
     "src": "src/js/components/testimonial-slider.js",
     "isDynamicEntry": true,
     "imports": [
-      "_swiper.min-vN7Zd2AR.js"
+      "_swiper.min-B9k-zMnm.js"
     ]
   },
   "src/js/donation-form.js": {
-    "file": "js/chunks/donation-form-Dl9xFXAx.js",
+    "file": "js/chunks/donation-form-Di-I84zO.js",
     "name": "donation-form",
     "src": "src/js/donation-form.js",
     "isDynamicEntry": true
   },
   "src/js/impact-tabs.js": {
-    "file": "js/chunks/impact-tabs-BKv9tIDC.js",
+    "file": "js/chunks/impact-tabs-C2p_kpE4.js",
     "name": "impact-tabs",
     "src": "src/js/impact-tabs.js",
     "isDynamicEntry": true
   },
   "src/js/load-more.js": {
-    "file": "js/chunks/load-more-BePPjjiD.js",
+    "file": "js/chunks/load-more-Ca2nW8H5.js",
     "name": "load-more",
     "src": "src/js/load-more.js",
     "isDynamicEntry": true
@@ -72,6 +90,8 @@
     "src": "src/js/main.js",
     "isEntry": true,
     "dynamicImports": [
+      "src/js/components/donation-modal-trigger.js",
+      "src/js/components/custom-amount-i18n.js",
       "src/js/donation-form.js",
       "src/js/components/gallery.js",
       "src/js/load-more.js",
@@ -81,16 +101,17 @@
       "src/js/sliders.js",
       "src/js/components/modal.js",
       "src/js/components/back-to-top.js",
-      "src/js/components/cookie-notice.js"
+      "src/js/components/cookie-notice.js",
+      "src/js/components/newsletter-form.js"
     ]
   },
   "src/js/sliders.js": {
-    "file": "js/chunks/sliders-CFCBGNj2.js",
+    "file": "js/chunks/sliders-DeFNu9Px.js",
     "name": "sliders",
     "src": "src/js/sliders.js",
     "isDynamicEntry": true,
     "imports": [
-      "_swiper.min-vN7Zd2AR.js"
+      "_swiper.min-B9k-zMnm.js"
     ]
   },
   "style.css": {
