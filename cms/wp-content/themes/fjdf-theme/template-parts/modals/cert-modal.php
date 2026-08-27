@@ -41,7 +41,7 @@ $image    = fjdf_option( 'fjdf_donate_cert_image' );
 
 			<button class="cert-modal__close"
 			        data-close-modal
-			        aria-label="<?php esc_attr_e( 'Schließen', 'fjdf' ); ?>">
+			        aria-label="<?php echo esc_attr( fjdf_str( 'Schließen' ) ); ?>">
 				<span aria-hidden="true">&times;</span>
 			</button>
 
@@ -56,7 +56,7 @@ $image    = fjdf_option( 'fjdf_donate_cert_image' );
 			<form class="cert-modal__form"
 			      id="cert-modal-form"
 			      novalidate
-			      aria-label="<?php esc_attr_e( 'Spendennachweis anfordern', 'fjdf' ); ?>">
+			      aria-label="<?php echo esc_attr( fjdf_str( 'Spendennachweis anfordern' ) ); ?>">
 				<?php wp_nonce_field( 'fjdf_cert_request', 'fjdf_cert_nonce' ); ?>
 
 				<div class="cert-modal__field">
@@ -68,7 +68,7 @@ $image    = fjdf_option( 'fjdf_donate_cert_image' );
 						id="cert-firstname"
 						name="firstname"
 						class="cert-modal__input"
-						placeholder="<?php esc_attr_e( 'Vorname(n)', 'fjdf' ); ?>"
+						placeholder="<?php echo esc_attr( fjdf_str( 'Vorname(n)' ) ); ?>"
 						required
 						autocomplete="given-name"
 					>
@@ -83,7 +83,7 @@ $image    = fjdf_option( 'fjdf_donate_cert_image' );
 						id="cert-lastname"
 						name="lastname"
 						class="cert-modal__input"
-						placeholder="<?php esc_attr_e( 'Nachname(n)', 'fjdf' ); ?>"
+						placeholder="<?php echo esc_attr( fjdf_str( 'Nachname(n)' ) ); ?>"
 						required
 						autocomplete="family-name"
 					>
@@ -98,7 +98,7 @@ $image    = fjdf_option( 'fjdf_donate_cert_image' );
 						id="cert-email"
 						name="email"
 						class="cert-modal__input"
-						placeholder="<?php esc_attr_e( 'E-Mail-Adresse', 'fjdf' ); ?>"
+						placeholder="<?php echo esc_attr( fjdf_str( 'E-Mail-Adresse' ) ); ?>"
 						required
 						autocomplete="email"
 					>

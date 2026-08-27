@@ -198,6 +198,14 @@ acf_add_local_field_group( [
 			'instructions'  => __( '{year} wird automatisch durch das aktuelle Jahr ersetzt.', 'fjdf' ),
 		],
 		[
+			'key'           => 'field_fjdf_contact_email',
+			'label'         => __( 'Kontakt-E-Mail', 'fjdf' ),
+			'name'          => 'fjdf_contact_email',
+			'type'          => 'email',
+			'default_value' => 'kontakt@friendsofjuandiegoflorez.org',
+			'instructions'  => __( 'Wird im Footer neben dem E-Mail-Icon angezeigt.', 'fjdf' ),
+		],
+		[
 			'key'           => 'field_fjdf_footer_agency_credit',
 			'label'         => __( 'Agentur Creditline anzeigen', 'fjdf' ),
 			'name'          => 'fjdf_footer_agency_credit',

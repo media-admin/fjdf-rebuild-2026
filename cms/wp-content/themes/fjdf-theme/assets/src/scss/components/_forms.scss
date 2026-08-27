@@ -26,21 +26,70 @@
 .form-checkbox {
 	display: flex;
 	align-items: flex-start;
-	gap: var(--space-3);
+	gap: var(--space-1);
+	margin-top: var(--space-3);
+	margin-left: var(--space-2);
 	cursor: pointer;
 
 	input[type="checkbox"] {
+		appearance: none;
+		-webkit-appearance: none;
 		width: 18px;
 		height: 18px;
 		flex-shrink: 0;
 		margin-top: 2px;
-		accent-color: var(--color-primary);
+		border: 2px solid currentColor;
+		border-radius: 4px;
+		background: transparent;
 		cursor: pointer;
+		position: relative;
+		transition: background-color 0.15s ease, border-color 0.15s ease;
+
+		&:checked {
+			background-color: var(--color-primary);
+			border-color: var(--color-primary);
+
+			&::after {
+				content: '';
+				position: absolute;
+				left: 5px;
+				top: 1px;
+				width: 4px;
+				height: 8px;
+				border: solid #fff;
+				border-width: 0 2px 2px 0;
+				transform: rotate(45deg);
+			}
+		}
+
+		&:focus-visible {
+			outline: 2px solid var(--color-primary);
+			outline-offset: 2px;
+		}
 	}
 
 	span {
 		font-size: var(--text-body-sm);
 		color: var(--color-text-secondary);
 		line-height: var(--leading-normal);
+
+		a {
+			color: inherit;
+			text-decoration: underline;
+			text-underline-offset: 2px;
+
+			&:hover { opacity: 0.8; }
+		}
+	}
+
+}
+
+
+// Newsletter-Sektion: dunkler Text/Rahmen für Kontrast auf goldenem Hintergrund
+.newsletter-section__consent {
+	color: var(--color-text-primary); // steuert currentColor am Checkbox-Rahmen
+
+	span {
+		color: var(--color-text-primary);
 	}
 }
