@@ -49,16 +49,19 @@ the_post();
 					<?php echo do_shortcode( '[medialab_share]' ); ?>
 				</div>
 
-				<!-- Post Navigation -->
-				<?php the_post_navigation( [
-					'prev_text' => '<span class="nav-subtitle">&#8592; Vorheriger Beitrag</span><span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">Nächster Beitrag &#8594;</span><span class="nav-title">%title</span>',
-				] ); ?>
+				<?php
+				$prev_label = fjdf_str( 'Vorheriger Beitrag' );
+				$next_label = fjdf_str( 'Nächster Beitrag' );
 
+				the_post_navigation( [
+					'prev_text' => '<span class="nav-subtitle">&#8592; ' . esc_html( $prev_label ) . '</span><span class="nav-title">%title</span>',
+					'next_text' => '<span class="nav-subtitle">' . esc_html( $next_label ) . ' &#8594;</span><span class="nav-title">%title</span>',
+				] );
+				?>
 
 			<!-- Mobile: Other News Carousel -->
-			<aside class="single-post__mobile-news" aria-label="<?php esc_attr_e( 'Weitere Beiträge', 'fjdf' ); ?>">
-				<h2 class="single-post__mobile-news-title"><?php esc_html_e( 'Weitere Beiträge', 'fjdf' ); ?></h2>
+			<aside class="single-post__mobile-news" aria-label="<?php echo esc_attr( fjdf_str( 'Weitere Beiträge' ) ); ?>">
+				<h2 class="single-post__mobile-news-title"><?php echo esc_html( fjdf_str( 'Weitere Beiträge' ) ); ?></h2>
 
 				<?php
 				$other_posts = get_posts( [
@@ -79,8 +82,6 @@ the_post();
 							<?php endforeach; ?>
 						</div>
 						<div class="swiper-pagination other-news-carousel__pagination"></div>
-						<button class="swiper-button-prev" aria-label="<?php esc_attr_e( 'Vorheriges', 'fjdf' ); ?>"></button>
-						<button class="swiper-button-next" aria-label="<?php esc_attr_e( 'Nächstes', 'fjdf' ); ?>"></button>
 					</div>
 				<?php endif; ?>
 			</aside>

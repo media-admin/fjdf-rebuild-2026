@@ -54,6 +54,10 @@ function fjdf_polylang_register_strings(): void {
     pll_register_string( 'nav_what',         __( 'Was wir tun', 'fjdf' ),               $group );
     pll_register_string( 'nav_news',         __( 'Aktuelles', 'fjdf' ),                 $group );
     pll_register_string( 'nav_donate',       __( 'Jetzt spenden', 'fjdf' ),             $group );
+    
+    // Breadcrumbs
+    pll_register_string( 'breadcrumb_home',     __( 'Startseite', 'fjdf' ),             $group );
+    pll_register_string( 'breadcrumb_archive',  __( 'Aktuelles', 'fjdf' ),              $group );
 
     // Global UI
     pll_register_string( 'btn_donate',       __( 'Jetzt spenden', 'fjdf' ),             $group );
@@ -62,6 +66,9 @@ function fjdf_polylang_register_strings(): void {
     pll_register_string( 'btn_load_more',    __( 'Mehr anzeigen', 'fjdf' ),             $group );
     pll_register_string( 'btn_learn_more',   __( 'Mehr erfahren', 'fjdf' ),             $group );
     pll_register_string( 'btn_all_news',     __( 'Alle Neuigkeiten', 'fjdf' ),          $group );
+    pll_register_string( 'other_news_label', __( 'Weitere Beiträge', 'fjdf' ),          $group );
+    pll_register_string( 'post_nav_prev', __( 'Vorheriger Beitrag', 'fjdf' ), $group );
+    pll_register_string( 'post_nav_next', __( 'Nächster Beitrag', 'fjdf' ), $group );
 
     // Archive
     pll_register_string( 'archive_title',    __( 'Aktuelles', 'fjdf' ),                 $group );
@@ -77,6 +84,16 @@ function fjdf_polylang_register_strings(): void {
     pll_register_string( 'newsletter_head',  __( 'Bleiben Sie nah am Wandel, den Sie bewirken', 'fjdf' ), $group );
     pll_register_string( 'newsletter_btn',   __( 'Newsletter abonnieren', 'fjdf' ),     $group );
     pll_register_string( 'newsletter_input', __( 'E-Mail-Adresse', 'fjdf' ),            $group );
+    pll_register_string( 'newsletter_consent',    __( 'Ich stimme der %s zu und möchte den Newsletter erhalten.', 'fjdf' ), $group );
+    pll_register_string( 'newsletter_privacy_link', __( 'Datenschutzerklärung', 'fjdf' ), $group );
+
+    // GiveWP donation form
+    pll_register_string( 'donate_freq_aria',    __( 'Zahlungsfrequenz', 'fjdf' ), $group );
+    pll_register_string( 'cert_close',          __( 'Schließen', 'fjdf' ), $group );
+    pll_register_string( 'cert_form_aria',      __( 'Spendennachweis anfordern', 'fjdf' ), $group );
+    pll_register_string( 'cert_firstname',      __( 'Vorname(n)', 'fjdf' ), $group );
+    pll_register_string( 'cert_lastname',       __( 'Nachname(n)', 'fjdf' ), $group );
+    pll_register_string( 'cert_email',          __( 'E-Mail-Adresse', 'fjdf' ), $group );
 
     // Certificate modal
     pll_register_string( 'cert_headline',    __( 'Erhalten Sie Ihren Spendennachweis', 'fjdf' ), $group );
@@ -86,9 +103,26 @@ function fjdf_polylang_register_strings(): void {
     // Thank you page
     pll_register_string( 'thankyou_back',    __( 'Zurück zur Startseite', 'fjdf' ),     $group );
 
+    // 404 page
+    pll_register_string( '404_title',   __( 'Seite nicht gefunden', 'fjdf' ), $group );
+    pll_register_string( '404_text',    __( 'Entschuldigung, die gesuchte Seite existiert nicht oder wurde verschoben.', 'fjdf' ), $group );
+    pll_register_string( '404_back',    __( 'Zurück zur Startseite', 'fjdf' ), $group );
+
     // Breadcrumb
     pll_register_string( 'breadcrumb_home',  __( 'Startseite', 'fjdf' ),                $group );
     pll_register_string( 'breadcrumb_news',  __( 'Aktuelles', 'fjdf' ),                 $group );
+
+    // Mixed stuff
+    pll_register_string( 'skip_link',     __( 'Zum Inhalt springen', 'fjdf' ),      $group );
+    pll_register_string( 'aria_home',     __( 'Zur Startseite', 'fjdf' ),           $group );
+    pll_register_string( 'aria_nav',      __( 'Hauptnavigation', 'fjdf' ),          $group );
+    pll_register_string( 'aria_menu_btn', __( 'Menü öffnen', 'fjdf' ),              $group );
+    pll_register_string( 'social_label',  __( 'Lerne Sinfonía por el Perú kennen', 'fjdf' ), $group );
+    pll_register_string( 'email_label',   __( 'E-Mail:', 'fjdf' ),                  $group );
+
+    pll_register_string( 'news_preview_head', __( 'Neuigkeiten & Aktuelles', 'fjdf' ), $group );
+
+    pll_register_string( 'read_more_aria', __( 'Weiterlesen: %s', 'fjdf' ), $group );
 }
 
 /**

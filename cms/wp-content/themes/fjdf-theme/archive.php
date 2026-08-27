@@ -17,9 +17,9 @@ $featured_id   = $featured_post ? $featured_post->ID : 0;
 	<!-- Page Header -->
 	<div class="archive-header section--sm">
 		<div class="container">
-			<h1 class="archive-header__title"><?php esc_html_e( 'Aktuelles', 'fjdf' ); ?></h1>
+			<h1 class="archive-header__title"><?php echo esc_html( fjdf_str( 'Aktuelles' ) ); ?></h1>
 			<p class="archive-header__desc">
-				<?php esc_html_e( 'Erfahren Sie die neuesten Nachrichten und Ereignisse rund um Sinfonía por el Perú und wie Ihr Beitrag vielen Kindern und Jugendlichen in Peru zugutekommen kann.', 'fjdf' ); ?>
+				<?php echo esc_html( fjdf_str( 'Erfahren Sie die neuesten Nachrichten und Ereignisse rund um Sinfonía por el Perú und wie Ihr Beitrag vielen Kindern und Jugendlichen in Peru zugutekommen kann.' ) ); ?>
 			</p>
 		</div>
 	</div>
@@ -50,7 +50,7 @@ $featured_id   = $featured_post ? $featured_post->ID : 0;
 	<?php if ( $news_query->have_posts() ) : ?>
 		<section class="other-news section--sm">
 			<div class="container">
-				<h2 class="other-news__title"><?php esc_html_e( 'Weitere Beiträge', 'fjdf' ); ?></h2>
+				<h2 class="other-news__title"><?php echo esc_html( fjdf_str( 'Weitere Beiträge' ) ); ?></h2>
 
 				<div class="other-news__grid"
 				     id="news-grid"

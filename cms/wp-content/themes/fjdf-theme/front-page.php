@@ -20,6 +20,8 @@
  */
 
 get_header();
+
+$fjdf_home_id = fjdf_translate_id( (int) get_option( 'page_on_front' ) );
 ?>
 
 <main id="main" class="site-main home-page">
@@ -28,13 +30,12 @@ get_header();
 	   1. HERO
 	   ================================================================ */ ?>
 	<?php
-	$hero_image        = fjdf_field( 'fjdf_hero_image', 6 );
-	$hero_person_image = fjdf_field( 'fjdf_hero_person_image', 6 );
-	$hero_headline     = fjdf_field( 'fjdf_hero_headline', 6, __( 'Lass die Träume der Kinder in Peru wahr werden', 'fjdf' ) );
-	$hero_subtext      = fjdf_field( 'fjdf_hero_subtext', 6 );
-	$hero_cta_label    = fjdf_field( 'fjdf_hero_cta_label', 6, __( 'Jetzt spenden', 'fjdf' ) );
-	$hero_cta_url      = fjdf_field( 'fjdf_hero_cta_url', 6 );
-	$hero_scroll       = fjdf_field( 'fjdf_hero_scroll_label', 6, __( 'Scrollen', 'fjdf' ) );
+	$hero_image        = fjdf_field( 'fjdf_hero_image', $fjdf_home_id );
+	$hero_person_image = fjdf_field( 'fjdf_hero_person_image', $fjdf_home_id );
+	$hero_headline     = fjdf_field( 'fjdf_hero_headline', $fjdf_home_id, __( 'Lass die Träume der Kinder in Peru wahr werden', 'fjdf' ) );
+	$hero_subtext      = fjdf_field( 'fjdf_hero_subtext', $fjdf_home_id );
+	$hero_cta_label    = fjdf_field( 'fjdf_hero_cta_label', $fjdf_home_id, __( 'Jetzt spenden', 'fjdf' ) );
+	$hero_scroll       = fjdf_field( 'fjdf_hero_scroll_label', $fjdf_home_id, __( 'Scrollen', 'fjdf' ) );
 	?>
 	<section class="hero" aria-label="<?php esc_attr_e( 'Hero', 'fjdf' ); ?>">
 		<?php if ( ! empty( $hero_image['id'] ) ) : ?>
@@ -69,10 +70,10 @@ get_header();
 					<p class="hero__subtext"><?php echo esc_html( $hero_subtext ); ?></p>
 				<?php endif; ?>
 
-				<?php if ( $hero_cta_url ) : ?>
-					<a href="<?php echo esc_url( $hero_cta_url ); ?>" class="btn btn--primary hero__cta">
+				<?php if ( $hero_cta_label ) : ?>
+					<button type="button" class="btn btn--primary hero__cta js-open-donation-modal">
 						<?php echo esc_html( $hero_cta_label ); ?>
-					</a>
+					</button>
 				<?php endif; ?>
 
 				<?php if ( $hero_scroll ) : ?>
@@ -89,12 +90,12 @@ get_header();
 	   2. NOSOTROS-TEASER
 	   ================================================================ */ ?>
 	<?php
-	$about_label = fjdf_field( 'fjdf_about_label', 6, 'ÜBER UNS' );
-	$about_head  = fjdf_field( 'fjdf_about_headline', 6, __( 'Partner für Wandel durch Musik', 'fjdf' ) );
-	$about_text  = fjdf_field( 'fjdf_about_text', 6 );
-	$about_cta_l = fjdf_field( 'fjdf_about_cta_label', 6, __( 'Mehr erfahren', 'fjdf' ) );
-	$about_cta_u = fjdf_field( 'fjdf_about_cta_url', 6 );
-	$about_image = fjdf_field( 'fjdf_about_image', 6 );
+	$about_label = fjdf_field( 'fjdf_about_label', $fjdf_home_id, 'ÜBER UNS' );
+	$about_head  = fjdf_field( 'fjdf_about_headline', $fjdf_home_id, __( 'Partner für Wandel durch Musik', 'fjdf' ) );
+	$about_text  = fjdf_field( 'fjdf_about_text', $fjdf_home_id );
+	$about_cta_l = fjdf_field( 'fjdf_about_cta_label', $fjdf_home_id, __( 'Mehr erfahren', 'fjdf' ) );
+	$about_cta_u = fjdf_field( 'fjdf_about_cta_url', $fjdf_home_id );
+	$about_image = fjdf_field( 'fjdf_about_image', $fjdf_home_id );
 	?>
 	<section class="about-teaser section" id="about">
 		<div class="container about-teaser__inner">
@@ -122,7 +123,7 @@ get_header();
 	<?php /* ================================================================
 	   3. STATS-LEISTE
 	   ================================================================ */ ?>
-	<?php $stats_bar = fjdf_field( 'fjdf_stats_bar', 6 ); ?>
+	<?php $stats_bar = fjdf_field( 'fjdf_stats_bar', $fjdf_home_id ); ?>
 	<?php if ( ! empty( $stats_bar ) ) : ?>
 	<section class="stats-slider" aria-label="<?php esc_attr_e( 'Kennzahlen', 'fjdf' ); ?>">
 		<div class="container">
@@ -147,12 +148,12 @@ get_header();
 	   4. QUÉ HACEMOS-TEASER
 	   ================================================================ */ ?>
 	<?php
-	$what_label = fjdf_field( 'fjdf_what_label', 6, 'WAS WIR TUN' );
-	$what_head  = fjdf_field( 'fjdf_what_headline', 6, __( 'Wir verändern Leben durch Musik', 'fjdf' ) );
-	$what_text  = fjdf_field( 'fjdf_what_text', 6 );
-	$what_cta_l = fjdf_field( 'fjdf_what_cta_label', 6, __( 'Unser Einfluss', 'fjdf' ) );
-	$what_cta_u = fjdf_field( 'fjdf_what_cta_url', 6 );
-	$what_image = fjdf_field( 'fjdf_what_image', 6 );
+	$what_label = fjdf_field( 'fjdf_what_label', $fjdf_home_id, 'WAS WIR TUN' );
+	$what_head  = fjdf_field( 'fjdf_what_headline', $fjdf_home_id, __( 'Wir verändern Leben durch Musik', 'fjdf' ) );
+	$what_text  = fjdf_field( 'fjdf_what_text', $fjdf_home_id );
+	$what_cta_l = fjdf_field( 'fjdf_what_cta_label', $fjdf_home_id, __( 'Unser Einfluss', 'fjdf' ) );
+	$what_cta_u = fjdf_field( 'fjdf_what_cta_url', $fjdf_home_id );
+	$what_image = fjdf_field( 'fjdf_what_image', $fjdf_home_id );
 	?>
 	<section class="what-teaser section bg-cream-dark">
 		<div class="container what-teaser__inner">
@@ -185,19 +186,19 @@ get_header();
 	   5. IMPACT STATS — 3 Tabs with separate stats + portrait
 	   ================================================================ */ ?>
 	<?php
-	$impact_label    = fjdf_field( 'fjdf_impact_label', 6, __( 'SOZIALER EINFLUSS', 'fjdf' ) );
-	$impact_head     = fjdf_field( 'fjdf_impact_headline', 6, __( 'Wirkungsindikatoren und erzielte Ergebnisse', 'fjdf' ) );
-	$impact_sub      = fjdf_field( 'fjdf_impact_subtext', 6 );
-	$impact_portrait = fjdf_field( 'fjdf_impact_portrait', 6 );
-	$tab1_label      = fjdf_field( 'fjdf_impact_tab1_label', 6, __( 'Persönlich', 'fjdf' ) );
-	$tab2_label      = fjdf_field( 'fjdf_impact_tab2_label', 6, __( 'Bildung', 'fjdf' ) );
-	$tab3_label      = fjdf_field( 'fjdf_impact_tab3_label', 6, __( 'Familie', 'fjdf' ) );
-	$stats_ind       = fjdf_field( 'fjdf_impact_stats_individual', 6, [] );
-	$stats_edu       = fjdf_field( 'fjdf_impact_stats_educational', 6, [] );
-	$stats_fam       = fjdf_field( 'fjdf_impact_stats_family', 6, [] );
+	$impact_label    = fjdf_field( 'fjdf_impact_label', $fjdf_home_id, __( 'SOZIALER EINFLUSS', 'fjdf' ) );
+	$impact_head     = fjdf_field( 'fjdf_impact_headline', $fjdf_home_id, __( 'Wirkungsindikatoren und erzielte Ergebnisse', 'fjdf' ) );
+	$impact_sub      = fjdf_field( 'fjdf_impact_subtext', $fjdf_home_id );
+	$impact_portrait = fjdf_field( 'fjdf_impact_portrait', $fjdf_home_id );
+	$tab1_label      = fjdf_field( 'fjdf_impact_tab1_label', $fjdf_home_id, __( 'Persönlich', 'fjdf' ) );
+	$tab2_label      = fjdf_field( 'fjdf_impact_tab2_label', $fjdf_home_id, __( 'Bildung', 'fjdf' ) );
+	$tab3_label      = fjdf_field( 'fjdf_impact_tab3_label', $fjdf_home_id, __( 'Familie', 'fjdf' ) );
+	$stats_ind       = fjdf_field( 'fjdf_impact_stats_individual', $fjdf_home_id, [] );
+	$stats_edu       = fjdf_field( 'fjdf_impact_stats_educational', $fjdf_home_id, [] );
+	$stats_fam       = fjdf_field( 'fjdf_impact_stats_family', $fjdf_home_id, [] );
 
 	// Fallback: if no per-tab stats exist yet, use the old generic field
-	$stats_fallback = fjdf_field( 'fjdf_impact_stats', 6, [] );
+	$stats_fallback = fjdf_field( 'fjdf_impact_stats', $fjdf_home_id, [] );
 	if ( empty( $stats_ind ) ) $stats_ind = $stats_fallback;
 	if ( empty( $stats_edu ) ) $stats_edu = $stats_fallback;
 	if ( empty( $stats_fam ) ) $stats_fam = $stats_fallback;
@@ -275,15 +276,15 @@ get_header();
 	<?php /* ================================================================
 	   6. TESTIMONIALS
 	   ================================================================ */ ?>
-	<?php fjdf_video_testimonial( 6 ); ?>
+	<?php fjdf_video_testimonial( fjdf_translate_id( 6 ) ); ?>
 
 	<?php /* ================================================================
 	   7b. CONTRIBUTION ITEMS (Flip Cards)
 	   ================================================================ */ ?>
 	<?php
-	$contrib_label = get_field( 'fjdf_what_contrib_label', 8 );
-	$contrib_head  = get_field( 'fjdf_what_contrib_headline', 8 );
-	$contrib_items = get_field( 'fjdf_what_contrib_items', 8 );
+	$contrib_label = get_field( 'fjdf_what_contrib_label', fjdf_translate_id( 8 ) );
+	$contrib_head  = get_field( 'fjdf_what_contrib_headline', fjdf_translate_id( 8 ) );
+	$contrib_items = get_field( 'fjdf_what_contrib_items', fjdf_translate_id( 8 ) );
 	$back_texts    = get_option( 'fjdf_contrib_back_texts', [] );
 	?>
 	<?php if ( ! empty( $contrib_items ) ) : ?>
@@ -339,12 +340,12 @@ get_header();
 	$news_query = fjdf_get_news( 3 );
 	if ( $news_query->have_posts() ) :
 	?>
-		<section class="news-preview section" aria-label="<?php esc_attr_e( 'Neuigkeiten & Aktuelles', 'fjdf' ); ?>">
+		<section class="news-preview section" aria-label="<?php echo esc_attr( fjdf_str( 'Neuigkeiten & Aktuelles' ) ); ?>">
 			<div class="container">
 				<div class="news-preview__header">
-					<h2 class="news-preview__headline"><?php esc_html_e( 'Neuigkeiten & Aktuelles', 'fjdf' ); ?></h2>
+					<h2 class="news-preview__headline"><?php echo esc_html( fjdf_str( 'Neuigkeiten & Aktuelles' ) ); ?></h2>
 					<a href="<?php echo esc_url( get_post_type_archive_link( 'post' ) ); ?>" class="news-preview__all btn btn--outline">
-						<?php esc_html_e( 'Alle Neuigkeiten', 'fjdf' ); ?>
+						<?php echo esc_html( fjdf_str( 'Alle Neuigkeiten' ) ); ?>
 					</a>
 				</div>
 

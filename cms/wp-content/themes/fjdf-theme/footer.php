@@ -51,7 +51,7 @@ $yt_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewB
                         </div>
 
                         <div class="site-footer__social-wrap">
-                                <p class="site-footer__social-label"><?php esc_html_e( 'Lerne Sinfonía por el Perú kennen', 'fjdf' ); ?></p>
+                                <p class="site-footer__social-label"><?php echo esc_html( fjdf_str( 'Lerne Sinfonía por el Perú kennen' ) ); ?></p>
                                 <ul class="site-footer__social-list" role="list">
                                         <?php
                                         $socials = [
@@ -74,7 +74,7 @@ $yt_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewB
                                 <?php $contact_email = fjdf_option( 'fjdf_contact_email', 'kontakt@friendsofjuandiegoflorez.org' ); ?>
                                 <?php if ( $contact_email ) : ?>
                                         <p class="site-footer__email">
-                                                <?php esc_html_e( 'E-Mail:', 'fjdf' ); ?>
+                                                <?php echo esc_html( fjdf_str( 'E-Mail:' ) ); ?>
                                                 <a href="mailto:<?php echo esc_attr( $contact_email ); ?>" class="site-footer__email-link"><?php echo esc_html( $contact_email ); ?></a>
                                         </p>
                                 <?php endif; ?>
@@ -114,6 +114,17 @@ $yt_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewB
                 </div>
         </div>
         <?php endif; ?>
+
+        <div class="give-modal-instance" style="display:none;">
+                <?php
+                $give_form_id = apply_filters( 'fjdf_give_form_id', 0 );
+                if ( $give_form_id ) {
+                        echo do_blocks(
+                                '<!-- wp:give/donation-form {"id":' . absint( $give_form_id ) . ',"displayStyle":"modal","continueButtonTitle":"' . esc_attr__( 'Spenden Sie jetzt', 'fjdf' ) . '"} /-->'
+                        );
+                }
+                ?>
+        </div>
 
 </footer>
 

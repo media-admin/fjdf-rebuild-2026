@@ -11,7 +11,7 @@
 <?php wp_body_open(); ?>
 
 <a class="skip-link screen-reader-text" href="#main">
-	<?php esc_html_e( 'Zum Inhalt springen', 'fjdf' ); ?>
+	<?php echo esc_html( fjdf_str( 'Zum Inhalt springen' ) ); ?>
 </a>
 
 
@@ -26,7 +26,8 @@
 		<div class="site-header__inner container"<?php if ( $header_style ) echo ' style="' . esc_attr( $header_style ) . '"'; ?>>
 
 		<!-- Logo -->
-		<a class="site-header__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php bloginfo( 'name' ); ?> – <?php esc_attr_e( 'Zur Startseite', 'fjdf' ); ?>">
+		<a class="site-header__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php bloginfo( 'name' ); ?> – <?php echo esc_attr( fjdf_str( 'Zur Startseite' ) ); ?>">
+
 			<?php
 			if ( has_custom_logo() ) :
 				the_custom_logo();
@@ -36,7 +37,7 @@
 		</a>
 
 		<!-- Desktop Navigation -->
-		<nav class="site-nav" id="site-nav" aria-label="<?php esc_attr_e( 'Hauptnavigation', 'fjdf' ); ?>">
+		<nav class="site-nav" id="site-nav" aria-label="<?php echo esc_attr( fjdf_str( 'Hauptnavigation' ) ); ?>">
 			<?php
 			wp_nav_menu( [
 				'theme_location' => 'primary',
@@ -57,20 +58,19 @@
                 <?php endif; ?>
 		<!-- CTA Button -->
 		<?php
-		$cta_url   = fjdf_option( 'fjdf_floating_url' ) ?: get_page_link( get_page_by_path( 'spenden' ) );
 		$cta_label = fjdf_option( 'fjdf_header_cta_label', __( 'Jetzt spenden', 'fjdf' ) );
-		if ( $cta_url ) : ?>
-			<a href="<?php echo esc_url( $cta_url ); ?>" class="site-header__cta btn btn--primary btn--heart-circle">
-				<?php echo esc_html( $cta_label ); ?>
-                        <span class="btn__heart" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span>			</a>
-		<?php endif; ?>
+		?>
+		<button type="button" class="site-header__cta btn btn--primary btn--heart-circle js-open-donation-modal">
+			<?php echo esc_html( $cta_label ); ?>
+			<span class="btn__heart" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span>
+		</button>
 
 		<!-- Mobile Hamburger -->
 		<button class="site-header__hamburger"
-		        id="nav-toggle"
-		        aria-expanded="false"
-		        aria-controls="site-nav"
-		        aria-label="<?php esc_attr_e( 'Menü öffnen', 'fjdf' ); ?>">
+				id="nav-toggle"
+				aria-expanded="false"
+				aria-controls="site-nav"
+				aria-label="<?php echo esc_attr( fjdf_str( 'Menü öffnen' ) ); ?>">
 			<span class="site-header__hamburger-bar"></span>
 			<span class="site-header__hamburger-bar"></span>
 			<span class="site-header__hamburger-bar"></span>

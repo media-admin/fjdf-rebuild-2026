@@ -48,11 +48,11 @@ function fjdf_news_card( int $post_id, string $size = 'card' ): void {
 
 				<p class="news-card__date"><?php echo esc_html( get_the_date( 'j. F Y', $post_id ) ); ?></p>
 			<a href="<?php echo esc_url( get_permalink( $post_id ) ); ?>"
-			   class="news-card__link"
-			   aria-label="<?php printf( esc_attr__( 'Weiterlesen: %s', 'fjdf' ), esc_attr( get_the_title( $post_id ) ) ); ?>">
-				<?php esc_html_e( 'Weiterlesen', 'fjdf' ); ?>
-				<span aria-hidden="true">›</span>
-			</a>
+				class="news-card__link"
+				aria-label="<?php echo esc_attr( sprintf( fjdf_str( 'Weiterlesen: %s' ), get_the_title( $post_id ) ) ); ?>">
+					<?php echo esc_html( fjdf_str( 'Weiterlesen' ) ); ?>
+					<span aria-hidden="true">›</span>
+				</a>
 		</div>
 	</article>
 	<?php
@@ -103,9 +103,9 @@ function fjdf_news_card_featured( int $post_id ): void {
 
 				<p class="news-card-featured__date"><?php echo esc_html( get_the_date( 'j. F Y', $post_id ) ); ?></p>
 			<a href="<?php echo esc_url( get_permalink( $post_id ) ); ?>"
-			   class="news-card-featured__link"
-			   aria-label="<?php printf( esc_attr__( 'Weiterlesen: %s', 'fjdf' ), esc_attr( get_the_title( $post_id ) ) ); ?>">
-				<?php esc_html_e( 'Weiterlesen', 'fjdf' ); ?>
+			class="news-card-featured__link"
+			aria-label="<?php echo esc_attr( sprintf( fjdf_str( 'Weiterlesen: %s' ), get_the_title( $post_id ) ) ); ?>">
+				<?php echo esc_html( fjdf_str( 'Weiterlesen' ) ); ?>
 				<span aria-hidden="true">›</span>
 			</a>
 		</div>
@@ -134,8 +134,8 @@ function fjdf_other_news_sidebar( int $current_post_id, int $count = 3 ): void {
 		return;
 	}
 	?>
-	<aside class="news-sidebar" aria-label="<?php esc_attr_e( 'Weitere Beiträge', 'fjdf' ); ?>">
-		<p class="news-sidebar__label"><?php esc_html_e( 'WEITERE BEITRÄGE', 'fjdf' ); ?></p>
+	<aside class="news-sidebar" aria-label="<?php echo esc_attr( fjdf_str( 'Weitere Beiträge' ) ); ?>">
+		<p class="news-sidebar__label"><?php echo esc_html( strtoupper( fjdf_str( 'Weitere Beiträge' ) ) ); ?></p>
 		<ul class="news-sidebar__list">
 			<?php foreach ( $posts as $post ) : ?>
 				<li class="news-sidebar__item">
@@ -209,13 +209,13 @@ function fjdf_partner_logos( string $class = 'partners' ): void {
  */
 function fjdf_breadcrumb(): void {
 	$archive_link  = get_post_type_archive_link( 'post' );
-	$archive_label = __( 'Aktuelles', 'fjdf' );
+	$archive_label = fjdf_str( 'Aktuelles' );
 	?>
 	<nav class="breadcrumb" aria-label="<?php esc_attr_e( 'Breadcrumb', 'fjdf' ); ?>">
 		<ol class="breadcrumb__list" itemscope itemtype="https://schema.org/BreadcrumbList">
 			<li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="item">
-					<span itemprop="name"><?php esc_html_e( 'Startseite', 'fjdf' ); ?></span>
+					<span itemprop="name"><?php echo esc_html( fjdf_str( 'Startseite' ) ); ?></span>
 				</a>
 				<meta itemprop="position" content="1" />
 			</li>

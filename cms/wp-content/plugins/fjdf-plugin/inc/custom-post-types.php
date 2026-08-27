@@ -80,7 +80,7 @@ function fjdf_register_projects_cpt() {
     
     register_post_type('project', $args);
 }
-add_action('init', 'fjdf_register_projects_cpt');
+// add_action('init', 'fjdf_register_projects_cpt');
 
 
 /**
@@ -109,7 +109,7 @@ function fjdf_register_project_categories() {
         'rewrite' => array('slug' => 'projekt-kategorie'),
     ));
 }
-add_action('init', 'fjdf_register_project_categories');
+// add_action('init', 'fjdf_register_project_categories');
 
 
 /**
@@ -512,7 +512,7 @@ function fjdf_register_jobs_cpt() {
     
     register_post_type('job', $args);
 }
-add_action('init', 'fjdf_register_jobs_cpt');
+// add_action('init', 'fjdf_register_jobs_cpt');
 
 
 /**
@@ -545,7 +545,7 @@ function fjdf_register_job_category_taxonomy() {
     
     register_taxonomy('job_category', 'job', $args);
 }
-add_action('init', 'fjdf_register_job_category_taxonomy');
+// add_action('init', 'fjdf_register_job_category_taxonomy');
 
 
 /**
@@ -576,7 +576,7 @@ function fjdf_register_job_type_taxonomy() {
     
     register_taxonomy('job_type', 'job', $args);
 }
-add_action('init', 'fjdf_register_job_type_taxonomy');
+// add_action('init', 'fjdf_register_job_type_taxonomy');
 
 
 /**
@@ -607,4 +607,4 @@ function fjdf_register_job_location_taxonomy() {
     
     register_taxonomy('job_location', 'job', $args);
 }
-add_action('init', 'fjdf_register_job_location_taxonomy');
+// add_action('init', 'fjdf_register_job_location_taxonomy');

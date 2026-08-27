@@ -27,6 +27,22 @@ function fjdf_option( string $field_name, mixed $fallback = '' ): mixed {
 	return fjdf_field( $field_name, 'option', $fallback );
 }
 
+function fjdf_str( string $string ): string {
+	return function_exists( 'pll__' ) ? pll__( $string ) : $string;
+}
+
+/**
+ * Übersetzt eine hartcodierte Post-ID in die passende Sprachversion.
+ * Fallback: Original-ID, falls keine Übersetzung existiert oder Polylang inaktiv ist.
+ */
+function fjdf_translate_id( int $id ): int {
+	if ( ! function_exists( 'pll_get_post' ) ) {
+		return $id;
+	}
+	$translated = pll_get_post( $id, pll_current_language() );
+	return $translated ?: $id;
+}
+
 /**
  * Output ACF image (responsive, with srcset)
  */
@@ -57,17 +73,12 @@ function fjdf_floating_button(): void {
 	}
 
 	$label = fjdf_option( 'fjdf_floating_label', __( 'Spenden', 'fjdf' ) );
-	$url   = fjdf_option( 'fjdf_floating_url', get_page_link( get_page_by_path( 'spenden' ) ) );
-
-	if ( empty( $url ) ) {
-		return;
-	}
 	?>
-	<a href="<?php echo esc_url( $url ); ?>"
-	   class="floating-donate-btn"
+	<button type="button"
+	   class="floating-donate-btn js-open-donation-modal"
 	   aria-label="<?php echo esc_attr( $label ); ?>">
 		<span><?php echo esc_html( $label ); ?></span>
-	</a>
+	</button>
 	<?php
 }
 
@@ -225,12 +236,13 @@ function fjdf_ajax_cert_request(): void {
  * Donation CTA Block — wiederverwendbar auf Homepage + About
  */
 function fjdf_donation_cta(): void {
-	$cta_head  = fjdf_field( 'fjdf_cta_headline', 6, __( 'Spenden und mitmachen', 'fjdf' ) );
-	$cta_text  = fjdf_field( 'fjdf_cta_text', 6 );
-	$cta_btn_l = fjdf_field( 'fjdf_cta_button_label', 6, __( 'Jetzt spenden', 'fjdf' ) );
-	$cta_btn_u = fjdf_field( 'fjdf_cta_button_url', 6 );
-	$cta_note  = fjdf_field( 'fjdf_cta_note', 6 );
-	$cta_image = fjdf_field( 'fjdf_cta_image', 6 );
+	$home_id   = fjdf_translate_id( 6 );
+	$cta_head  = fjdf_field( 'fjdf_cta_headline', $home_id, __( 'Spenden und mitmachen', 'fjdf' ) );
+	$cta_text  = fjdf_field( 'fjdf_cta_text', $home_id );
+	$cta_btn_l = fjdf_field( 'fjdf_cta_button_label', $home_id, __( 'Jetzt spenden', 'fjdf' ) );
+	$cta_btn_u = fjdf_field( 'fjdf_cta_button_url', $home_id );
+	$cta_note  = fjdf_field( 'fjdf_cta_note', $home_id );
+	$cta_image = fjdf_field( 'fjdf_cta_image', $home_id );
 	?>
 	<section class="donation-cta section">
 		<div class="container donation-cta__inner">
@@ -239,10 +251,10 @@ function fjdf_donation_cta(): void {
 				<?php if ( $cta_text ) : ?>
 					<p class="donation-cta__text"><?php echo esc_html( $cta_text ); ?></p>
 				<?php endif; ?>
-				<?php if ( $cta_btn_u ) : ?>
-					<a href="<?php echo esc_url( $cta_btn_u ); ?>" class="btn btn--primary btn--heart donation-cta__btn">
+				<?php if ( $cta_btn_l ) : ?>
+					<button type="button" class="btn btn--primary btn--heart donation-cta__btn js-open-donation-modal">
 						<?php echo esc_html( $cta_btn_l ); ?>
-					</a>
+					</button>
 				<?php endif; ?>
 				<?php if ( $cta_note ) : ?>
 					<div class="donation-cta__note">
