@@ -73,7 +73,7 @@ $table_prefix = 'fjdf_';
 
 /* Add any custom values between this line and the "stop editing" line. */
 
-
+define('WP_POST_REVISIONS', 20);
 
 /**
  * For developers: WordPress debugging mode.
