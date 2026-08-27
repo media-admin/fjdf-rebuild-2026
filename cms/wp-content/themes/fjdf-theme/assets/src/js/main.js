@@ -12,9 +12,11 @@ import '../scss/style.scss';
 
 // Immer laden (global)
 import './navbar.js';
+import('./components/donation-modal-trigger.js');
+import('./components/custom-amount-i18n.js');
 
 // Dynamic Imports — nur wenn DOM-Element vorhanden
-if ( document.querySelector( '.dona-layout' ) ) {
+if ( document.querySelector( '.donate-layout' ) ) {
 	import( './donation-form.js' );
 }
 
@@ -81,3 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     observer.observe(videoModal, { attributes: true, attributeFilter: ['class'] });
 });
+
+// Newsletter
+if ( document.querySelector( '.newsletter-section__form' ) ) {
+	import( './components/newsletter-form.js' ).then( m => m.initNewsletterForm() );
+}

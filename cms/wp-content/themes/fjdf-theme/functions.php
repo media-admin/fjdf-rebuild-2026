@@ -196,10 +196,20 @@ function fjdf_register_menus(): void {
 // =============================================================================
 // 6. GIVEWP SUPPORT
 // =============================================================================
-
 add_filter( 'give_get_template_part', 'fjdf_givewp_template_path', 10, 1 );
 
-function fjdf_givewp_template_path( string $template ): string {
+function fjdf_givewp_template_path( $template ) {
+	// GiveWP übergibt je nach Version einen String oder ein Array möglicher Pfade
+	if ( is_array( $template ) ) {
+		foreach ( $template as $t ) {
+			$custom = FJDF_DIR . '/give-templates/' . $t;
+			if ( file_exists( $custom ) ) {
+				return $custom;
+			}
+		}
+		return $template; // keinen eigenen Override gefunden → GiveWP-Standard nutzen
+	}
+
 	$custom = FJDF_DIR . '/give-templates/' . $template;
 	if ( file_exists( $custom ) ) {
 		return $custom;
@@ -334,7 +344,18 @@ add_filter( 'get_custom_logo', function( $html ) {
 
 // GiveWP Formular ID
 add_filter( 'fjdf_give_form_id', function() {
-	return 51;
+	return fjdf_translate_id( 51 );
+} );
+
+// GiveWP Multilanguage Success Page
+add_filter( 'give_get_settings', function( $settings ) {
+	if ( ! empty( $settings['success_page'] ) ) {
+		$settings['success_page'] = fjdf_translate_id( (int) $settings['success_page'] );
+	}
+	if ( ! empty( $settings['failure_page'] ) ) {
+		$settings['failure_page'] = fjdf_translate_id( (int) $settings['failure_page'] );
+	}
+	return $settings;
 } );
 
 /**

@@ -1,7 +1,7 @@
 /**
  * FJDF — donation-form.js
  * Donation Page Interaktivität:
- *  - Frequency Toggle (Única / Mensual)
+ *  - Frequency Toggle (Einmalig / Monatlich)
  *  - Betrag-Auswahl + Custom Input
  *  - Submit-Button Label dynamisch aktualisieren
  *  - Zahlungsmethoden-Auswahl
@@ -11,12 +11,12 @@
 class DonationForm {
 
 	constructor() {
-		this.form          = document.querySelector( '.dona-layout__form-inner' );
-		this.freqBtns      = document.querySelectorAll( '.dona-frequency__btn' );
-		this.amountPanels  = document.querySelectorAll( '.dona-amounts' );
-		this.submitBtn     = document.getElementById( 'dona-submit' );
-		this.submitAmount  = document.getElementById( 'dona-submit-amount' );
-		this.customInputs  = document.querySelectorAll( '.dona-custom-input' );
+		this.form          = document.querySelector( '.donate-layout__form-inner' );
+		this.freqBtns      = document.querySelectorAll( '.donate-frequency__btn' );
+		this.amountPanels  = document.querySelectorAll( '.donate-amounts' );
+		this.submitBtn     = document.getElementById( 'donate-submit' );
+		this.submitAmount  = document.getElementById( 'donate-submit-amount' );
+		this.customInputs  = document.querySelectorAll( '.donate-custom-input' );
 
 		if ( ! this.form ) return;
 
@@ -35,7 +35,7 @@ class DonationForm {
 	}
 
 	// ---------------------------------------------------------------------------
-	// Frequency Tabs (Única / Mensual)
+	// Frequency Tabs (Einmalig / Monatlich)
 	// ---------------------------------------------------------------------------
 	bindFrequencyTabs() {
 		this.freqBtns.forEach( btn => {
@@ -71,7 +71,7 @@ class DonationForm {
 	// Betrag-Optionen
 	// ---------------------------------------------------------------------------
 	bindAmountOptions() {
-		document.querySelectorAll( '.dona-amount-option input[type="radio"]' ).forEach( radio => {
+		document.querySelectorAll( '.donate-amount-option input[type="radio"]' ).forEach( radio => {
 			radio.addEventListener( 'change', () => {
 				if ( radio.value !== 'custom' ) {
 					this.currentAmount = parseFloat( radio.value );
@@ -96,7 +96,7 @@ class DonationForm {
 
 			// Custom-Radio aktivieren wenn Input fokussiert
 			input.addEventListener( 'focus', () => {
-				const radio = input.closest( '.dona-amount-option' )?.querySelector( 'input[type="radio"]' );
+				const radio = input.closest( '.donate-amount-option' )?.querySelector( 'input[type="radio"]' );
 				if ( radio ) radio.checked = true;
 			} );
 		} );
@@ -106,7 +106,7 @@ class DonationForm {
 	// Zahlungsmethoden
 	// ---------------------------------------------------------------------------
 	bindPaymentMethods() {
-		document.querySelectorAll( '.dona-payment-option input[type="radio"]' ).forEach( radio => {
+		document.querySelectorAll( '.donate-payment-option input[type="radio"]' ).forEach( radio => {
 			radio.addEventListener( 'change', () => {
 				// Apple Pay nur mit Stripe verfügbar — Hinweis einblenden
 				if ( radio.value === 'applepay' ) {
@@ -123,8 +123,8 @@ class DonationForm {
 		if ( ! note ) {
 			note = document.createElement( 'p' );
 			note.id        = 'payment-note';
-			note.className = 'dona-payment-note';
-			document.querySelector( '.dona-payment-methods' )?.after( note );
+			note.className = 'donate-payment-note';
+			document.querySelector( '.donate-payment-methods' )?.after( note );
 		}
 		note.textContent = msg;
 	}
