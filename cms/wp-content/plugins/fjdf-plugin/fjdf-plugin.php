@@ -3,7 +3,7 @@
  * Plugin Name: FJDF Rebuild 2026 Plugin
  * Plugin URI: https://github.com/media-admin/media-lab-starter-kit
  * Description: Project-specific CPTs, taxonomies, and ACF fields. Duplicate and customize for each client project.
- * Version: 1.0.0
+ * Version: 1.1.0
  * Author: Media Lab
  * Author URI: https://medialab.at
  * Text Domain: fjdf
@@ -18,7 +18,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Plugin Constants
-define('MEDIALAB_PROJECT_VERSION', '1.0.0');
+define('MEDIALAB_PROJECT_VERSION', '1.1.0');
 define('MEDIALAB_PROJECT_FILE', __FILE__);
 define('MEDIALAB_PROJECT_PATH', plugin_dir_path(__FILE__));
 define('MEDIALAB_PROJECT_URL', plugin_dir_url(__FILE__));
@@ -59,8 +59,11 @@ function medialab_project_init() {
     require_once MEDIALAB_PROJECT_PATH . 'inc/polylang-setup.php';
     require_once MEDIALAB_PROJECT_PATH . 'inc/newsletter-fluentcrm.php';
     require_once MEDIALAB_PROJECT_PATH . 'inc/acf-revisions.php';
+    require_once MEDIALAB_PROJECT_PATH . 'inc/pdf-receipt-attachment.php';
+    require_once MEDIALAB_PROJECT_PATH . 'inc/givewp-polylang-redirect.php';
+    require_once MEDIALAB_PROJECT_PATH .  'inc/fluentcrm-email-styles.php';
 }
-add_action('plugins_loaded', 'medialab_project_init', 10);
+add_action('init', 'medialab_project_init', 5);
 
 /**
  * Activation Hook
