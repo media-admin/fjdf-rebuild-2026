@@ -35,7 +35,7 @@ the_post();
 				</div>
 
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="thank-you-split__back">
-					<?php esc_html_e( 'Zurück zur Startseite', 'fjdf' ); ?>
+					<?php echo esc_html( fjdf_str( 'Zurück zur Startseite' ) ); ?>
 				</a>
 			</div>
 		</div>
