@@ -1,0 +1,13 @@
+{
+    "name": "media-lab/fjdf-plugin",
+    "type": "wordpress-plugin",
+    "authors": [
+        {
+            "name": "media-admin",
+            "email": "markus.tritremmel@media-lab.at"
+        }
+    ],
+    "require": {
+        "dompdf/dompdf": "^3.1"
+    }
+}
