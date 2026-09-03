@@ -88,7 +88,7 @@ define('WP_POST_REVISIONS', 20);
  * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */
 if ( ! defined( 'WP_DEBUG' ) ) {
-	define( 'WP_DEBUG', false );
+	define( 'WP_DEBUG', true );
 }
 
 /* HTTPS hinter Valet/Proxy */
