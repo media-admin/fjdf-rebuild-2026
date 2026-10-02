@@ -299,11 +299,6 @@ function fjdf_acf_notice(): void {
 // =============================================================================
 
 $fjdf_includes = [
-	'/inc/acf-fields/options.php',       // Global ACF options fields
-	'/inc/acf-fields/home.php',          // Homepage ACF fields
-	'/inc/acf-fields/about.php',         // About page ACF fields       (was: nosotros.php)
-	'/inc/acf-fields/what-we-do.php',    // What we do ACF fields       (was: que-hacemos.php)
-	'/inc/acf-fields/donate.php',        // Donation page ACF fields    (was: dona.php)
 	'/inc/template-functions.php',
 	'/inc/template-tags.php',
 	'/inc/news-helpers.php',
